@@ -1,0 +1,760 @@
+/* ==========================================================================
+   LACEY GUTHRIE WEBSITE STYLES
+   ========================================================================== */
+
+/* ==========================================================================
+   ANIMATIONS & KEYFRAMES
+   ========================================================================== */
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 4rem; }
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes wavy {
+    0%   { transform: scaleY(1); }
+    10%  { transform: scaleY(1.15); }
+    20%  { transform: scaleY(0.85); }
+    30%  { transform: scaleY(1.25); }
+    40%  { transform: scaleY(0.75); }
+    50%  { transform: scaleY(1.3); }
+    60%  { transform: scaleY(0.85); }
+    70%  { transform: scaleY(1.2); }
+    80%  { transform: scaleY(0.95); }
+    90%  { transform: scaleY(1.05); }
+    100% { transform: scaleY(1); }
+}
+
+/* ==========================================================================
+   ANIMATION UTILITY CLASSES
+   ========================================================================== */
+
+.wavy-1 {
+    display: inline-block;
+    animation: wavy 5s linear infinite;
+}
+
+.wavy-2 {
+    display: inline-block;
+    animation: wavy 5s 0.1s linear infinite;
+}
+
+.wavy-3 {
+    display: inline-block;
+    animation: wavy 5s 0.2s linear infinite;
+}
+
+.wavy-4 {
+    display: inline-block;
+    animation: wavy 5s 0.3s linear infinite;
+}
+
+/* ==========================================================================
+   GLOBAL RESET & BASE STYLES
+   ========================================================================== */
+
+/**
+ * 1. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+    font-size: 1em;
+    box-sizing: border-box;
+    margin: 0 auto;
+    overflow-x: hidden;
+    height: auto;
+    max-width: 100vw;
+    -webkit-text-size-adjust: 100%; /* 1 */
+    opacity: 1 !important;
+    background-color: #ffffff;
+    color: #000;
+    width: 100vw;
+
+    /* This is a fallback for folks who have their
+    OS settings to always show scrollbars,
+    prevents layout shift */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/**
+ * This allows all elements to safely inherit
+ * the correct box-sizing. Box-sizing is set to 
+ * border-box on html.
+ */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+    display: block;
+}
+
+body {
+    margin: 0 auto;
+    width: 100vw;
+    height: auto;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Cormorant", serif;
+    color: #000;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   MEDIA & IMAGES
+   ========================================================================== */
+
+img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    background-color: #000;
+    /* Prevent layout shift during loading */
+    aspect-ratio: attr(width) / attr(height);
+}
+
+/* ==========================================================================
+   INTERACTIVE ELEMENTS
+   ========================================================================== */
+
+button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    color: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+/* ==========================================================================
+   FOCUS & ACCESSIBILITY
+   ========================================================================== */
+
+*:focus {
+    outline: none;
+}
+
+*:focus-visible:not([data-programmatic-focus]) {
+    outline: none;
+    background: #00ffee !important;
+    color: #000 !important;
+}   
+
+.sr-only {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+/* ==========================================================================
+   SELECTION & VISUAL FEEDBACK
+   ========================================================================== */
+
+::selection {
+    background-color: #f9ff5a;
+    color: #000;
+}
+
+/* ==========================================================================
+   UTILITY CLASSES
+   ========================================================================== */
+
+   .lg-tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding-block: 2rem;
+}
+
+/* ==========================================================================
+   LAYOUT CONTAINERS
+   ========================================================================== */
+
+.container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.container--full {
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+
+.lg-header {
+    padding-top: 3rem;
+    position: relative;
+}
+
+.lg-header__title {
+    font-family: "Jacquard 12", cursive;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0 0 2.25rem 0;
+    line-height: 1;
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+}
+
+.lg-header__title a {
+    text-decoration: none;
+    position: relative;
+}
+
+.lg-header__nav-title {
+    font-size: 1.25rem;
+    font-style: italic;
+    margin: 0 0 1rem 0;
+    line-height: 1;
+}
+
+.lg-header__nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 1rem 0 0;
+    background-color: #fff;
+}
+
+.lg-header__nav-list a,
+.lg-header__nav-list button {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    font-family: "Arimo", sans-serif;
+    font-size: 0.675rem;
+    line-height: 1;
+    padding: 0.5rem;
+}
+
+.lg-header__nav-list .is-active {
+    pointer-events: none;
+}
+
+.lg-header__nav-list .is-active::after {
+    content: "\2190  you are here";
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-family: "Arimo", sans-serif;
+    font-size: 0.4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.25rem 0;
+    letter-spacing: 0.025rem;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   MAIN CONTENT AREAS
+   ========================================================================== */
+
+.lg-main__content {
+    width: 100%;
+}
+
+.lg-section {
+    width: 100%;
+    display: grid;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.lg-section__title {
+    font-size: 1.25rem;
+    font-style: italic;
+    margin: 0;
+    line-height: 1
+}
+
+.lg-section__chunk-title {
+    font-size: 1rem;
+    margin: 0 0 0.25rem 0;
+    line-height: 1;
+}
+
+.lg-section__chunk-links {
+    list-style: none;
+    margin: 0.5rem 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.25rem;
+}
+
+.lg-section__chunk-links li {
+    list-style: none;
+    padding: 0;
+}
+
+.lg-section__chunk p {
+    max-width: 38rem;
+}
+
+.lg-section__chunk-highlight {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 0.625rem;
+    line-height: 1.2;
+}
+
+.lg-section__subtitle,
+.lg-section__highlight {
+    display: inline-block;
+    font-family: "Jacquard 24", cursive;
+    font-size: 1rem;    
+    line-height: 1;
+    font-weight: 400;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0.25rem 0 0 0;
+    padding: 0.25rem 0;
+    text-decoration: none;
+}
+
+.lg-section__text {
+    margin: 0 0 0.5rem 0;
+}
+
+.lg-section__link {
+    font-family: "Arimo", sans-serif;
+    font-size: 0.675rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.lg-section__list {
+    margin: 0 0 0.5rem 1.25rem;
+    padding: 0;
+}
+
+.lg-section__unordered-list {
+    list-style: none;
+    margin: 0 0 0.5rem 0;
+    padding: 0;
+}
+
+.lg-section__embed {
+    margin-top: 0.5rem;
+}
+
+.lg-section__loading {
+    display: inline-block;
+    font-family: "Jacquard 24", cursive;
+    font-size: 1rem;    
+    line-height: 1;
+    font-weight: 400;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0.25rem 0 0 0;
+    animation: typing 2.5s infinite;
+}
+
+/* ==========================================================================
+   SHOWS SECTION
+   ========================================================================== */
+
+.lg-shows {
+    margin-top: 1.25rem;
+    padding-top: 2rem;
+    padding-bottom: 1.25rem;
+}
+
+.lg-shows__title {
+    font-size: 1.25rem;
+    line-height: 1;
+    font-weight: 600;
+    font-style: italic;
+    margin: 0;
+    text-align: center;
+}
+
+.lg-shows__list {
+    margin: 0.5rem 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.lg-shows__list-item {
+    list-style: none;
+}
+
+.lg-shows__list-item__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.lg-shows__date {
+    display: block;
+    font-weight: 700;
+}
+
+.lg-shows__ticker-container {
+    overflow: hidden;
+}
+
+.lg-shows__ticker {
+    display: block;
+    margin: 0.5rem 0;
+    font-family: "Jacquard 24", cursive;
+    font-size: 0.95rem;
+    line-height: 1;
+    font-weight: 400;
+    white-space: nowrap;
+    animation: marquee 9s linear infinite;
+}
+
+.lg-the-timeline {
+    margin: 2rem 0;
+    font-family: "Jacquard 24", cursive;
+    font-size: 1rem;
+    line-height: 1;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* ==========================================================================
+   BUTTONS & INTERACTIVE COMPONENTS
+   ========================================================================== */
+
+.lg-button {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    color: inherit;
+    text-align: left;
+    border: 1px solid #000000;
+    background-color: #e2e2e2;
+    padding: 0.625rem 1rem;
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-family: "Jacquard 24", cursive;
+    font-size: 1rem;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.lg-pill {
+    text-decoration: none;
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #000;
+    padding: 0.125rem 0.5rem;
+    background: none;
+    border-radius: 1.25rem;
+    border: 1px solid #000;
+    display: inline-block;
+    font-family: "Arimo", sans-serif;
+    transition: color 0.15s, background 0.15s, border-color 0.17s;
+}
+
+.lg-pill.is-active {
+    background-color: #000;
+    color: #fff;
+}
+
+.lg-text-link {
+    font-family: "Arimo", sans-serif;
+    font-size: 0.675rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.lg-icon {
+    font-size: 0.75rem;
+}
+
+.lg-external-link {
+    display: inline-block;
+    width: max-content;
+    text-decoration: none;
+    margin-right: 0.25rem;
+    font-family: "Arimo", sans-serif;
+    font-size: 0.675rem;
+    text-transform: lowercase;
+}
+  
+.lg-external-link::after {
+content: " →";
+}
+
+/* ==========================================================================
+   POPUP MODAL SYSTEM
+   ========================================================================== */
+
+.lg-popup-button {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 99;
+}
+
+.lg-popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    cursor: pointer;
+}
+
+.lg-popup-overlay.is-active {
+    display: block;
+}
+
+.lg-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    pointer-events: none;
+}
+
+.lg-popup.is-active {
+    display: block;
+}
+
+.lg-popup__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e2e2e2;
+    border: 1px solid #000;
+    box-shadow:
+        8px 8px 0 #000,
+        8px 8px 0 1px #000;
+    width: 90%;
+    max-width: 32rem;
+    max-height: max-content;
+    padding: 1rem 1rem 1.5rem 1rem;
+    display: grid;
+    gap: 1rem;
+    pointer-events: auto;
+    border-radius: 0;
+}
+
+
+.lg-popup__title {
+    font-size: 1.25rem;
+    font-style: italic;
+    margin: 0;
+    line-height: 1;
+}
+
+.lg-popup__header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+
+.lg-popup__close {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.lg-popup__content p {
+    margin: 0.5rem 0 0 0;
+    font-family: "Arimo", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.lg-popup__label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.1rem;
+}
+
+.lg-popup__content a {
+    text-decoration: underline;
+}
+
+.lg-popup__form fieldset {
+    width: 100%;
+    margin: 0;
+}
+
+.lg-popup__form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.25rem;
+}
+
+.lg-popup__form input {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.lg-popup__form button {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media screen and (min-width: 768px) {
+
+    .here-i-am {
+        position: relative;
+    }
+    
+    .here-i-am::before {
+        content: "here";
+        position: absolute;
+        top: 5.25rem;
+        left: 5.25rem;
+        transform: rotate(-5deg);
+        font-size: 5.25rem;
+        font-weight: 400;
+        line-height: 1;
+        font-family: "Jacquard 24", cursive;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .lg-header__nav-title {
+        text-align: center;
+    }
+
+    .lg-header__nav-list {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0;
+        text-align: center;
+    }
+
+    .lg-header__nav-list a,
+    .lg-header__nav-list button {
+        padding: 0.5rem 0.75rem;
+        border-radius: 1.25rem;
+    }
+
+    .lg-header__nav-list .is-active::after {
+        content: "you are here";
+        position: absolute;
+        bottom: 0.25rem;
+        left: 50%;
+        margin-left: 0;
+        transform: translate(-50%, 100%);
+        padding-top: 0.25rem;
+    }
+    
+    .lg-flex--tablet {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .lg-section__text,
+    .lg-section__list {
+        max-width: 20rem;
+    }
+
+    .lg-shows {
+        max-width: 20rem;
+        margin-top: 0;
+        order: 2;
+    }
+
+    .lg-popup__content {
+        transform: translate(-50%, -50%) rotate(-3deg);
+    }
+}
+
+@media (hover: hover) {
+    .lg-header__nav-list a:hover,
+    .lg-header__nav-list button:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .lg-button:hover,
+    .lg-pill:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .lg-text-link:hover {
+        text-decoration: underline;
+    }
+
+    .lg-external-link:hover {
+        text-decoration: underline;
+    }
+}
+

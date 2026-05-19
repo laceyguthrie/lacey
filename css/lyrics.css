@@ -1,0 +1,49 @@
+/* ==========================================================================
+   LYRICS
+   ========================================================================== */
+
+.lg-section--lyrics {
+    display: none;
+    padding-top: 0;
+}
+
+.lg-section--lyrics.is-active {
+    display: block;
+}
+
+.lg-lyrics__list {
+    margin: 2rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lg-lyrics__item {
+    break-inside: avoid;
+    margin-bottom: 2rem;
+}
+
+.lg-lyrics__item h4 {
+    margin: 0;
+}
+
+.lg-lyrics__item p {
+    margin: 0.625rem 0;
+}
+
+@media screen and (min-width: 600px) {
+    .lg-lyrics__list {
+        column-count: 2;
+        column-gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .lg-lyrics__list {
+        column-count: 1;
+    }
+}
+@media screen and (min-width: 936px) {
+    .lg-lyrics__list {
+        column-count: 2;
+    }
+}

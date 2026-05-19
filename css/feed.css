@@ -1,0 +1,506 @@
+/* ==========================================================================
+   FEED/INSTAGRAM-STYLE LAYOUT
+   ========================================================================== */
+
+.lg-feed__nav-container {
+    max-width: max-content;
+    margin: 3rem auto 0 auto;
+}
+
+.lg-feed__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    list-style: none;
+    text-align: center;
+    font-family: "Arimo", sans-serif;
+    font-size: 0.625rem;
+    margin: 0 0 2rem 0;
+    padding: 0.5rem 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.lg-feed__nav li {
+    list-style: none;
+    position: relative;
+    flex-shrink: 0;
+    width: 5.25rem;
+    text-align: center;
+}
+
+.lg-feed__nav-image-wrapper {
+    display: block;
+    border-radius: 50%;
+    width: 5.25rem;
+    height: 5.25rem;
+    border: 2.5px solid #fff;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.09);
+    transition: box-shadow 0.15s, transform 0.15s;
+    overflow: hidden;
+    position: relative;
+}
+
+.lg-feed__nav img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lg-feed__nav-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    color: inherit;
+}
+
+.lg-feed__list {
+    display: grid;
+    gap: 2rem;
+    margin: 0;
+    padding: 0 0 3rem 0;
+}
+
+.lg-feed__item {
+    list-style: none;
+    contain: layout style paint;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    opacity: 1;
+}
+
+/* Hidden items when filtered */
+.lg-feed__item[aria-hidden="true"] {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.lg-feed__item[aria-hidden="false"] {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Focus-visible styling for filter buttons */
+.lg-feed__nav-button:focus-visible {
+    background: transparent !important;
+}
+
+.lg-feed__nav-button:focus-visible .lg-feed__nav-image-wrapper,
+.lg-feed__nav-button.is-active .lg-feed__nav-image-wrapper {
+    background-color: #00ffee;
+}
+
+.lg-feed__nav-button:focus-visible .lg-feed__nav-image-wrapper img,
+.lg-feed__nav-button.is-active .lg-feed__nav-image-wrapper img {
+    mix-blend-mode: multiply;
+}
+
+.lg-feed__nav-button.is-active::after {
+    content: "Selected";
+    display: inline-block;
+    font-family: "Arimo", sans-serif;
+    font-size: 0.4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.25rem 0;
+    letter-spacing: 0.025rem;
+    white-space: nowrap;
+    text-align: center;
+    border-top: 1px dashed #000;
+}
+
+.lg-feed__nav-button.is-active .lg-feed__nav-button-text {
+    font-weight: 700;
+}
+
+.lg-feed__item a {
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   FEED POST COMPONENTS
+   ========================================================================== */
+
+.lg-feed__post {
+    display: grid;
+    gap: 0.75rem;
+    font-family: "Arimo", sans-serif;
+}
+
+.lg-feed__post .lg-button {
+    padding: 0;
+    border: none;
+    background: none;
+    gap: 0.25rem;
+    font-family: "Arimo", sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+
+.lg-feed__post .lg-button__icon {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.lg-feed__post .lg-button__icon--swap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 2.5rem;
+    height: 1.25rem;
+}
+
+.lg-feed__post .lg-button__icon--swap img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lg-feed__post-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+}
+
+.lg-feed__post-header .lg-feed__username {
+    display: block;
+    font-family: "Jacquard 24", cursive;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.lg-feed__post-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 100%;
+}
+
+.lg-feed__post-timestamp {
+    font-size: 0.625rem;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+.lg-feed__post-header img {
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.lg-feed__post-header .lg-button {
+    position: relative;
+    z-index: 1;
+}
+
+.lg-feed__post-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    background-color: #000;
+}
+
+.lg-feed__post-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+.lg-feed__post-image.is-active img {
+    filter: invert(1);
+}
+
+/* ==========================================================================
+   VIDEO FACADE (YouTube thumbnail + play button)
+   ========================================================================== */
+
+.lg-feed__post-video {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    background-color: #000;
+    cursor: pointer;
+    aspect-ratio: 16 / 9;
+}
+
+.lg-feed__post-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+.lg-feed__post-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.lg-feed__play-button {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    padding: 0.6rem 1.25rem;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 0.75rem;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    transition: background 0.2s ease, color 0.2s ease;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "Arimo", sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.lg-feed__play-button-icon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.45em 0 0.45em 0.75em;
+    border-color: transparent transparent transparent #fff;
+    flex-shrink: 0;
+    transition: border-color 0.2s ease;
+}
+
+@media (hover: hover) {
+    .lg-feed__post-video:hover img {
+        filter: brightness(0.7);
+    }
+
+    .lg-feed__post-video:hover .lg-feed__play-button {
+        color: #00ffee;
+        background-color: rgba(0, 0, 0, 1);
+    }
+
+    .lg-feed__post-video:hover .lg-feed__play-button-icon {
+        border-color: transparent transparent transparent #00ffee;
+    }
+}
+
+.lg-feed__post-likes {
+    gap: 0.25rem;
+}
+
+.lg-feed__post-likes-users {
+    padding-left: 1px;
+}
+
+.lg-feed__post-likes-users img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px #ccc;
+    margin-left: -0.75rem;
+}
+
+.lg-feed__post-likes-users img:first-child {
+    margin-left: 0;
+}
+
+.lg-feed__post-likes {
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.lg-feed__post-likes-users {
+    display: inline-flex;
+    align-items: center;
+}
+
+.lg-feed__post-caption {
+    font-size: 0.75rem;
+}
+
+.lg-feed__post-caption a {
+    text-decoration: underline;
+}
+
+.lg-feed__post-caption .lg-feed__username {
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   DEVOTION POPUP - USER PROFILE STYLES
+   ========================================================================== */
+
+.lg-devotion-popup .lg-popup__content {
+    max-height: 80vh;
+    height: 100%;
+}
+
+.lg-devotion-profiles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    min-height: 200px;
+}
+
+.lg-devotion-loading {
+    display: inline-block;
+    list-style: none;
+    font-family: "Jacquard 24", cursive;
+    font-size: 1rem;
+    line-height: 1;
+    font-weight: 400;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+    animation: typing 2.5s infinite;
+    padding: 2rem 0;
+}
+
+.lg-devotion-profile {
+    display: flex;
+    list-style: none;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background-color: #f5f5f0;
+    border: 1px solid #d0d0d0;
+    border-radius: 0;
+    font-family: "Arimo", sans-serif;
+}
+
+.lg-devotion-profile__avatar {
+    width: 5.25rem;
+    height: 5.25rem;
+    border-radius: 0;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: #000;
+    background-color: #e2e2e2;
+    flex-shrink: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    overflow: hidden;
+    position: relative;
+}
+
+.lg-devotion-profile__avatar[style*="background-image"] {
+    color: transparent;
+}
+
+.lg-devotion-profile__avatar-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.lg-devotion-profile__info {
+    flex: 1;
+    min-width: 0;
+}
+
+.lg-devotion-profile__name {
+    font-family: "VT323", monospace;
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.375rem 0;
+    color: #000;
+    line-height: 1.2;
+}
+
+.lg-devotion-profile__bio {
+    font-family: "Arimo", sans-serif;
+    font-size: 0.675rem;
+    color: #000;
+    margin: 0 0 0.375rem 0;
+    line-height: 1.4;
+}
+
+.lg-devotion-profile__link {
+    font-family: "Arimo", sans-serif;
+    font-size: 0.675rem;
+    font-weight: 700;
+    text-transform: lowercase;
+    color: #001eff;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 1px dotted #001eff;
+}
+
+/* Scrollbar styling for profiles container */
+.lg-devotion-profiles::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lg-devotion-profiles::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.lg-devotion-profiles::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+@media screen and (min-width: 768px) {
+    .lg-feed__list {
+        grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+    }
+}
