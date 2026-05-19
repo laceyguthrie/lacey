@@ -320,11 +320,19 @@
 }
 
 .lg-feed__post-likes {
-    gap: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
 }
 
 .lg-feed__post-likes-users {
     padding-left: 1px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .lg-feed__post-likes-users img {
@@ -338,21 +346,6 @@
 
 .lg-feed__post-likes-users img:first-child {
     margin-left: 0;
-}
-
-.lg-feed__post-likes {
-    font-size: 0.75rem;
-    font-weight: 700;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.5rem;
-}
-
-.lg-feed__post-likes-users {
-    display: inline-flex;
-    align-items: center;
 }
 
 .lg-feed__post-caption {
