@@ -95,14 +95,14 @@
                 <span class="lg-feed__nav-button-text">album art</span>
             </button>
         </li>
-        <li>
+        <!-- <li>
             <button class="lg-feed__nav-button" type="button" data-filter="unknown">
                 <div class="lg-feed__nav-image-wrapper">
                     <img src="../images/tiny/sheeba.jpg" alt="close-cropped image of a persian cat's face with eyes reflecting green light" width="52" height="52">
                 </div>
                 <span class="lg-feed__nav-button-text">unknown</span>
             </button>
-        </li>
+        </li> -->
         <li>
             <button class="lg-feed__nav-button js-open-popup" data-popup-id="passwordPopup" type="button">
                 <div class="lg-feed__nav-image-wrapper">
@@ -132,7 +132,7 @@
                 <div class="lg-feed__nav-image-wrapper">
                     <img src="../images/tiny/lefty.jpg" alt="close-cropped image of a cat's face with its eyes closed and tongue sticking out" width="52" height="52">
                 </div>
-                <span class="lg-feed__nav-button-text">muppets.exe</span>
+                <span class="lg-feed__nav-button-text">provide to me a list of muppets</span>
             </button>
         </li>
     </ul>
@@ -140,6 +140,36 @@
 
 <main class="lg-feed container--full">
     <ul class="lg-feed__list js-masonry-grid">
+        <li class="lg-feed__item js-feed-item" data-tags="portraits">
+            <article class="lg-feed__post js-post">
+                <header class="lg-feed__post-header">
+                    <img src="../images/tiny/lacey.jpg" alt="" width="40" height="40">
+                    <div class="lg-feed__post-header-text">
+                        <a href="https://laceyguthrie.com" class="lg-feed__username">laceyjoguthrie</a>
+                    </div>
+                </header>
+                <div class="lg-feed__post-image js-post-image">
+                    <picture>
+                        <source srcset="../images/jenny_o_photo_5.webp" type="image/webp">
+                        <source srcset="../images/jenny_o_photo_5.jpg" type="image/jpeg">
+                        <img src="../images/jenny_o_photo_5.webp" alt="Manic smile at the camera with my hands raised and curled in front of me against a deep orange backdrop." width="780" height="520">
+                    </picture>
+                </div>
+                <button class="lg-feed__post-likes js-devotion-button">
+                    <span class="lg-feed__post-likes-users">
+                        <img src="../images/tiny/this.jpg" alt="" width="24" height="24">
+                        <img src="../images/tiny/what.jpg" alt="" width="24" height="24">
+                        <img src="../images/tiny/will.jpg" alt="" width="24" height="24">
+                    </span>
+                    <span>the devoted</span>
+                </button>
+                <div class="lg-feed__post-caption">
+                    <strong>laceyjoguthrie</strong>
+                    <span class="js-post-caption">taken by Jenny O in Alhambra, May 2026</span>
+                </div>
+                <time class="lg-feed__post-timestamp" datetime="2026-05-16T19:06:55Z">2026-05-16T19:06:55Z</time>
+            </article>
+        </li>
         <li class="lg-feed__item js-feed-item" data-tags="collages">
             <article class="lg-feed__post js-post">
                 <header class="lg-feed__post-header">
@@ -935,7 +965,7 @@
     <div id="devotionPopup" class="lg-popup js-popup lg-devotion-popup" role="dialog" aria-modal="true" aria-labelledby="devotionPopupTitle">
         <div class="lg-popup__content">
             <div class="lg-popup__header">
-                <h2 id="devotionPopupTitle" class="lg-popup__title">🙏 bless them 🙏</h2>
+                <h2 id="devotionPopupTitle" class="lg-popup__title">🙏 bless 🙏</h2>
                 <button type="button" class="lg-popup__close lg-button js-close-popup" data-popup-id="devotionPopup">
                     <svg aria-hidden="true" class="lg-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
