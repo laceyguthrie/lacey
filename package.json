@@ -1,0 +1,17 @@
+{
+  "name": "lacey",
+  "version": "1.0.0",
+  "description": "Personal site — static HTML/CSS/JS, built with Eleventy.",
+  "private": true,
+  "scripts": {
+    "build": "eleventy && npm run minify:css && npm run minify:js",
+    "minify:css": "esbuild _site/css/*.css --minify --allow-overwrite --outdir=_site/css",
+    "minify:js": "esbuild _site/js/*.js --minify --allow-overwrite --outdir=_site/js",
+    "start": "eleventy --serve"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "esbuild": "^0.28.0"
+  }
+}
