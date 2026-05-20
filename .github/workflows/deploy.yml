@@ -12,6 +12,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -20,17 +32,10 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           port: 21
+          # Upload the built site, not the repo root.
+          local-dir: ./_site/
           # Adjust if your site lives somewhere other than public_html.
           # Examples: ./public_html/  |  ./public_html/laceyguthrie.com/  |  ./
           server-dir: ./public_html/
-          # Only upload changed files (default behavior — keeps deploys fast).
-          # Files matching these patterns won't be uploaded:
           exclude: |
-            **/.git*
-            **/.git*/**
-            **/.github/**
             **/.DS_Store
-            **/_drop/**
-            **/node_modules/**
-            convert-images.sh
-            README.md
