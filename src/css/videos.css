@@ -1,0 +1,161 @@
+/* ==========================================================================
+   VIDEO PAGE GRID
+   ========================================================================== */
+
+.lg-video-page {
+    padding: 2rem 0 3rem;
+}
+
+.lg-video-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+/* ==========================================================================
+   VIDEO FACADE (YouTube thumbnail + play button)
+   ========================================================================== */
+
+.lg-feed__post-video {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    background-color: #000;
+    aspect-ratio: 16 / 9;
+}
+
+.lg-feed__post-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+.lg-feed__post-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ==========================================================================
+   ZINE-STYLE LABELS
+   ========================================================================== */
+
+.lg-video-card__artist,
+.lg-video-card__caption,
+.lg-feed__play-button {
+    font-family: "Arimo", sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #000;
+    background: #fff;
+    padding: 0.125rem 0.25rem;
+    border: none;
+    margin: 0;
+    pointer-events: none;
+}
+
+/* Artist — top-left corner */
+.lg-video-card__artist {
+    position: absolute;
+    top: 0.625rem;
+    left: 0.75rem;
+    z-index: 2;
+    display: block;
+    transform: rotate(-2deg);
+    transform-origin: left top;
+}
+
+.lg-video-card:nth-child(even) .lg-video-card__artist {
+    transform: rotate(2.5deg);
+}
+
+.lg-video-card:nth-child(3n) .lg-video-card__artist {
+    transform: rotate(-3.5deg);
+    top: 0.75rem;
+}
+
+/* Play button — centered */
+.lg-feed__play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-1deg);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1.375rem;
+    font-style: italic;
+    cursor: pointer;
+    z-index: 2;
+    pointer-events: auto;
+    transition: filter 0.15s ease;
+}
+
+.lg-video-card:nth-child(even) .lg-feed__play-button {
+    transform: translate(-50%, -50%) rotate(1.5deg);
+}
+
+.lg-video-card:nth-child(3n) .lg-feed__play-button {
+    transform: translate(-50%, -50%) rotate(-2deg);
+}
+
+.lg-feed__play-button::before {
+    content: '';
+    position: absolute;
+    inset: -250%;
+}
+
+.lg-feed__play-button-icon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.45em 0 0.45em 0.75em;
+    border-color: transparent transparent transparent #000;
+    flex-shrink: 0;
+}
+
+/* Caption — bottom, alternating sides */
+.lg-video-card__caption {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    z-index: 2;
+    max-width: 75%;
+    transform: rotate(2deg);
+    transform-origin: left bottom;
+}
+
+.lg-video-card:nth-child(even) .lg-video-card__caption {
+    left: auto;
+    right: 1.25rem;
+    transform: rotate(-2.5deg);
+    transform-origin: right bottom;
+}
+
+.lg-video-card:nth-child(3n) .lg-video-card__caption {
+    transform: rotate(3deg);
+}
+
+@media (hover: hover) {
+    .lg-feed__play-button:hover {
+        filter: invert(1);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .lg-video-page {
+        padding-top: 4rem;
+    }
+
+    .lg-video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Drop HEIC or JPG/JPEG files into _drop/, run ./convert-images.sh.
-# Outputs an optimized .jpg + .webp pair into images/ for each source file.
+# Outputs an optimized .jpg + .webp pair into src/img/ for each source file.
 # Originals are moved to _drop/processed/ so you have a safety copy.
 #
 # One-time setup:  brew install webp
@@ -11,7 +11,7 @@ set -euo pipefail
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DROP_DIR="$SCRIPT_DIR/_drop"
 PROCESSED_DIR="$DROP_DIR/processed"
-OUT_DIR="$SCRIPT_DIR/images"
+OUT_DIR="$SCRIPT_DIR/src/img"
 
 JPG_QUALITY=82
 WEBP_QUALITY=82
@@ -51,7 +51,7 @@ for src in "${files[@]}"; do
         cwebp -quiet -q "$WEBP_QUALITY" "$src" -o "$out_webp"
     fi
     mv "$src" "$PROCESSED_DIR/$base"
-    echo "  ✓ images/$name.jpg + images/$name.webp"
+    echo "  ✓ src/img/$name.jpg + src/img/$name.webp"
 done
 
 echo
