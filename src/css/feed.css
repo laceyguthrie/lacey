@@ -72,15 +72,18 @@
 }
 
 .lg-feed__list {
-    display: grid;
-    gap: 2rem;
+    column-count: 1;
+    column-gap: 2rem;
     margin: 0;
     padding: 0 0 3rem 0;
 }
 
+
 .lg-feed__item {
     list-style: none;
-    contain: layout style paint;
+    contain: style paint;
+    break-inside: avoid;
+    margin-bottom: 2rem;
     transition: opacity 0.25s ease, transform 0.25s ease;
     opacity: 1;
 }
@@ -492,8 +495,14 @@
     border-radius: 3px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 640px) {
     .lg-feed__list {
-        grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+        column-count: 2;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .lg-feed__list {
+        column-count: 3;
     }
 }
