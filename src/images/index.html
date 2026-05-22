@@ -1,0 +1,531 @@
+---
+layout: layouts/base.html
+title: "o, sh*t"
+ogTitle: Lacey Guthrie
+description: "Totally inconsequential. What's here is mine. Can you see me?"
+fontsHref: https://fonts.googleapis.com/css2?family=Cormorant:wght@300..700&family=Jacquard+12&family=Jacquard+24&family=Arimo:ital,wght@0,400..700;1,400..700&display=swap
+activePage: images
+headerModifier: lg-header--feed
+extraCSS:
+  - css/feed.css
+---
+<nav class="lg-feed__nav-container">
+    <ul class="lg-feed__nav js-feed-filters">
+        <li>
+            <button class="lg-feed__nav-button" type="button" data-filter="all">
+                <div class="lg-feed__nav-image-wrapper">
+                    <img src="../img/tiny/pile.jpg" alt="a hand with fingers spread out" width="52" height="52">
+                </div>
+                <span class="lg-feed__nav-button-text">all items</span>
+            </button>
+        </li>
+        <li>
+            <button class="lg-feed__nav-button" type="button" data-filter="portraits">
+                <div class="lg-feed__nav-image-wrapper">
+                    <img src="../img/tiny/my.jpg" alt="a person with her tongue sticking out" width="52" height="52">
+                </div>
+                <span class="lg-feed__nav-button-text">my fkn face</span>
+            </button>
+        </li>
+        <li>
+            <button class="lg-feed__nav-button" type="button" data-filter="collages">
+                <div class="lg-feed__nav-image-wrapper">
+                    <img src="../img/tiny/of.jpg" alt="statue of david's head wearing sunglasses made of floppy disks" width="52" height="52">
+                </div>
+                <span class="lg-feed__nav-button-text">collages</span>
+            </button>
+        </li>
+        <li>
+            <button class="lg-feed__nav-button" type="button" data-filter="album-art">
+                <div class="lg-feed__nav-image-wrapper">
+                    <img src="../img/tiny/will.jpg" alt="me as a toddler wearing a princess dress and crown eating a donut hanging from a string" width="52" height="52">
+                </div>
+                <span class="lg-feed__nav-button-text">album art</span>
+            </button>
+        </li>
+        <li>
+            <button class="lg-feed__nav-button" type="button" data-filter="unknown">
+                <div class="lg-feed__nav-image-wrapper">
+                    <img src="../img/tiny/dirt.jpg" alt="me, 20-something, sitting on a bed staring wide-eyed at the floor. In the foreground are a pair of naked legs; it looks like the subject in the foreground is standing on her head." width="52" height="52">
+                </div>
+                <span class="lg-feed__nav-button-text">unknown</span>
+            </button>
+        </li>
+        <li>
+            <button class="lg-feed__nav-button js-open-popup" data-popup-id="passwordPopup" type="button">
+                <div class="lg-feed__nav-image-wrapper">
+                    <img src="../img/tiny/become.jpg" alt="me wearing glasses looking at the camera with rows of hematite in my mouth that look like large, gray teeth" width="52" height="52">
+                </div>
+                <span class="lg-feed__nav-button-text">private</span>
+            </button>
+        </li>
+        <li>
+            <a class="lg-feed__nav-button" href="https://en.wikipedia.org/wiki/Dream" target="_blank" rel="noopener noreferrer">
+                <div class="lg-feed__nav-image-wrapper">
+                    <img src="../img/tiny/sheeba.jpg" alt="close-cropped image of a persian cat's face with eyes reflecting green light" width="52" height="52">
+                </div>
+                <span class="lg-feed__nav-button-text">en.wikipedia.org<br>Dream</span>
+            </a>
+        </li>
+        <li>
+            <button class="lg-feed__nav-button js-devotion-button" type="button">
+                <div class="lg-feed__nav-image-wrapper">
+                    <img src="../img/tiny/lefty.jpg" alt="close-cropped image of a cat's face with its eyes closed and tongue sticking out" width="52" height="52">
+                </div>
+                <span class="lg-feed__nav-button-text">provide to me a list of muppets</span>
+            </button>
+        </li>
+    </ul>
+</nav>
+
+<main class="lg-feed container--full">
+    <ul class="lg-feed__list js-masonry-grid">
+        <li class="lg-feed__item js-feed-item" data-tags="portraits">
+            <article class="lg-feed__post js-post">
+                <header class="lg-feed__post-header">
+                    <img src="../img/tiny/lacey.jpg" alt="" width="40" height="40">
+                    <div class="lg-feed__post-header-text">
+                        <a href="https://laceyguthrie.com" class="lg-feed__username">laceyjoguthrie</a>
+                    </div>
+                </header>
+                <div class="lg-feed__post-image js-post-image">
+                    <picture>
+                        <source srcset="../img/jenny_o_photo_5.webp" type="image/webp">
+                        <source srcset="../img/jenny_o_photo_5.jpg" type="image/jpeg">
+                        <img src="../img/jenny_o_photo_5.webp" alt="Manic smile at the camera with my hands raised and curled in front of me against a deep orange backdrop." width="780" height="520">
+                    </picture>
+                </div>
+                <button class="lg-feed__post-likes js-devotion-button">
+                    <span class="lg-feed__post-likes-users">
+                        <img src="../img/tiny/this.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/what.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/will.jpg" alt="" width="24" height="24">
+                    </span>
+                    <span>the devoted</span>
+                </button>
+                <div class="lg-feed__post-caption">
+                    <strong>laceyjoguthrie</strong>
+                    <span class="js-post-caption">taken by Jenny O in Alhambra, May 2026</span>
+                </div>
+                <time class="lg-feed__post-timestamp" datetime="2026-05-16T19:06:55Z">2026-05-16T19:06:55Z</time>
+            </article>
+        </li>
+        <li class="lg-feed__item js-feed-item" data-tags="portraits,collages">
+            <article class="lg-feed__post js-post">
+                <header class="lg-feed__post-header">
+                    <img src="../img/tiny/lacey.jpg" alt="" width="40" height="40">
+                    <div class="lg-feed__post-header-text">
+                        <a href="https://laceyguthrie.com" class="lg-feed__username">laceyjoguthrie</a>
+                    </div>
+                </header>
+                <div class="lg-feed__post-image js-post-image">
+                    <picture>
+                        <source srcset="../img/symmetrical.webp" type="image/webp">
+                        <source srcset="../img/symmetrical.jpg" type="image/jpeg">
+                        <img src="../img/symmetrical.webp" alt="a symmetrical composition featuring mirrored images of my face with colorful makeup." width="780" height="530">
+                    </picture>
+                </div>
+                <button class="lg-feed__post-likes js-devotion-button">
+                    <span class="lg-feed__post-likes-users">
+                        <img src="../img/tiny/this.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/what.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/will.jpg" alt="" width="24" height="24">
+                    </span>
+                    <span>the devoted</span>
+                </button>
+                <div class="lg-feed__post-caption">
+                    <strong>laceyjoguthrie</strong>
+                    <span class="js-post-caption"><em>id, id, id</em></span>
+                </div>
+                <time class="lg-feed__post-timestamp" datetime="2025-07-29T18:30:00Z">2025-07-29T18:30:00Z</time>
+            </article>
+        </li>
+        <li class="lg-feed__item js-feed-item" data-tags="live-photos,collages">
+            <article class="lg-feed__post js-post">
+                <header class="lg-feed__post-header">
+                    <img src="../img/tiny/lacey.jpg" alt="" width="40" height="40">
+                    <div class="lg-feed__post-header-text">
+                        <a href="https://laceyguthrie.com" class="lg-feed__username">laceyjoguthrie</a>
+                    </div>
+                </header>
+                <div class="lg-feed__post-image js-post-image">
+                    <picture>
+                        <source srcset="../img/collage.webp" type="image/webp">
+                        <source srcset="../img/collage.jpg" type="image/jpeg">
+                        <img src="../img/collage.webp" alt="a collage of a band of people playing music. There's a lot of red here. Red drums, red lips. And a lot of movement, and open mouths that appear to be singing." width="780" height="530">
+                    </picture>
+                </div>
+                <button class="lg-feed__post-likes js-devotion-button">
+                    <span class="lg-feed__post-likes-users">
+                        <img src="../img/tiny/this.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/what.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/become.jpg" alt="" width="24" height="24">
+                    </span>
+                    <span>the devoted</span>
+                </button>
+                <div class="lg-feed__post-caption">
+                    <strong>laceyjoguthrie</strong>
+                    <span class="js-post-caption"><em>Me and 13 Clowns On A Mountain</em></span>
+                </div>
+                <time class="lg-feed__post-timestamp" datetime="2025-07-29T18:30:00Z">2025-07-29T18:30:00Z</time>
+            </article>
+        </li>
+        <li class="lg-feed__item js-feed-item" data-tags="album-art">
+            <article class="lg-feed__post js-post">
+                <header class="lg-feed__post-header">   
+                    <img src="../img/tiny/lacey.jpg" alt="" width="40" height="40">
+                    <div class="lg-feed__post-header-text">
+                        <a href="https://laceyguthrie.com" class="lg-feed__username">laceyjoguthrie</a>
+                    </div>
+                </header>
+                <div class="lg-feed__post-image js-post-image">
+                    <picture>
+                        <source srcset="../img/hi-res-fem.webp" type="image/webp">
+                        <source srcset="../img/hi-res-fem.jpg" type="image/jpeg">
+                        <img src="../img/hi-res-fem.webp" alt="album artwork featuring a photo of me when I was a little girl in a princess outfit biting a donut hanging from a red string." width="766" height="766" loading="lazy">
+                    </picture>
+                </div>
+                <button class="lg-feed__post-likes js-devotion-button">
+                    <span class="lg-feed__post-likes-users">
+                        <img src="../img/tiny/of.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/what.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/make.jpg" alt="" width="24" height="24">
+                    </span>
+                    <span>the devoted</span>
+                </button>
+                <div class="lg-feed__post-caption">
+                    <strong>laceyjoguthrie</strong>
+                    <span class="js-post-caption">
+                        <em>Flower-Eating Monster</em> by Lacey Guthrie
+                    </span>
+                </div>
+                <time class="lg-feed__post-timestamp" datetime="2025-06-12T12:00:00Z">2025-10-06T11:15:00Z</time>
+            </article>
+        </li>
+        <li class="lg-feed__item js-feed-item" data-tags="">
+            <article class="lg-feed__post js-post">
+                <header class="lg-feed__post-header">
+                    <img src="../img/tiny/lacey.jpg" alt="" width="40" height="40">
+                    <div class="lg-feed__post-header-text">
+                        <a href="https://laceyguthrie.com" class="lg-feed__username">laceyjoguthrie</a>
+                    </div>
+                </header>
+                <div class="lg-feed__post-image js-post-image">
+                    <picture>
+                        <source srcset="../img/christmas.webp" type="image/webp">
+                        <source srcset="../img/christmas.jpg" type="image/jpeg">
+                        <img src="../img/christmas.webp" alt="childhood photo of me sitting on a large pillow on the floor, a persian cat hissing behind me, next to a decorated christmas tree." width="780" height="530">
+                    </picture>
+                </div>
+                <button class="lg-feed__post-likes js-devotion-button">
+                    <span class="lg-feed__post-likes-users">
+                        <img src="../img/tiny/will.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/make.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/what.jpg" alt="" width="24" height="24">
+                    </span>
+                    <span>the devoted</span>
+                </button>
+                <div class="lg-feed__post-caption">
+                    <strong>laceyjoguthrie</strong>
+                </div>
+                <time class="lg-feed__post-timestamp" datetime="2025-08-16T12:10:00Z">2025-10-06T11:17:00Z</time>
+            </article>
+        </li>
+        <li class="lg-feed__item js-feed-item" data-tags="collages">
+            <article class="lg-feed__post js-post">
+                <header class="lg-feed__post-header">
+                    <img src="../img/tiny/lacey.jpg" alt="" width="40" height="40">
+                    <div class="lg-feed__post-header-text">
+                        <a href="https://laceyguthrie.com" class="lg-feed__username">laceyjoguthrie</a>
+                    </div>
+                </header>
+                <div class="lg-feed__post-image js-post-image">
+                    <picture>
+                        <source srcset="../img/find-me.webp" type="image/webp">
+                        <source srcset="../img/find-me.jpg" type="image/jpeg">
+                        <img src="../img/find-me.webp" alt="Collage of several laughing faces in a circle floating in space with the words 'find me' peppered around." width="780" height="530">
+                    </picture>
+                </div>
+                <button class="lg-feed__post-likes js-devotion-button">
+                    <span class="lg-feed__post-likes-users">
+                        <img src="../img/tiny/will.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/make.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/dirt.jpg" alt="" width="24" height="24">
+                    </span>
+                    <span>the devoted</span>
+                </button>
+                <div class="lg-feed__post-caption">
+                    <strong>laceyjoguthrie</strong>
+                    <span class="js-post-caption">
+                        <em>ha ha ha ha ha</em>
+                    </span>
+                </div>
+                <time class="lg-feed__post-timestamp" datetime="2025-08-16T12:10:00Z">2025-10-06T11:17:00Z</time>
+            </article>
+        </li>
+        <li class="lg-feed__item js-feed-item" data-tags="collages">
+            <article class="lg-feed__post js-post">
+                <header class="lg-feed__post-header">
+                    <img src="../img/tiny/lacey.jpg" alt="" width="40" height="40">
+                    <div class="lg-feed__post-header-text">
+                        <a href="https://laceyguthrie.com" class="lg-feed__username">laceyjoguthrie</a>
+                    </div>
+                </header>
+                <div class="lg-feed__post-image js-post-image">
+                    <picture>
+                        <source srcset="../img/bigarettes.webp" type="image/webp">
+                        <source srcset="../img/bigarettes.jpg" type="image/jpeg">
+                        <img src="../img/bigarettes.webp" alt="The band duchess posing on a porch holding comically large cigarettes. Everyong is wearing sunglasses. Todd the Bassist is clearly photoshopped into the picture." width="780" height="530" loading="lazy">
+                    </picture>
+                </div>
+                <button class="lg-feed__post-likes js-devotion-button">
+                    <span class="lg-feed__post-likes-users">
+                        <img src="../img/tiny/will.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/make.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/what.jpg" alt="" width="24" height="24">
+                    </span>
+                    <span>the devoted</span>
+                </button>
+                <div class="lg-feed__post-caption">
+                    <strong>laceyjoguthrie</strong>
+                    <span class="js-post-caption"><br>
+                        the band duchess, <em>bigarettes</em>, 2025
+                    </span>
+                </div>
+                <time class="lg-feed__post-timestamp" datetime="2025-08-16T12:10:00Z">2025-10-06T11:17:00Z</time>
+            </article>
+        </li>
+        <li class="lg-feed__item js-feed-item" data-tags="portraits">
+            <article class="lg-feed__post js-post">
+                <header class="lg-feed__post-header">
+                    <img src="../img/tiny/lacey.jpg" alt="" width="40" height="40">
+                    <div class="lg-feed__post-header-text">
+                        <a href="https://laceyguthrie.com" class="lg-feed__username">laceyjoguthrie</a>
+                    </div>
+                </header>
+                <div class="lg-feed__post-image js-post-image">
+                    <picture>
+                        <source srcset="../img/suffer.webp" type="image/webp">
+                        <source srcset="../img/suffer.jpg" type="image/jpeg">
+                        <img src="../img/suffer.webp" alt="Candid photo of a woman who looks very tired holding a rolling pin, with a piece of fabric that says 'SUFFER' pinned to her sweatshirt." width="780" height="530" loading="lazy">
+                    </picture>
+                </div>
+                <button class="lg-feed__post-likes js-devotion-button">
+                    <span class="lg-feed__post-likes-users">
+                        <img src="../img/tiny/what.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/this.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/of.jpg" alt="" width="24" height="24">
+                    </span>
+                    <span>the devoted</span>
+                </button>
+                <div class="lg-feed__post-caption">
+                    <strong>laceyjoguthrie</strong>
+                    <span class="js-post-caption"><br>
+                        <em>
+                            The shameful dream is past,<br>
+                            The subtle maze untrod:<br>
+                            We recognise at last<br>
+                            That war is not of God.<br>
+                        </em>
+                    </span>
+                </div>
+                <time class="lg-feed__post-timestamp" datetime="2025-07-29T18:30:00Z">2025-07-29T18:30:00Z</time>
+            </article>
+        </li>
+        <li class="lg-feed__item js-feed-item" data-tags="album-art">
+            <article class="lg-feed__post js-post">
+                <header class="lg-feed__post-header">
+                    <img src="../img/tiny/lacey.jpg" alt="" width="40" height="40">
+                    <div class="lg-feed__post-header-text">
+                        <a href="https://laceyguthrie.com" class="lg-feed__username">laceyjoguthrie</a>
+                    </div>
+                </header>
+                <div class="lg-feed__post-image js-post-image">
+                    <picture>
+                        <source srcset="../img/digital.webp" type="image/webp">
+                        <source srcset="../img/digital.jpg" type="image/jpeg">
+                        <img src="../img/digital.webp" alt="Album art with a digitally-illustrated cloud hovering above a childhood photo of me sitting on a couch, wearing a crown, holding out the skirt of a black dress." width="766" height="446" loading="lazy">
+                    </picture>
+                </div>
+                <button class="lg-feed__post-likes js-devotion-button">
+                    <span class="lg-feed__post-likes-users">
+                        <img src="../img/tiny/of.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/what.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/make.jpg" alt="" width="24" height="24">
+                    </span>
+                    <span>the devoted</span>
+                </button>
+                <div class="lg-feed__post-caption">
+                    <strong>laceyjoguthrie</strong>
+                    <span class="js-post-caption">
+                        <em>The King of Holding Onto Things</em> by Lacey Guthrie
+                    </span>
+                </div>
+                <time class="lg-feed__post-timestamp" datetime="2025-06-12T12:00:00Z">2025-10-06T11:15:00Z</time>
+            </article>
+        </li>
+        <li class="lg-feed__item js-feed-item" data-tags="portraits,collages">
+            <article class="lg-feed__post js-post">
+                <header class="lg-feed__post-header">
+                    <img src="../img/tiny/lacey.jpg" alt="" width="40" height="40">
+                    <div class="lg-feed__post-header-text">
+                        <a href="https://laceyguthrie.com" class="lg-feed__username">laceyjoguthrie</a>
+                    </div>
+                </header>
+                <div class="lg-feed__post-image js-post-image">
+                    <picture>
+                        <source srcset="../img/eye-paint.webp" type="image/webp">
+                        <source srcset="../img/eye-paint.jpg" type="image/jpeg">
+                        <img src="../img/eye-paint.webp" alt="My face with rainbow-colored paint on my eyes. My mouth is overlaid with a circular cropped image of one of my eyes." width="766" height="446" loading="lazy">
+                    </picture>
+                </div>
+                <button class="lg-feed__post-likes js-devotion-button">
+                    <span class="lg-feed__post-likes-users">
+                        <img src="../img/tiny/will.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/this.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/lefty.jpg" alt="" width="24" height="24">
+                    </span>
+                    <span>the devoted</span>
+                </button>
+                <div class="lg-feed__post-caption">
+                    <strong>laceyjoguthrie</strong>
+                    <span class="js-post-caption"><em>The Galvanizing Body Horror of Heidi Klum's Worm Costume</em></span>
+                </div>
+                <time class="lg-feed__post-timestamp" datetime="2025-04-10T12:00:00Z">2025-04-10T12:00:00Z</time>
+            </article>
+        </li>
+        <li class="lg-feed__item js-feed-item" data-tags="album-art">
+            <article class="lg-feed__post js-post">
+                <header class="lg-feed__post-header">
+                    <img src="../img/tiny/lacey.jpg" alt="" width="40" height="40">
+                    <div class="lg-feed__post-header-text">
+                        <a href="https://laceyguthrie.com" class="lg-feed__username">laceyjoguthrie</a>
+                    </div>
+                </header>
+                <div class="lg-feed__post-image js-post-image">
+                    <picture>
+                        <source srcset="../img/ouzelum.webp" type="image/webp">
+                        <source srcset="../img/ouzelum.jpg" type="image/jpeg">
+                        <img src="../img/ouzelum.webp" alt="A toddler with badly cut bangs destroying a cassette tape." width="766" height="766" loading="lazy">
+                    </picture>
+                </div>
+                <button class="lg-feed__post-likes js-devotion-button">
+                    <span class="lg-feed__post-likes-users">
+                        <img src="../img/tiny/of.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/what.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/make.jpg" alt="" width="24" height="24">
+                    </span>
+                    <span>the devoted</span>
+                </button>
+                <div class="lg-feed__post-caption">
+                    <strong>laceyjoguthrie</strong>
+                    <span class="js-post-caption">
+                        <em>Ouzelum</em> by Ouzelum
+                    </span>
+                </div>
+                <time class="lg-feed__post-timestamp" datetime="2025-06-12T12:00:00Z">2025-10-06T11:15:00Z</time>
+            </article>
+        </li>
+        <li class="lg-feed__item js-feed-item" data-tags="portraits">
+            <article class="lg-feed__post js-post">
+                <header class="lg-feed__post-header">
+                    <img src="../img/tiny/lacey.jpg" alt="" width="40" height="40">
+                    <div class="lg-feed__post-header-text">
+                        <a href="https://laceyguthrie.com" class="lg-feed__username">laceyjoguthrie</a>
+                    </div>
+                </header>
+                <div class="lg-feed__post-image js-post-image">
+                    <picture>
+                        <source srcset="../img/tiger-portrait.webp" type="image/webp">
+                        <source srcset="../img/tiger-portrait.jpg" type="image/jpeg">
+                        <img src="../img/tiger-portrait.webp" alt="" width="872" height="1024" loading="lazy">
+                    </picture>
+                </div>
+                <button class="lg-feed__post-likes js-devotion-button"> 
+                    <span class="lg-feed__post-likes-users">
+                        <img src="../img/tiny/what.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/this.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/make.jpg" alt="" width="24" height="24">
+                    </span>
+                    <span>the devoted</span>
+                </button>
+                <div class="lg-feed__post-caption">
+                    <strong>laceyjoguthrie</strong>
+                </div>
+                <time class="lg-feed__post-timestamp" datetime="2026-03-13T12:00:00Z">2026-03-13T12:00:00Z</time>
+            </article>
+        </li>
+        <li class="lg-feed__item js-feed-item" data-tags="collages">
+            <article class="lg-feed__post js-post">
+                <header class="lg-feed__post-header">
+                    <img src="../img/tiny/lacey.jpg" alt="" width="40" height="40">
+                    <div class="lg-feed__post-header-text">
+                        <a href="https://laceyguthrie.com" class="lg-feed__username">laceyjoguthrie</a>
+                    </div>
+                </header>
+                <div class="lg-feed__post-image js-post-image">
+                    <picture>
+                        <source srcset="../img/web-collage-bpb.webp" type="image/webp">
+                        <source srcset="../img/web-collage-bpb.jpg" type="image/jpeg">
+                        <img src="../img/web-collage-bpb.webp" alt="A collage of duchess (the band) on a porch with bonnie 'prince' billy superimposed, part of a promo for a weekend of shows." width="780" height="530" loading="lazy">
+                    </picture>
+                </div>
+                <button class="lg-feed__post-likes js-devotion-button">
+                    <span class="lg-feed__post-likes-users">
+                        <img src="../img/tiny/will.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/make.jpg" alt="" width="24" height="24">
+                        <img src="../img/tiny/what.jpg" alt="" width="24" height="24">
+                    </span>
+                    <span>the devoted</span>
+                </button>
+                <div class="lg-feed__post-caption">
+                    <strong>laceyjoguthrie</strong>
+                    <span class="js-post-caption">
+                        angels
+                    </span>
+                </div>
+                <time class="lg-feed__post-timestamp" datetime="2025-08-16T12:10:00Z">2025-10-06T11:17:00Z</time>
+            </article>
+        </li>
+    </ul>
+</main>
+
+<!-- Popups -->
+<aside id="passwordPopup" class="lg-popup js-popup" role="dialog" aria-modal="true" aria-labelledby="passwordPopupTitle">
+    <div class="lg-popup__content">
+        <div class="lg-popup__header">
+            <h2 id="passwordPopupTitle" class="lg-popup__title">e̶̟̓r̶̮̐ŕ̵͇ö̴͚́r̶͉͆ ̴͕͒p̴͙͋a̷̛͇s̶̤͝s̴̯̀w̶͇̎o̶͕͝r̷̹̅d̴̛ͅ ̴̧̐p̴̡̅ľ̷̢e̸̲̽ã̶͉s̶̏͜e̶͔͐</h2>
+      
+            <button type="button" class="lg-popup__close lg-button js-close-popup" data-popup-id="passwordPopup">
+                <svg aria-hidden="true" class="lg-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
+                </svg>
+            </button>
+        </div>
+        <form class="lg-popup__form" action="#" method="post">
+            <fieldset>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" autocomplete="current-password">
+            </fieldset>
+            <button type="submit" class="lg-button">submit</button>
+        </form>
+    </div>
+</aside>
+
+<aside>
+    <div id="devotionPopup" class="lg-popup js-popup lg-devotion-popup" role="dialog" aria-modal="true" aria-labelledby="devotionPopupTitle">
+        <div class="lg-popup__content">
+            <div class="lg-popup__header">
+                <h2 id="devotionPopupTitle" class="lg-popup__title">🙏 bless 🙏</h2>
+                <button type="button" class="lg-popup__close lg-button js-close-popup" data-popup-id="devotionPopup">
+                    <svg aria-hidden="true" class="lg-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
+                    </svg>
+                </button>
+            </div>
+            <ul class="lg-devotion-profiles" id="devotionProfiles">
+                <li class="lg-devotion-loading">loading...</li>
+            </ul>
+        </div>
+    </div>
+</aside>
