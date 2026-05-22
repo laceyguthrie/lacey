@@ -280,94 +280,6 @@ function optimizeLazyLoadingImages() {
   }
 }
 
-// Masonry Grid Layout System
-
-let globalMasonryLayout = null;
-
-function setupMasonryGrid() {
-  const grid = document.querySelector('.js-masonry-grid');
-  if (!grid) return;
-
-  function masonryLayout() {
-    const items = Array.from(grid.children);
-    const gridStyle = window.getComputedStyle(grid);
-    const gap = parseInt(gridStyle.getPropertyValue('gap')) || 0;
-
-    const columnCount = gridStyle.getPropertyValue('grid-template-columns')
-      .split(' ')
-      .filter(Boolean)
-      .length;
-
-    const visibleItems = items.filter(item => {
-      const style = window.getComputedStyle(item);
-      return style.display !== 'none' && item.getAttribute('aria-hidden') !== 'true';
-    });
-
-    items.forEach(item => {
-      item.style.position = '';
-      item.style.top = '';
-      item.style.left = '';
-      item.style.width = '';
-    });
-    grid.style.height = '';
-    grid.style.position = '';
-
-    if (!columnCount || columnCount < 2) {
-      return;
-    }
-
-    const gridRect = grid.getBoundingClientRect();
-    const colWidth = (gridRect.width - gap * (columnCount - 1)) / columnCount;
-    const colHeights = Array(columnCount).fill(0);
-
-    visibleItems.forEach(item => {
-      let minCol = 0;
-      for (let i = 1; i < columnCount; i++) {
-        if (colHeights[i] < colHeights[minCol]) minCol = i;
-      }
-      item.style.position = 'absolute';
-      item.style.top = colHeights[minCol] + 'px';
-      item.style.left = (minCol * (colWidth + gap)) + 'px';
-      item.style.width = colWidth + 'px';
-      colHeights[minCol] += item.offsetHeight + gap;
-    });
-
-    grid.style.position = 'relative';
-    grid.style.height = Math.max(...colHeights) + 'px';
-  }
-
-  globalMasonryLayout = masonryLayout;
-
-  let resizeTimeout;
-  if ('ResizeObserver' in window) {
-    const ro = new ResizeObserver(() => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(masonryLayout, 100);
-    });
-    ro.observe(grid);
-  } else {
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(masonryLayout, 100);
-    });
-  }
-
-  // Run layout immediately, then re-run as images load
-  masonryLayout();
-
-  let imageLayoutTimeout;
-  const images = grid.querySelectorAll('img');
-  images.forEach(img => {
-    if (!img.complete) {
-      const onLoad = () => {
-        clearTimeout(imageLayoutTimeout);
-        imageLayoutTimeout = setTimeout(masonryLayout, 50);
-      };
-      img.addEventListener('load', onLoad);
-      img.addEventListener('error', onLoad);
-    }
-  });
-}
 
 // Tab System
 
@@ -409,9 +321,8 @@ function setupFeedFilter() {
   const filterNav = document.querySelector('.js-feed-filters');
   const feedItems = document.querySelectorAll('.js-feed-item');
   const filterButtons = filterNav?.querySelectorAll('[data-filter]');
-  const grid = document.querySelector('.js-masonry-grid');
-  
-  if (!filterNav || !filterButtons || filterButtons.length === 0 || feedItems.length === 0 || !grid) {
+
+  if (!filterNav || !filterButtons || filterButtons.length === 0 || feedItems.length === 0) {
     return;
   }
 
@@ -436,12 +347,6 @@ function setupFeedFilter() {
     });
 
     updateActiveStates(filterTag);
-
-    if (globalMasonryLayout) {
-      requestAnimationFrame(() => {
-        globalMasonryLayout();
-      });
-    }
   }
 
   function updateActiveStates(filterTag) {
@@ -786,13 +691,40 @@ function setupPasswordPopup() {
   });
 }
 
+// Lazy-load iframes via IntersectionObserver
+
+function setupLazyIframes() {
+  const iframes = document.querySelectorAll('.js-lazy-iframe[data-src]');
+  if (!iframes.length) return;
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const iframe = entry.target;
+          iframe.src = iframe.getAttribute('data-src');
+          iframe.removeAttribute('data-src');
+          obs.unobserve(iframe);
+        }
+      });
+    }, { rootMargin: '200px' });
+
+    iframes.forEach(iframe => observer.observe(iframe));
+  } else {
+    iframes.forEach(iframe => {
+      iframe.src = iframe.getAttribute('data-src');
+      iframe.removeAttribute('data-src');
+    });
+  }
+}
+
 // Initialization
 
 document.addEventListener('DOMContentLoaded', function() {
   optimizeLazyLoadingImages();
-  setupMasonryGrid();
   setupTabs();
   setupFeedFilter();
   setupDevotionButton();
   setupPasswordPopup();
+  setupLazyIframes();
 });
