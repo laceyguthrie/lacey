@@ -41,16 +41,8 @@
         <nav class="lg-header__nav">
             <h2 class="lg-header__nav-title" id="nav-title">Directory</h2>
             <ul class="lg-header__nav-list" aria-labelledby="nav-title">
-                {%- if activePage == "home" %}
-                <li><a class="js-anchor-link" href="#releases">releases</a></li>
-                <li><a class="js-anchor-link" href="#shows">shows</a></li>
-                {%- elsif activePage == "images" or activePage == "videos" %}
                 <li><a href="/">releases</a></li>
                 <li><a class="js-anchor-link" href="#shows">shows</a></li>
-                {%- else %}
-                <li><a href="/#releases">releases</a></li>
-                <li><a href="/#shows">shows</a></li>
-                {%- endif %}
                 <li><a {% if activePage == "images" %}class="is-active" {% endif %}href="/images/">images</a></li>
                 <li><a {% if activePage == "videos" %}class="is-active" {% endif %}href="/videos/">videos</a></li>
                 <li><a {% if activePage == "lyrics" %}class="is-active" {% endif %}href="/lyrics/">lyrics</a></li>
