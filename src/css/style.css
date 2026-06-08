@@ -193,10 +193,11 @@ a {
    ========================================================================== */
 
 .container,
-.container--full {
+.container--wide {
     margin: 0 auto;
     padding: 0 1rem;
     width: 100%;
+    max-width: 96rem;
 }
 
 .container {
@@ -711,7 +712,7 @@ content: " →";
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
-        gap: 2rem;
+        gap: 3rem;
     }
 
     .lg-section__text,
