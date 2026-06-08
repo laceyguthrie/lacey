@@ -44,6 +44,9 @@
                 {%- if activePage == "home" %}
                 <li><a class="js-anchor-link" href="#releases">releases</a></li>
                 <li><a class="js-anchor-link" href="#shows">shows</a></li>
+                {%- elsif activePage == "images" or activePage == "videos" %}
+                <li><a href="/">releases</a></li>
+                <li><a class="js-anchor-link" href="#shows">shows</a></li>
                 {%- else %}
                 <li><a href="/#releases">releases</a></li>
                 <li><a href="/#shows">shows</a></li>

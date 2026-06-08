@@ -11,8 +11,9 @@ extraCSS:
 extraScripts:
   - js/videos.js
 ---
-<main class="lg-video-page container--full">
-    <div class="lg-video-grid">
+<main class="lg-main lg-flex--tablet container">
+    <div class="lg-main__content lg-video-page">
+        <div class="lg-video-grid">
         <div class="lg-video-card">
             <div class="lg-feed__post-video">
                 <img src="https://img.youtube.com/vi/14-20Die1WM/maxresdefault.jpg" alt="Language &amp; Violence" width="1280" height="720">
@@ -118,5 +119,7 @@ extraScripts:
                 <p class="lg-video-card__caption"><em>Red Sun</em> (Live from La La Land)</p>
             </div>
         </div>
+        </div>
     </div>
+    {% include "shows.html" %}
 </main>

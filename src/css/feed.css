@@ -181,7 +181,7 @@
 }
 
 .lg-feed__post-header {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 0.75rem;
     position: relative;
@@ -204,6 +204,7 @@
 }
 
 .lg-feed__post-timestamp {
+    display: none;
     font-size: 0.625rem;
     font-weight: 400;
     line-height: 1;
@@ -417,14 +418,9 @@
     border-radius: 3px;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 1200px) {
     .lg-feed__list {
         column-count: 2;
     }
 }
 
-@media screen and (min-width: 1200px) {
-    .lg-feed__list {
-        column-count: 3;
-    }
-}

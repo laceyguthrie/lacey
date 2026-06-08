@@ -154,8 +154,4 @@
     .lg-video-page {
         padding-top: 4rem;
     }
-
-    .lg-video-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
