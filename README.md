@@ -77,8 +77,7 @@ Nothing runs in the background — the script processes whatever's in `_drop/` e
 
 **What it does:**
 
-- **HEIC** → optimized `.jpg` (via `sips`) + `.webp` (via `cwebp`, encoded from the new JPG since `cwebp` can't read HEIC directly)
-- **JPG/JPEG** → optimized `.jpg` + `.webp`, both at quality 82
+- Resizes so the longest edge is at most 2000px (never upscales), then converts to `.jpg` (via `sips`) + `.webp` (via `cwebp`, encoded from the resized JPG so both pairs share the same dimensions), both at quality 82
 
 Filename case doesn't matter (`.HEIC` from iPhone works fine).
 

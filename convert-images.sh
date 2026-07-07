@@ -15,6 +15,7 @@ OUT_DIR="$SCRIPT_DIR/src/img"
 
 JPG_QUALITY=82
 WEBP_QUALITY=82
+MAX_DIMENSION=2000
 
 if ! command -v cwebp >/dev/null 2>&1; then
     echo "cwebp not found. Install with: brew install webp"
@@ -38,18 +39,24 @@ echo
 for src in "${files[@]}"; do
     base=$(basename "$src")
     name="${base%.*}"
-    ext_lower=$(echo "${base##*.}" | tr '[:upper:]' '[:lower:]')
     out_jpg="$OUT_DIR/$name.jpg"
     out_webp="$OUT_DIR/$name.webp"
 
     echo "→ $base"
-    sips -s format jpeg -s formatOptions "$JPG_QUALITY" "$src" --out "$out_jpg" >/dev/null
-    if [ "$ext_lower" = "heic" ]; then
-        # cwebp can't read HEIC, so encode the webp from the freshly written JPG.
-        cwebp -quiet -q "$WEBP_QUALITY" "$out_jpg" -o "$out_webp"
+    # sips -Z always scales so the longest edge EQUALS the given value, including
+    # upscaling smaller images — so only pass it when the source is actually larger
+    # than MAX_DIMENSION. Otherwise just convert format at native size.
+    src_w=$(sips -g pixelWidth "$src" | awk '/pixelWidth/{print $2}')
+    src_h=$(sips -g pixelHeight "$src" | awk '/pixelHeight/{print $2}')
+    src_long=$(( src_w > src_h ? src_w : src_h ))
+
+    if [ "$src_long" -gt "$MAX_DIMENSION" ]; then
+        sips -Z "$MAX_DIMENSION" -s format jpeg -s formatOptions "$JPG_QUALITY" "$src" --out "$out_jpg" >/dev/null
     else
-        cwebp -quiet -q "$WEBP_QUALITY" "$src" -o "$out_webp"
+        sips -s format jpeg -s formatOptions "$JPG_QUALITY" "$src" --out "$out_jpg" >/dev/null
     fi
+    # Encode webp from the resized JPG so both pairs share the same dimensions.
+    cwebp -quiet -q "$WEBP_QUALITY" "$out_jpg" -o "$out_webp"
     mv "$src" "$PROCESSED_DIR/$base"
     echo "  ✓ src/img/$name.jpg + src/img/$name.webp"
 done
