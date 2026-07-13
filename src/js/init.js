@@ -670,6 +670,27 @@ function setupDevotionButton() {
   });
 }
 
+// Password Popup
+
+function setupPasswordPopup() {
+  const passwordForm = document.querySelector('#passwordPopup form');
+  if (!passwordForm) return;
+
+  passwordForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const passwordInput = this.querySelector('input[type="password"]');
+    const password = passwordInput?.value;
+
+    if (password === 'mallard') {
+      window.location.href = '/press';
+    } else {
+      passwordInput.value = '';
+      passwordInput.setAttribute('aria-invalid', 'true');
+      passwordInput.focus();
+    }
+  });
+}
+
 // Lazy-load iframes via IntersectionObserver
 
 function setupLazyIframes() {
@@ -704,5 +725,6 @@ document.addEventListener('DOMContentLoaded', function() {
   setupTabs();
   setupFeedFilter();
   setupDevotionButton();
+  setupPasswordPopup();
   setupLazyIframes();
 });
