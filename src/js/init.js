@@ -682,7 +682,7 @@ function setupPasswordPopup() {
     const password = passwordInput?.value;
 
     if (password === 'mallard') {
-      window.location.href = '/press';
+      window.location.href = '/bardo';
     } else {
       passwordInput.value = '';
       passwordInput.setAttribute('aria-invalid', 'true');
