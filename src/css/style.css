@@ -343,6 +343,94 @@ a {
 }
 
 /* ==========================================================================
+   SOLO ALBUMS OUTLINE
+   ========================================================================== */
+
+.lg-solo {
+    position: relative;
+    display: grid;
+    gap: 2rem;
+    padding: 1.5rem;
+    /* no-JS fallback; solo-outline.js swaps this for the wavy SVG */
+    border: 2px dotted #000;
+}
+
+.lg-solo--js {
+    border-color: transparent;
+}
+
+.lg-solo__outline {
+    position: absolute;
+    inset: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    overflow: visible;
+    pointer-events: none;
+}
+
+.lg-solo__outline path {
+    fill: none;
+    stroke: #000;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 0.1 6;
+}
+
+.lg-solo__label {
+    position: absolute;
+    padding: 0.5rem;
+    background-color: #fff;
+    font-size: 0.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.lg-solo__label--1 {
+    top: -0.25rem;
+    left: 14%;
+    transform: translateY(-50%) rotate(-4deg);
+}
+
+.lg-solo__label--2 {
+    top: 22%;
+    right: 0;
+    transform: translate(50%, -50%) rotate(86deg);
+}
+
+.lg-solo__label--3 {
+    bottom: 0;
+    left: 45%;
+    transform: translateY(50%) rotate(3deg);
+}
+
+.lg-solo__label--4 {
+    top: 63%;
+    left: 0;
+    transform: translate(-50%, -50%) rotate(-92deg);
+}
+
+.lg-solo__label--5 {
+    top: 0;
+    right: 12%;
+    transform: translateY(-50%) rotate(2deg);
+}
+
+.lg-solo__label--6 {
+    top: 58%;
+    right: 0;
+    transform: translate(50%, -50%) rotate(88deg);
+}
+
+.lg-solo__label--7 {
+    top: 20%;
+    left: 0;
+    transform: translate(-50%, -50%) rotate(-88deg);
+}
+
+/* ==========================================================================
    PRESS FEED
    ========================================================================== */
 
