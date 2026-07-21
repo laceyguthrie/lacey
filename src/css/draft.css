@@ -1,0 +1,45 @@
+/* ==========================================================================
+   DRAFT PAGE — PROJECTS
+   Simple, classic, a little unwell. Black & white only.
+   ========================================================================== */
+
+.lg-intro {
+    position: relative;
+    max-width: 34rem;
+    padding: 1.5rem 0 2rem;
+    border-bottom: 1px solid #000;
+}
+
+.lg-intro__lead {
+    margin: 0;
+    font-family: "Arimo", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.15;
+    /* nudged a hair off baseline — felt, not named */
+    transform: translateY(-2px);
+}
+
+/* a heading-ish word that breaks where it shouldn't */
+.lg-intro__break {
+    display: inline-block;
+    word-break: break-all;
+    letter-spacing: 0.02em;
+}
+
+/* one line spaced too wide, whispering under the lead */
+.lg-intro__aside {
+    margin: 0.75rem 0 0;
+    font-family: "Jacquard 24", cursive;
+    font-size: 0.75rem;
+    letter-spacing: 0.9em;
+    text-indent: 0.9em; /* balance the trailing letter-spacing */
+    opacity: 0.55;
+    transform: rotate(-0.4deg);
+    transform-origin: left center;
+}
+
+@media screen and (min-width: 768px) {
+    .lg-intro__lead {
+        font-size: 2rem;
+    }
+}
