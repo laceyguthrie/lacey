@@ -116,3 +116,74 @@
 .lg-work__stage {
     padding-top: 0.5rem;
 }
+
+/* ==========================================================================
+   FULL DISCOGRAPHY
+   ========================================================================== */
+
+.lg-disco {
+    display: grid;
+    gap: 2rem;
+    padding-top: 2.5rem;
+    margin-top: 2rem;
+    border-top: 1px solid #000;
+}
+
+.lg-disco__heading {
+    margin: 0;
+    font-family: "Jacquard 24", cursive;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.lg-disco__band {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.lg-disco__band-name {
+    margin: 0;
+    font-family: "Arimo", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.lg-disco__band-years {
+    font-weight: 400;
+    font-size: 0.7rem;
+    font-style: italic;
+    letter-spacing: 0.03em;
+}
+
+.lg-disco__note {
+    margin: 0;
+    font-style: italic;
+}
+
+.lg-disco__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.lg-disco__list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+.lg-disco__year {
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+.lg-disco__meta {
+    font-size: 0.7rem;
+    font-style: italic;
+    opacity: 0.7;
+}
