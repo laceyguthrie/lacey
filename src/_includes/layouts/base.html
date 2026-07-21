@@ -43,8 +43,15 @@
             <ul class="lg-header__nav-list" aria-labelledby="nav-title">
                 {%- if activePage == "home" %}
                 <li><a class="js-anchor-link" href="#releases">releases</a></li>
+                {%- elsif activePage == "draft" %}
+                <li><a class="js-anchor-link" href="#projects">projects</a></li>
+                {%- elsif activePage == "fam-damily-band" %}
+                <li><a href="/draft/">projects</a></li>
                 {%- else %}
                 <li><a href="/">releases</a></li>
+                {%- endif %}
+                {%- if activePage == "draft" or activePage == "fam-damily-band" %}
+                <li><a {% if activePage == "fam-damily-band" %}class="is-active" {% endif %}href="/fam-damily-band/">the fam damily band</a></li>
                 {%- endif %}
                 <li><a class="js-anchor-link" href="#shows">shows</a></li>
                 <li><a {% if activePage == "images" %}class="is-active" {% endif %}href="/images/">images</a></li>
