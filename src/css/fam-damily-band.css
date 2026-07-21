@@ -1,0 +1,74 @@
+/* ==========================================================================
+   THE DAM FAMILY BAND — constellation
+   Black & white. Hairlines. Quiet.
+   ========================================================================== */
+
+.lg-dam {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.lg-dam__stage {
+    width: 100%;
+    min-height: 70vh;
+}
+
+.lg-dam__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.lg-dam__line {
+    stroke: #000;
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+}
+
+.lg-dam__dot {
+    fill: #000;
+}
+
+.lg-dam__node--band .lg-dam__dot {
+    fill: #fff;
+    stroke: #000;
+    stroke-width: 1.5;
+}
+
+.lg-dam__label {
+    font-family: "Arimo", sans-serif;
+    font-size: 11px;
+    fill: #000;
+    dominant-baseline: middle;
+}
+
+.lg-dam__node--band .lg-dam__label {
+    font-family: "Jacquard 24", cursive;
+    font-size: 15px;
+}
+
+/* Fallback list: visible by default; hidden once JS has drawn the SVG. */
+.lg-dam__fallback {
+    padding-top: 1.5rem;
+}
+
+.lg-dam__fallback ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+    max-width: 34rem;
+}
+
+.lg-dam--js .lg-dam__fallback {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
