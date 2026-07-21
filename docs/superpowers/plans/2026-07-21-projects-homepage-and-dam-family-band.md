@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build a draft homepage at `/draft/` (Releases → Projects, a post-punk "unwell" intro, a "current work" section, and a trimmed by-band discography) plus a new JSON-driven constellation page at `/dam-family-band/`, without altering the live site.
+**Goal:** Build a draft homepage at `/draft/` (Releases → Projects, a post-punk "unwell" intro, a "current work" section, and a trimmed by-band discography) plus a new JSON-driven constellation page at `/fam-damily-band/`, without altering the live site.
 
-**Architecture:** Static Eleventy site. New pages reuse the existing `layouts/base.html` and its `extraCSS`/`extraScripts` front-matter hooks. The nav in `base.html` gains draft-aware branches that render byte-identically for every existing page. The constellation reads one Eleventy global-data file (`src/_data/damFamily.json`) two ways: Liquid renders a build-time accessible fallback list, and the same data is inlined into a `<script type="application/json">` block that vanilla JS parses to draw a seeded, frozen force-directed SVG.
+**Architecture:** Static Eleventy site. New pages reuse the existing `layouts/base.html` and its `extraCSS`/`extraScripts` front-matter hooks. The nav in `base.html` gains draft-aware branches that render byte-identically for every existing page. The constellation reads one Eleventy global-data file (`src/_data/famFamily.json`) two ways: Liquid renders a build-time accessible fallback list, and the same data is inlined into a `<script type="application/json">` block that vanilla JS parses to draw a seeded, frozen force-directed SVG.
 
 **Tech Stack:** Eleventy 3.1.5, LiquidJS templating, vanilla JS (no libraries), plain CSS following the existing `lg-` naming. Tests via Node's built-in `node:test` runner (zero new dependencies).
 
@@ -24,7 +24,7 @@
 ## Deviations from the spec (confirm at plan review)
 
 1. **Constellation model is bipartite.** The spec described band nodes with members listed beside them; this plan renders both **people and bands as star nodes**, with each band drawing an edge to each of its members. This matches the original brief ("start with me and then draw lines out to all members of my band") and the lone-Lacey starting state. Same JSON shape.
-2. **Data lives in `src/_data/damFamily.json`** (Eleventy global data), not `src/js/…`. This gives a build-time accessible fallback and a single source of truth, and avoids a runtime `fetch`. The JS reads the data from an inlined JSON `<script>` block, not the network.
+2. **Data lives in `src/_data/famFamily.json`** (Eleventy global data), not `src/js/…`. This gives a build-time accessible fallback and a single source of truth, and avoids a runtime `fetch`. The JS reads the data from an inlined JSON `<script>` block, not the network.
 
 ---
 
@@ -33,17 +33,17 @@
 **Create:**
 - `src/draft/index.html` — the draft homepage (Projects heading, intro, current work, discography). Includes `shows.html`.
 - `src/css/draft.css` — all draft-page styling. Loaded only by the draft page.
-- `src/dam-family-band/index.html` — constellation page (no visible heading; inlined JSON + fallback list + SVG mount).
-- `src/css/dam-family-band.css` — constellation styling.
-- `src/js/dam-family-band.js` — seeded PRNG, bipartite graph build, force layout, SVG render.
-- `src/_data/damFamily.json` — the constellation data (seeded with Lacey only).
-- `test/dam-family-band.test.js` — `node:test` unit tests for the pure JS functions.
+- `src/fam-damily-band/index.html` — constellation page (no visible heading; inlined JSON + fallback list + SVG mount).
+- `src/css/fam-damily-band.css` — constellation styling.
+- `src/js/fam-damily-band.js` — seeded PRNG, bipartite graph build, force layout, SVG render.
+- `src/_data/famFamily.json` — the constellation data (seeded with Lacey only).
+- `test/fam-damily-band.test.js` — `node:test` unit tests for the pure JS functions.
 
 **Modify:**
-- `src/_includes/layouts/base.html` — nav gains draft/dam-family-band branches (additive; live pages unchanged).
+- `src/_includes/layouts/base.html` — nav gains draft/fam-damily-band branches (additive; live pages unchanged).
 - `eleventy.config.js` — add a `json` filter (for inlining data) and confirm passthrough.
 
-**Responsibilities:** each new file has one job. `dam-family-band.js` splits cleanly into pure functions (PRNG, `buildGraph`, `layout`) that are unit-tested, and DOM functions (`readData`, `render`) that are browser-verified.
+**Responsibilities:** each new file has one job. `fam-damily-band.js` splits cleanly into pure functions (PRNG, `buildGraph`, `layout`) that are unit-tested, and DOM functions (`readData`, `render`) that are browser-verified.
 
 ---
 
@@ -54,7 +54,7 @@
 - Verify: full-site build diff
 
 **Interfaces:**
-- Produces: pages with `activePage: draft` render a first nav item `projects` (anchor to `#projects`); pages with `activePage: dam-family-band` render `projects` (link to `/draft/`); both render a `the dam family band` nav item. All other `activePage` values render exactly as before.
+- Produces: pages with `activePage: draft` render a first nav item `projects` (anchor to `#projects`); pages with `activePage: fam-damily-band` render `projects` (link to `/draft/`); both render a `the fam damily band` nav item. All other `activePage` values render exactly as before.
 
 - [ ] **Step 1: Capture the current built nav as a baseline**
 
@@ -80,19 +80,19 @@ with:
                 <li><a class="js-anchor-link" href="#releases">releases</a></li>
                 {%- elsif activePage == "draft" %}
                 <li><a class="js-anchor-link" href="#projects">projects</a></li>
-                {%- elsif activePage == "dam-family-band" %}
+                {%- elsif activePage == "fam-damily-band" %}
                 <li><a href="/draft/">projects</a></li>
                 {%- else %}
                 <li><a href="/">releases</a></li>
                 {%- endif %}
 ```
 
-- [ ] **Step 3: Add the dam-family-band nav item**
+- [ ] **Step 3: Add the fam-damily-band nav item**
 
 Immediately after the `{%- endif %}` from Step 2 and before the `shows` line (`<li><a class="js-anchor-link" href="#shows">shows</a></li>`), insert:
 ```liquid
-                {%- if activePage == "draft" or activePage == "dam-family-band" %}
-                <li><a {% if activePage == "dam-family-band" %}class="is-active" {% endif %}href="/dam-family-band/">the dam family band</a></li>
+                {%- if activePage == "draft" or activePage == "fam-damily-band" %}
+                <li><a {% if activePage == "fam-damily-band" %}class="is-active" {% endif %}href="/fam-damily-band/">the fam damily band</a></li>
                 {%- endif %}
 ```
 
@@ -230,7 +230,7 @@ Expected: no differences outside `draft/`.
 
 - [ ] **Step 5: Browser check**
 
-Open `http://localhost:8080/draft/`. Confirm: nav shows `projects` and `the dam family band`; the "Projects" heading; the intro reads as intentional-but-slightly-off. No console errors.
+Open `http://localhost:8080/draft/`. Confirm: nav shows `projects` and `the fam damily band`; the "Projects" heading; the intro reads as intentional-but-slightly-off. No console errors.
 
 - [ ] **Step 6: Commit**
 
@@ -585,11 +585,11 @@ git commit -m "Add trimmed by-band discography to draft Projects page"
 
 **Files:**
 - Modify: `eleventy.config.js`
-- Create: `src/_data/damFamily.json`
-- Create: `test/dam-family-band.test.js` (data-shape assertion only in this task)
+- Create: `src/_data/famFamily.json`
+- Create: `test/fam-damily-band.test.js` (data-shape assertion only in this task)
 
 **Interfaces:**
-- Produces: a global `damFamily` data object `{ people: string[], bands: { name: string, members: string[] }[] }`, and a `json` Liquid filter that serializes a value to a JSON string.
+- Produces: a global `famFamily` data object `{ people: string[], bands: { name: string, members: string[] }[] }`, and a `json` Liquid filter that serializes a value to a JSON string.
 
 - [ ] **Step 1: Add the `json` filter to Eleventy config**
 
@@ -620,7 +620,7 @@ module.exports = function(eleventyConfig) {
 
 - [ ] **Step 2: Create the seed data (Lacey only)**
 
-Create `src/_data/damFamily.json`:
+Create `src/_data/famFamily.json`:
 ```json
 {
   "people": ["Lacey Guthrie"],
@@ -630,11 +630,11 @@ Create `src/_data/damFamily.json`:
 
 - [ ] **Step 3: Write a data-shape test**
 
-Create `test/dam-family-band.test.js`:
+Create `test/fam-damily-band.test.js`:
 ```javascript
 const { test } = require('node:test');
 const assert = require('node:assert');
-const data = require('../src/_data/damFamily.json');
+const data = require('../src/_data/famFamily.json');
 
 test('seed data has the expected shape', () => {
   assert.ok(Array.isArray(data.people), 'people is an array');
@@ -662,7 +662,7 @@ Expected: `build ok`.
 - [ ] **Step 6: Commit**
 
 ```bash
-git add eleventy.config.js src/_data/damFamily.json test/dam-family-band.test.js
+git add eleventy.config.js src/_data/famFamily.json test/fam-damily-band.test.js
 git commit -m "Add json filter and seed dam family constellation data"
 ```
 
@@ -671,53 +671,53 @@ git commit -m "Add json filter and seed dam family constellation data"
 ## Task 6: Dam family band page (skeleton, inlined data, accessible fallback)
 
 **Files:**
-- Create: `src/dam-family-band/index.html`
+- Create: `src/fam-damily-band/index.html`
 - Verify: build + browser
 
 **Interfaces:**
-- Consumes: `damFamily` global data + `json` filter (Task 5); nav branch `activePage: dam-family-band` (Task 1).
-- Produces: a page at `/dam-family-band/` containing a JSON `<script id="dam-data">`, a visually-hidden fallback `<ul>`, and an empty `<div id="dam-stage">` mount, loading `dam-family-band.css` + `dam-family-band.js`.
+- Consumes: `famFamily` global data + `json` filter (Task 5); nav branch `activePage: fam-damily-band` (Task 1).
+- Produces: a page at `/fam-damily-band/` containing a JSON `<script id="dam-data">`, a visually-hidden fallback `<ul>`, and an empty `<div id="dam-stage">` mount, loading `fam-damily-band.css` + `fam-damily-band.js`.
 
 - [ ] **Step 1: Create the page**
 
-Create `src/dam-family-band/index.html`:
+Create `src/fam-damily-band/index.html`:
 ```liquid
 ---
 layout: layouts/base.html
-title: the dam family band
+title: the fam damily band
 description: How the Louisville music scene is intertwined.
 fontsHref: https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jacquard+24&family=Arimo:ital,wght@0,400..700;1,400..700&display=swap
-activePage: dam-family-band
+activePage: fam-damily-band
 extraCSS:
-  - css/dam-family-band.css
+  - css/fam-damily-band.css
 extraScripts:
-  - js/dam-family-band.js
+  - js/fam-damily-band.js
 ---
 <main class="lg-dam container--wide">
-    <script type="application/json" id="dam-data">{{ damFamily | json }}</script>
+    <script type="application/json" id="dam-data">{{ famFamily | json }}</script>
 
     <div class="lg-dam__stage" id="dam-stage" aria-hidden="true"></div>
 
     <div class="lg-dam__fallback">
-        <h2 class="sr-only">The dam family band — people and the bands they share</h2>
+        <h2 class="sr-only">The fam damily band — people and the bands they share</h2>
         <ul>
-            {%- for band in damFamily.bands %}
+            {%- for band in famFamily.bands %}
             <li><strong>{{ band.name }}</strong>: {{ band.members | join: ", " }}</li>
             {%- endfor %}
-            {%- for person in damFamily.people %}
+            {%- for person in famFamily.people %}
             <li>{{ person }}</li>
             {%- endfor %}
         </ul>
     </div>
 </main>
 ```
-Note: the fallback lists bands (with members) and any people. It is visible by default; `dam-family-band.js` hides it only after a successful render.
+Note: the fallback lists bands (with members) and any people. It is visible by default; `fam-damily-band.js` hides it only after a successful render.
 
 - [ ] **Step 2: Build and verify the data inlined and fallback rendered**
 
 Run:
 ```bash
-npm run build >/dev/null 2>&1 && grep -c 'id="dam-data"' _site/dam-family-band/index.html && grep -c "Lacey Guthrie" _site/dam-family-band/index.html && grep -c 'id="dam-stage"' _site/dam-family-band/index.html
+npm run build >/dev/null 2>&1 && grep -c 'id="dam-data"' _site/fam-damily-band/index.html && grep -c "Lacey Guthrie" _site/fam-damily-band/index.html && grep -c 'id="dam-stage"' _site/fam-damily-band/index.html
 ```
 Expected: each prints at least `1`.
 
@@ -725,7 +725,7 @@ Expected: each prints at least `1`.
 
 Run:
 ```bash
-node -e "const h=require('fs').readFileSync('_site/dam-family-band/index.html','utf8');const m=h.match(/id=\"dam-data\">([\s\S]*?)<\/script>/);JSON.parse(m[1]);console.log('valid json inlined')"
+node -e "const h=require('fs').readFileSync('_site/fam-damily-band/index.html','utf8');const m=h.match(/id=\"dam-data\">([\s\S]*?)<\/script>/);JSON.parse(m[1]);console.log('valid json inlined')"
 ```
 Expected: `valid json inlined`.
 
@@ -733,14 +733,14 @@ Expected: `valid json inlined`.
 
 Run:
 ```bash
-diff -r /tmp/_site_baseline _site --exclude=draft --exclude=dam-family-band
+diff -r /tmp/_site_baseline _site --exclude=draft --exclude=fam-damily-band
 ```
 Expected: no differences.
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add src/dam-family-band/index.html
+git add src/fam-damily-band/index.html
 git commit -m "Add dam family band page skeleton with inlined data and fallback"
 ```
 
@@ -749,8 +749,8 @@ git commit -m "Add dam family band page skeleton with inlined data and fallback"
 ## Task 7: Constellation JavaScript (PRNG, graph, layout, render)
 
 **Files:**
-- Create: `src/js/dam-family-band.js`
-- Modify: `test/dam-family-band.test.js` (add unit tests)
+- Create: `src/js/fam-damily-band.js`
+- Modify: `test/fam-damily-band.test.js` (add unit tests)
 - Verify: `node --test` + browser
 
 **Interfaces:**
@@ -759,9 +759,9 @@ git commit -m "Add dam family band page skeleton with inlined data and fallback"
 
 - [ ] **Step 1: Write failing unit tests for the pure functions**
 
-Append to `test/dam-family-band.test.js`:
+Append to `test/fam-damily-band.test.js`:
 ```javascript
-const dam = require('../src/js/dam-family-band.js');
+const dam = require('../src/js/fam-damily-band.js');
 
 test('mulberry32 is deterministic for a fixed seed', () => {
   const a = dam.mulberry32(42);
@@ -809,14 +809,14 @@ Run:
 ```bash
 node --test
 ```
-Expected: FAIL — cannot find module `../src/js/dam-family-band.js`.
+Expected: FAIL — cannot find module `../src/js/fam-damily-band.js`.
 
 - [ ] **Step 3: Implement the constellation script**
 
-Create `src/js/dam-family-band.js`:
+Create `src/js/fam-damily-band.js`:
 ```javascript
 /**
- * The dam family band — a seeded, frozen force-directed constellation.
+ * The fam damily band — a seeded, frozen force-directed constellation.
  * People and bands are stars; each band links to each of its members.
  * No libraries, no interactivity: the sim runs to a fixed iteration count
  * with a fixed seed, then freezes. Identical on every visit.
@@ -1033,7 +1033,7 @@ Expected: all tests pass (data-shape + PRNG + graph + layout).
 - [ ] **Step 5: Commit**
 
 ```bash
-git add src/js/dam-family-band.js test/dam-family-band.test.js
+git add src/js/fam-damily-band.js test/fam-damily-band.test.js
 git commit -m "Add seeded force-directed constellation script with unit tests"
 ```
 
@@ -1042,7 +1042,7 @@ git commit -m "Add seeded force-directed constellation script with unit tests"
 ## Task 8: Constellation styling + verification
 
 **Files:**
-- Create: `src/css/dam-family-band.css`
+- Create: `src/css/fam-damily-band.css`
 - Verify: build + browser (with data variations)
 
 **Interfaces:**
@@ -1051,7 +1051,7 @@ git commit -m "Add seeded force-directed constellation script with unit tests"
 
 - [ ] **Step 1: Create the stylesheet**
 
-Create `src/css/dam-family-band.css`:
+Create `src/css/fam-damily-band.css`:
 ```css
 /* ==========================================================================
    THE DAM FAMILY BAND — constellation
@@ -1133,17 +1133,17 @@ Create `src/css/dam-family-band.css`:
 
 Run:
 ```bash
-npm run build >/dev/null 2>&1 && grep -c "dam-family-band.css" _site/dam-family-band/index.html
+npm run build >/dev/null 2>&1 && grep -c "fam-damily-band.css" _site/fam-damily-band/index.html
 ```
 Expected: prints `1`.
 
 - [ ] **Step 3: Browser check — lone star**
 
-Open `http://localhost:8080/dam-family-band/`. With the seed data (Lacey only) confirm: a single labeled star renders (not broken/empty); the fallback list is visually hidden; no console errors; nav shows `the dam family band` as active.
+Open `http://localhost:8080/fam-damily-band/`. With the seed data (Lacey only) confirm: a single labeled star renders (not broken/empty); the fallback list is visually hidden; no console errors; nav shows `the fam damily band` as active.
 
 - [ ] **Step 4: Browser check — populated graph (temporary data)**
 
-Temporarily edit `src/_data/damFamily.json` to:
+Temporarily edit `src/_data/famFamily.json` to:
 ```json
 {
   "people": ["Lacey Guthrie"],
@@ -1155,25 +1155,25 @@ Temporarily edit `src/_data/damFamily.json` to:
 ```
 Reload. Confirm: two band stars and the people stars, lines from each band to its members, Lacey sitting between the two bands (shared member), no overlap-into-illegibility, identical layout on repeated reloads. Then **revert** the file:
 ```bash
-git checkout src/_data/damFamily.json
+git checkout src/_data/famFamily.json
 ```
 
 - [ ] **Step 5: Browser check — malformed data does not blank the page**
 
-Temporarily break the JSON (e.g. add a trailing comma) in `src/_data/damFamily.json`, but since that would fail the build, instead test the runtime guard: in DevTools console on the page, run `document.getElementById('dam-data').textContent = '{bad json'` then re-run the script logic by reloading is not applicable — instead confirm by code review that `readData()` catches `JSON.parse` errors and `init()` returns early, leaving the fallback visible. (Covered by the design; no file change.)
+Temporarily break the JSON (e.g. add a trailing comma) in `src/_data/famFamily.json`, but since that would fail the build, instead test the runtime guard: in DevTools console on the page, run `document.getElementById('dam-data').textContent = '{bad json'` then re-run the script logic by reloading is not applicable — instead confirm by code review that `readData()` catches `JSON.parse` errors and `init()` returns early, leaving the fallback visible. (Covered by the design; no file change.)
 
 - [ ] **Step 6: Final live-pages diff**
 
 Run:
 ```bash
-npm run build >/dev/null 2>&1 && diff -r /tmp/_site_baseline _site --exclude=draft --exclude=dam-family-band
+npm run build >/dev/null 2>&1 && diff -r /tmp/_site_baseline _site --exclude=draft --exclude=fam-damily-band
 ```
 Expected: no differences.
 
 - [ ] **Step 7: Commit**
 
 ```bash
-git add src/css/dam-family-band.css
+git add src/css/fam-damily-band.css
 git commit -m "Style the dam family band constellation"
 ```
 

@@ -25,7 +25,7 @@ Three pieces of work:
 
 1. A **draft homepage** at `/draft/` that renames Releases → Projects, adds a
    new intro and "current work" section, and condenses the discography.
-2. A new page, **the dam family band**, at `/dam-family-band/` — a
+2. A new page, **the fam damily band**, at `/fam-damily-band/` — a
    JSON-driven constellation of Louisville bands connected by shared members.
 3. A **promotion path** for moving the draft to the live homepage when ready.
 
@@ -105,7 +105,7 @@ The `shows.html` include stays, unchanged.
 The draft page's nav previews the future state:
 
 - `projects` (anchor to `#projects`) replaces `releases`
-- new item: `the dam family band` → `/dam-family-band/`
+- new item: `the fam damily band` → `/fam-damily-band/`
 - everything else unchanged
 
 The live nav in `base.html` is not modified until promotion. Implementation
@@ -118,9 +118,9 @@ All new styling in `src/css/draft.css`, loaded via the layout's existing
 `extraCSS` front-matter hook. `style.css` is not modified. New class names
 follow the existing `lg-` BEM-ish convention.
 
-## 2. The dam family band — `/dam-family-band/`
+## 2. The fam damily band — `/fam-damily-band/`
 
-New file `src/dam-family-band/index.html`. No page heading — the
+New file `src/fam-damily-band/index.html`. No page heading — the
 constellation is the page. (The document `<title>` is still set.)
 
 ### Purpose
@@ -130,7 +130,7 @@ people they share.
 
 ### Data
 
-A single JSON file (e.g. `src/js/dam-family-band-data.json`, passed through
+A single JSON file (e.g. `src/js/fam-damily-band-data.json`, passed through
 to the built site) with this shape:
 
 ```json
@@ -176,7 +176,7 @@ When the draft is approved:
 
 1. Draft content replaces `src/index.html`.
 2. `draft.css` merges into `style.css`.
-3. Nav updates site-wide: `projects` + `the dam family band`.
+3. Nav updates site-wide: `projects` + `the fam damily band`.
 4. `/draft/` is removed.
 
 ## 4. Build & verification
