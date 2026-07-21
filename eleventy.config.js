@@ -8,7 +8,7 @@ module.exports = function(eleventyConfig) {
 
   // Serialize a value to a JSON string (used to inline data into pages).
   eleventyConfig.addFilter("json", function (value) {
-    return JSON.stringify(value);
+    return JSON.stringify(value).replace(/</g, "\\u003c");
   });
 
   return {
