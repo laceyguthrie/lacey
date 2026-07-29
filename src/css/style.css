@@ -276,6 +276,14 @@ a {
    MAIN CONTENT AREAS
    ========================================================================== */
 
+.lg-main__title {
+    font-size: 1.25rem;
+    font-style: italic;
+    margin: 0;
+    line-height: 1;
+    margin: 25vh 0;
+}
+
 .lg-main__content {
     width: 100%;
 }
