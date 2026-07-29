@@ -6,11 +6,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/*.png");
   eleventyConfig.addPassthroughCopy("src/*.ico");
 
-  // Serialize a value to a JSON string (used to inline data into pages).
-  eleventyConfig.addFilter("json", function (value) {
-    return JSON.stringify(value).replace(/</g, "\\u003c");
-  });
-
   return {
     dir: {
       input: "src",
