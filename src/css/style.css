@@ -398,66 +398,60 @@ a {
 }
 
 .lg-solo__label--5 {
-    top: 0;
-    right: 12%;
-    transform: translateY(-50%) rotate(2deg);
-}
-
-.lg-solo__label--6 {
     top: 58%;
     right: 0;
     transform: translate(50%, -50%) rotate(88deg);
 }
 
-.lg-solo__label--7 {
+.lg-solo__label--6 {
     top: 20%;
     left: 0;
     transform: translate(-50%, -50%) rotate(-88deg);
 }
 
-.lg-solo__label--8 {
+.lg-solo__label--7 {
     top: -0.25rem;
     left: 42%;
     transform: translateY(-50%) rotate(3deg);
 }
 
-.lg-solo__label--9 {
+.lg-solo__label--8 {
     top: 0;
     left: 68%;
     transform: translateY(-50%) rotate(-2deg);
 }
 
-.lg-solo__label--10 {
+.lg-solo__label--9 {
     top: 41%;
     right: 0;
     transform: translate(50%, -50%) rotate(93deg);
 }
 
-.lg-solo__label--11 {
+.lg-solo__label--10 {
     top: 82%;
     right: 0;
     transform: translate(50%, -50%) rotate(85deg);
 }
 
-.lg-solo__label--12 {
+.lg-solo__label--11 {
     bottom: 0;
     left: 12%;
     transform: translateY(50%) rotate(-3deg);
 }
 
-.lg-solo__label--13 {
+.lg-solo__label--12 {
     bottom: -0.25rem;
     left: 71%;
     transform: translateY(50%) rotate(4deg);
 }
 
-.lg-solo__label--14 {
+.lg-solo__label--13 {
     top: 42%;
     left: 0;
     transform: translate(-50%, -50%) rotate(-84deg);
 }
 
-.lg-solo__label--15 {
+.lg-solo__label--14 {
     top: 84%;
     left: 0;
     transform: translate(-50%, -50%) rotate(-93deg);
