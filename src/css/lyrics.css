@@ -3,12 +3,7 @@
    ========================================================================== */
 
 .lg-section--lyrics {
-    display: none;
     padding-top: 0;
-}
-
-.lg-section--lyrics.is-active {
-    display: block;
 }
 
 .lg-lyrics__list {
@@ -37,7 +32,7 @@
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 880px) {
     .lg-lyrics__list {
         column-count: 1;
     }

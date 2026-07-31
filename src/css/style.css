@@ -185,7 +185,41 @@ a {
     align-items: center;
     justify-content: flex-start;
     gap: 0.5rem;
-    padding-block: 2rem;
+    padding-block: 3rem;
+    width: fit-content;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.lg-tabs .js-tab {
+    flex-shrink: 0;
+}
+
+.lg-music-tabs-container .lg-tabs {
+    padding-bottom: 1rem;
+}
+
+@media screen and (max-width: 879px) {
+    .lg-tabs {
+        margin-inline: -1rem;
+        padding-inline: 1rem;
+        padding-block: 1rem;
+        width: calc(100% + 2rem);
+        max-width: none;
+    }
+}
+
+.js-tab-content {
+    display: none;
+}
+
+.js-tab-content.is-active {
+    display: block;
 }
 
 /* ==========================================================================
@@ -351,113 +385,6 @@ a {
 }
 
 /* ==========================================================================
-   SOLO ALBUMS FENCE
-   ========================================================================== */
-
-.lg-solo {
-    position: relative;
-    display: grid;
-    gap: 2rem;
-    padding: 1.5rem;
-}
-
-.lg-solo__label {
-    position: absolute;
-    padding: 0.5rem;
-    background-color: #fff;
-    font-size: 0.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    white-space: nowrap;
-    line-height: 1;
-}
-
-.lg-solo__label--1 {
-    top: -0.25rem;
-    left: 14%;
-    transform: translateY(-50%) rotate(-4deg);
-}
-
-.lg-solo__label--2 {
-    top: 22%;
-    right: 0;
-    transform: translate(50%, -50%) rotate(86deg);
-}
-
-.lg-solo__label--3 {
-    bottom: 0;
-    left: 45%;
-    transform: translateY(50%) rotate(3deg);
-}
-
-.lg-solo__label--4 {
-    top: 63%;
-    left: 0;
-    transform: translate(-50%, -50%) rotate(-92deg);
-}
-
-.lg-solo__label--5 {
-    top: 58%;
-    right: 0;
-    transform: translate(50%, -50%) rotate(88deg);
-}
-
-.lg-solo__label--6 {
-    top: 20%;
-    left: 0;
-    transform: translate(-50%, -50%) rotate(-88deg);
-}
-
-.lg-solo__label--7 {
-    top: -0.25rem;
-    left: 42%;
-    transform: translateY(-50%) rotate(3deg);
-}
-
-.lg-solo__label--8 {
-    top: 0;
-    left: 68%;
-    transform: translateY(-50%) rotate(-2deg);
-}
-
-.lg-solo__label--9 {
-    top: 41%;
-    right: 0;
-    transform: translate(50%, -50%) rotate(93deg);
-}
-
-.lg-solo__label--10 {
-    top: 82%;
-    right: 0;
-    transform: translate(50%, -50%) rotate(85deg);
-}
-
-.lg-solo__label--11 {
-    bottom: 0;
-    left: 12%;
-    transform: translateY(50%) rotate(-3deg);
-}
-
-.lg-solo__label--12 {
-    bottom: -0.25rem;
-    left: 71%;
-    transform: translateY(50%) rotate(4deg);
-}
-
-.lg-solo__label--13 {
-    top: 42%;
-    left: 0;
-    transform: translate(-50%, -50%) rotate(-84deg);
-}
-
-.lg-solo__label--14 {
-    top: 84%;
-    left: 0;
-    transform: translate(-50%, -50%) rotate(-93deg);
-}
-
-/* ==========================================================================
    PRESS FEED
    ========================================================================== */
 
@@ -534,10 +461,6 @@ a {
 .lg-section__list {
     margin: 0 0 0.5rem 1.25rem;
     padding: 0;
-}
-
-.lg-section__embed {
-    margin-top: 0.5rem;
 }
 
 /* ==========================================================================
@@ -775,7 +698,7 @@ a {
    RESPONSIVE DESIGN
    ========================================================================== */
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 880px) {
 
     .here-i-am {
         position: relative;

@@ -11,7 +11,7 @@ extraCSS:
   <div class="lg-main__content">
     <nav class="lg-tabs" role="tablist" aria-label="Lyrics tabs">
       <button class="lg-pill js-tab is-active" type="button" data-tab="lacey-guthrie-lyrics" role="tab" aria-selected="true" aria-controls="lacey-guthrie-lyrics" id="tab-lg">
-        lacey
+        solo
       </button>
       <button class="lg-pill js-tab" type="button" data-tab="twin-limb-lyrics" role="tab" aria-selected="false" aria-controls="twin-limb-lyrics" id="tab-tl">
         twin limb
@@ -24,7 +24,8 @@ extraCSS:
       </button>
     </nav> 
 
-    <section class="lg-section lg-section--lyrics is-active js-tab-content" id="lacey-guthrie-lyrics">
+    <section class="is-active js-tab-content" id="lacey-guthrie-lyrics">
+      <div class="lg-section lg-section--lyrics">
       <h2 class="sr-only">Lacey Lyrics</h2>
       <div class="lg-section__chunk">
         <div class="lg-section__chunk-header">
@@ -847,8 +848,10 @@ extraCSS:
           </li>
         </ol>
       </div>
+      </div>
     </section>
-    <section class="lg-section lg-section--lyrics js-tab-content" id="twin-limb-lyrics">
+    <section class="js-tab-content" id="twin-limb-lyrics">
+      <div class="lg-section lg-section--lyrics">
       <h2 class="sr-only">Twin Limb Lyrics</h2>
       <div class="lg-section__chunk">
         <div class="lg-section__chunk-header">
@@ -1937,9 +1940,11 @@ extraCSS:
           </li>
         </ol>
       </div>
+      </div>
     </section>
-    <section class="lg-section lg-section--lyrics js-tab-content" id="duchess-lyrics">
-      <h2 class="sr-only">duchess Lyrics</h2> 
+    <section class="js-tab-content" id="duchess-lyrics">
+      <div class="lg-section lg-section--lyrics">
+      <h2 class="sr-only">duchess Lyrics</h2>
       <div class="lg-section__chunk">
         <div class="lg-section__chunk-header">
           <h3 class="lg-section__chunk-title">
@@ -2051,8 +2056,10 @@ extraCSS:
           </li>
         </ol>
       </div>
+      </div>
     </section>
-    <section class="lg-section lg-section--lyrics js-tab-content" id="ouzelum-lyrics">
+    <section class="js-tab-content" id="ouzelum-lyrics">
+      <div class="lg-section lg-section--lyrics">
       <h2 class="sr-only">ouzelum Lyrics</h2>
       <div class="lg-section__chunk">
         <div class="lg-section__chunk-header">
@@ -2302,6 +2309,7 @@ extraCSS:
           </span>
         </li>
       </ol>
+      </div>
     </section>
   </div>
   {% include "shows.html" %}

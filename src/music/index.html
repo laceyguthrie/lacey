@@ -7,27 +7,55 @@ activePage: music
 ---
 <main class="lg-main lg-flex--tablet container">
     <div class="lg-main__content">
-        <section class="lg-section" id="music">
-            <h2 class="lg-section__title">Music</h2>
-            <div class="lg-solo">
-                <span class="lg-solo__label lg-solo__label--1" aria-hidden="true">solo albums</span>
-                <span class="lg-solo__label lg-solo__label--2" aria-hidden="true">solo albums</span>
-                <span class="lg-solo__label lg-solo__label--3" aria-hidden="true">solo albums</span>
-                <span class="lg-solo__label lg-solo__label--4" aria-hidden="true">solo albums</span>
-                <span class="lg-solo__label lg-solo__label--5" aria-hidden="true">solo albums</span>
-                <span class="lg-solo__label lg-solo__label--6" aria-hidden="true">solo albums</span>
-                <span class="lg-solo__label lg-solo__label--7" aria-hidden="true">solo albums</span>
-                <span class="lg-solo__label lg-solo__label--8" aria-hidden="true">solo albums</span>
-                <span class="lg-solo__label lg-solo__label--9" aria-hidden="true">solo albums</span>
-                <span class="lg-solo__label lg-solo__label--10" aria-hidden="true">solo albums</span>
-                <span class="lg-solo__label lg-solo__label--11" aria-hidden="true">solo albums</span>
-                <span class="lg-solo__label lg-solo__label--12" aria-hidden="true">solo albums</span>
-                <span class="lg-solo__label lg-solo__label--13" aria-hidden="true">solo albums</span>
-                <span class="lg-solo__label lg-solo__label--14" aria-hidden="true">solo albums</span>
+        <div class="lg-music-tabs-container">
+            <nav class="lg-tabs" role="tablist" aria-label="Music tabs">
+                <button class="lg-pill js-tab is-active" type="button" data-tab="solo-music" role="tab" aria-selected="true" aria-controls="solo-music" id="tab-sw">
+                    solo
+                </button>
+                <button class="lg-pill js-tab" type="button" data-tab="duchess-music" role="tab" aria-selected="false" aria-controls="duchess-music" id="tab-dc">
+                    duchess
+                </button>
+                <button class="lg-pill js-tab" type="button" data-tab="ouzelum-music" role="tab" aria-selected="false" aria-controls="ouzelum-music" id="tab-ou">
+                    ouzelum
+                </button>
+                <button class="lg-pill js-tab" type="button" data-tab="twin-limb-music" role="tab" aria-selected="false" aria-controls="twin-limb-music" id="tab-tl">
+                    twin limb
+                </button>
+                <button class="lg-pill js-tab" type="button" data-tab="p-boys-music" role="tab" aria-selected="false" aria-controls="p-boys-music" id="tab-pb">
+                    pleasure boys
+                </button>
+                <button class="lg-pill js-tab" type="button" data-tab="reading-group-music" role="tab" aria-selected="false" aria-controls="reading-group-music" id="tab-rg">
+                    reading group
+                </button>
+                <button class="lg-pill js-tab" type="button" data-tab="bunny-day-music" role="tab" aria-selected="false" aria-controls="bunny-day-music" id="tab-bd">
+                    bunny day
+                </button>
+            </nav>
+            <span class="lg-section__chunk-highlight">
+                <span>disorder tends to &rarr; increase &rarr; in &times; closed &times; systems</span><br>
+                <span class="wavy-1">entropy</span>
+                <span class="wavy-2">measurement</span>
+                <span class="wavy-3">is a</span>
+                <span class="wavy-4">a</span>
+                <span class="wavy-5">way</span>
+                <span class="wavy-4">of</span>
+                <span class="wavy-3">distinguishing</span>
+                <span class="wavy-2">the</span><br>
+                <span class="wavy-1">past</span><br>
+                <span style="margin-left: 2em;" class="wavy-2">from</span><br>
+                <span style="margin-left: 4em;" class="wavy-3">the</span><br>
+                <span style="margin-left: 6em;" class="wavy-4">future</span>
+            </span>
+        </div>
+
+        <section class="is-active js-tab-content" id="solo-music">
+            <div class="lg-section">
+            <h2 class="sr-only">solo</h2>
+
             <div class="lg-section__chunk">
                 <div class="lg-section__chunk-header">
                     <h3 class="lg-section__chunk-title">
-                        MA AM<sup>2026</sup>                  
+                        MA AM<sup>2027</sup>
                     </h3>
                     <span class="lg-section__loading">
                         loading...
@@ -67,11 +95,49 @@ activePage: music
                 <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/album=1190449619/size=large/bgcol=ffffff/linkcol=000000/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 406px;" seamless></iframe>
             </div>
             </div>
+        </section>
+
+        <section class="js-tab-content" id="duchess-music">
+            <div class="lg-section">
+            <h2 class="sr-only">duchess</h2>
 
             <div class="lg-section__chunk">
                 <div class="lg-section__chunk-header">
                     <h3 class="lg-section__chunk-title">
-                        Priestess <sup>2020</sup> <small><em>by Twin Limb</em></small>
+                        Untitled <sup>2027</sup>
+                    </h3>
+                    <span class="lg-section__loading">
+                        loading...
+                    </span>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="js-tab-content" id="ouzelum-music">
+            <div class="lg-section">
+            <h2 class="sr-only">Ouzelum</h2>
+
+            <div class="lg-section__chunk">
+                <div class="lg-section__chunk-header">
+                    <h3 class="lg-section__chunk-title">
+                        Ouzelum <sup>2020</sup>
+                    </h3>
+                </div>
+
+                <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/album=1173018840/size=large/bgcol=ffffff/linkcol=000000/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 406px;" seamless></iframe>
+            </div>
+            </div>
+        </section>
+
+        <section class="js-tab-content" id="twin-limb-music">
+            <div class="lg-section">
+            <h2 class="sr-only">Twin Limb</h2>
+
+            <div class="lg-section__chunk">
+                <div class="lg-section__chunk-header">
+                    <h3 class="lg-section__chunk-title">
+                        Priestess <sup>2020</sup>
                     </h3>
                 </div>
 
@@ -81,65 +147,17 @@ activePage: music
             <div class="lg-section__chunk">
                 <div class="lg-section__chunk-header">
                     <h3 class="lg-section__chunk-title">
-                        Ouzelum <sup>2020</sup> <small><em>by Ouzelum</em></small>
+                        In The Warm Light, As A Ghost <sup>2019</sup>
                     </h3>
                 </div>
 
-                <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/album=1173018840/size=large/bgcol=ffffff/linkcol=000000/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 406px;" seamless></iframe>
+                <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/album=3938433057/size=large/bgcol=ffffff/linkcol=333333/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 439px;" seamless></iframe>
             </div>
 
             <div class="lg-section__chunk">
                 <div class="lg-section__chunk-header">
                     <h3 class="lg-section__chunk-title">
-                        In The Warm Light, As A Ghost <sup>2019</sup> <small><em>by Twin Limb</em></small>
-                    </h3>
-                </div>
-
-                    <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/album=3938433057/size=large/bgcol=ffffff/linkcol=333333/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 439px;" seamless></iframe>
-               </div>
-
-            <div class="lg-section__chunk">
-                <div class="lg-section__chunk-header">
-                    <h3 class="lg-section__chunk-title">
-                        A One Night Show <sup>2019</sup> <small><em>by Pleasure Boys</em></small>
-                    </h3>
-                </div>
-                <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/album=1163048884/size=large/bgcol=ffffff/linkcol=333333/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 373px;" seamless></iframe>
-            </div>
-            <div class="lg-section__chunk">
-                <div class="lg-section__chunk-header">
-                    <h3 class="lg-section__chunk-title">
-                        Shadows <sup>2018</sup> <small><em>by Pleasure Boys</em></small>
-                    </h3>
-                </div>
-
-                <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/album=3645195785/size=large/bgcol=ffffff/linkcol=333333/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 241px;" seamless></iframe>
-            </div>
-
-            <div class="lg-section__chunk">
-                <div class="lg-section__chunk-header">
-                    <h3 class="lg-section__chunk-title">
-                        Waking Up <sup>2017</sup> <small><em>by Pleasure Boys</em></small>
-                    </h3>
-                </div>
-
-                <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/album=2520028393/size=large/bgcol=ffffff/linkcol=333333/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 208px;" seamless></iframe>
-            </div>
-
-            <div class="lg-section__chunk">
-                <div class="lg-section__chunk-header">
-                    <h3 class="lg-section__chunk-title">
-                        Mowed Down <sup>2016</sup> <small><em>by Pleasure Boys</em></small>
-                    </h3>
-
-                    <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/track=2637334089/size=large/bgcol=ffffff/linkcol=333333/tracklist=false/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 120px;" seamless></iframe>
-                </div>
-            </div>
-
-            <div class="lg-section__chunk">
-                <div class="lg-section__chunk-header">
-                    <h3 class="lg-section__chunk-title">
-                        Haplo <sup>2016</sup> <small><em>by Twin Limb</em></small>
+                        Haplo <sup>2016</sup>
                     </h3>
 
                     <ul class="lg-section__chunk-links">
@@ -186,17 +204,67 @@ activePage: music
             <div class="lg-section__chunk">
                 <div class="lg-section__chunk-header">
                     <h3 class="lg-section__chunk-title">
-                        Anything Is Possible And Nothing Makes Sense <sup>2015</sup> <small><em>by Twin Limb</em></small>
+                        Anything Is Possible And Nothing Makes Sense <sup>2015</sup>
                     </h3>
                 </div>
 
                 <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/album=3992410889/size=large/bgcol=ffffff/linkcol=333333/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 340px;" seamless></iframe>
             </div>
+            </div>
+        </section>
 
-            <!-- <div class="lg-section__chunk">
+        <section class="js-tab-content" id="p-boys-music">
+            <div class="lg-section">
+            <h2 class="sr-only">Pleasure Boys</h2>
+
+            <div class="lg-section__chunk">
                 <div class="lg-section__chunk-header">
                     <h3 class="lg-section__chunk-title">
-                        Emergency Action Plan <sup>2011</sup> <small><em>by Reading Group</em></small>
+                        A One Night Show <sup>2019</sup>
+                    </h3>
+                </div>
+                <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/album=1163048884/size=large/bgcol=ffffff/linkcol=333333/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 373px;" seamless></iframe>
+            </div>
+            <div class="lg-section__chunk">
+                <div class="lg-section__chunk-header">
+                    <h3 class="lg-section__chunk-title">
+                        Shadows <sup>2018</sup>
+                    </h3>
+                </div>
+
+                <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/album=3645195785/size=large/bgcol=ffffff/linkcol=333333/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 241px;" seamless></iframe>
+            </div>
+
+            <div class="lg-section__chunk">
+                <div class="lg-section__chunk-header">
+                    <h3 class="lg-section__chunk-title">
+                        Waking Up <sup>2017</sup>
+                    </h3>
+                </div>
+
+                <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/album=2520028393/size=large/bgcol=ffffff/linkcol=333333/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 208px;" seamless></iframe>
+            </div>
+
+            <div class="lg-section__chunk">
+                <div class="lg-section__chunk-header">
+                    <h3 class="lg-section__chunk-title">
+                        Mowed Down <sup>2016</sup>
+                    </h3>
+
+                    <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/track=2637334089/size=large/bgcol=ffffff/linkcol=333333/tracklist=false/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 120px;" seamless></iframe>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="js-tab-content" id="reading-group-music">
+            <div class="lg-section">
+            <h2 class="sr-only">Reading Group</h2>
+
+            <div class="lg-section__chunk">
+                <div class="lg-section__chunk-header">
+                    <h3 class="lg-section__chunk-title">
+                        Emergency Action Plan <sup>2011</sup>
                     </h3>
 
                     <p>
@@ -211,30 +279,37 @@ activePage: music
             <div class="lg-section__chunk">
                 <div class="lg-section__chunk-header">
                     <h3 class="lg-section__chunk-title">
-                        Hugging Is Mandatory! <sup>2010</sup> <small><em>by Reading Group</em></small>
+                        Hugging Is Mandatory! <sup>2010</sup>
                     </h3>
 
                     <p>
-                        Recorded at Skull Alley by Trip Barriger and his classy mobile recording unit<br>
+                        Recorded at Skull Alley by Trip Barriger<br>
                         Mixed and mastered by Trip at Studio K
                     </p>
 
                     <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/album=2991717885/size=large/bgcol=ffffff/linkcol=333333/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 241px;" seamless></iframe>                </div>
-            </div>
-
-            <div class="lg-section__chunk">
-                <div class="lg-section__chunk-header">
-                    <h3 class="lg-section__chunk-title">
-                        This Is Manifesto <sup>2010</sup> <small><em>by Bunny Day &amp; The Mercy Buckets</em></small>
-                    </h3>
-
-                    <p>
-                        Recorded in 2010 by Trip Barriger at Skull Alley, released to the internet in 2020
-                    </p>
-
-                    <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/album=476792063/size=large/bgcol=ffffff/linkcol=333333/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 340px;" seamless></iframe>
                 </div>
-            </div> -->
+            </div>
+        </section>
+
+        <section class="js-tab-content" id="bunny-day-music">
+            <div class="lg-section">
+                <h2 class="sr-only">Bunny Day &amp; The Mercy Buckets</h2>
+
+                <div class="lg-section__chunk">
+                    <div class="lg-section__chunk-header">
+                        <h3 class="lg-section__chunk-title">
+                            This Is Manifesto <sup>2010</sup>
+                        </h3>
+
+                        <p>
+                            Recorded in 2010 by Trip Barriger at Skull Alley, released to the internet in 2020
+                        </p>
+
+                        <iframe class="lg-section__embed js-lazy-iframe" data-src="https://bandcamp.com/EmbeddedPlayer/album=476792063/size=large/bgcol=ffffff/linkcol=333333/artwork=none/transparent=true/" style="border: 0; width: 100%; height: 340px;" seamless></iframe>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
     {% include "shows.html" %}
