@@ -136,17 +136,6 @@
     text-decoration: none;
 }
 
-/* Mirror universe nav button */
-.lg-feed__nav-button--mirror .lg-feed__nav-button-text {
-    font-family: "Jacquard 24", cursive;
-    font-size: 0.9375rem;
-    line-height: 1.1;
-}
-
-.lg-feed__nav-button--mirror.is-active .lg-feed__nav-button-text {
-    font-weight: 400;
-}
-
 /* The default is-active/focus-visible treatment (cyan background +
    mix-blend-mode: multiply) crushes a spinning photo toward black, so the
    mirror button keeps its thumbnail undimmed instead. */
