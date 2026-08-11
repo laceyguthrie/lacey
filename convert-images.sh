@@ -22,6 +22,11 @@ if ! command -v cwebp >/dev/null 2>&1; then
     exit 1
 fi
 
+if ! command -v jhead >/dev/null 2>&1; then
+    echo "jhead not found. Install with: brew install jhead"
+    exit 1
+fi
+
 mkdir -p "$DROP_DIR" "$PROCESSED_DIR" "$OUT_DIR"
 
 shopt -s nullglob nocaseglob
@@ -55,7 +60,12 @@ for src in "${files[@]}"; do
     else
         sips -s format jpeg -s formatOptions "$JPG_QUALITY" "$src" --out "$out_jpg" >/dev/null
     fi
-    # Encode webp from the resized JPG so both pairs share the same dimensions.
+    # sips carries the EXIF orientation tag through without baking the rotation
+    # into the pixels. JPEG viewers respect that tag, but cwebp doesn't — it
+    # encodes the raw (unrotated) pixels, so webp output can end up 90°/180° off
+    # from the jpg. jhead -autorot bakes the rotation in and resets the tag.
+    jhead -autorot -q "$out_jpg" >/dev/null
+    # Encode webp from the resized, auto-rotated JPG so both pairs match.
     cwebp -quiet -q "$WEBP_QUALITY" "$out_jpg" -o "$out_webp"
     mv "$src" "$PROCESSED_DIR/$base"
     echo "  ✓ src/img/$name.jpg + src/img/$name.webp"
