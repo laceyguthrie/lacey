@@ -143,6 +143,23 @@
     line-height: 1.1;
 }
 
+.lg-feed__nav-button--mirror.is-active .lg-feed__nav-button-text {
+    font-weight: 400;
+}
+
+/* The default is-active/focus-visible treatment (cyan background +
+   mix-blend-mode: multiply) crushes a spinning photo toward black, so the
+   mirror button keeps its thumbnail undimmed instead. */
+.lg-feed__nav-button--mirror.is-active .lg-feed__nav-image-wrapper,
+.lg-feed__nav-button--mirror:focus-visible .lg-feed__nav-image-wrapper {
+    background-color: transparent;
+}
+
+.lg-feed__nav-button--mirror.is-active .lg-feed__nav-image-wrapper img,
+.lg-feed__nav-button--mirror:focus-visible .lg-feed__nav-image-wrapper img {
+    mix-blend-mode: normal;
+}
+
 .lg-feed__nav-button--mirror .lg-feed__nav-image-wrapper img {
     animation: mirror-spin 6s linear infinite;
 }
