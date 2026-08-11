@@ -330,10 +330,11 @@ function setupFeedFilter() {
     feedItems.forEach(item => {
       let shouldShow = false;
 
+      const tags = item.getAttribute('data-tags');
+
       if (filterTag === 'all') {
-        shouldShow = true;
+        shouldShow = !(tags && tags.includes('mirror'));
       } else {
-        const tags = item.getAttribute('data-tags');
         shouldShow = tags && tags.includes(filterTag);
       }
 

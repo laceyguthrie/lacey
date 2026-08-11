@@ -136,6 +136,28 @@
     text-decoration: none;
 }
 
+/* Mirror universe nav button */
+.lg-feed__nav-button--mirror .lg-feed__nav-button-text {
+    font-family: "Jacquard 24", cursive;
+    font-size: 0.9375rem;
+    line-height: 1.1;
+}
+
+.lg-feed__nav-button--mirror .lg-feed__nav-image-wrapper img {
+    animation: mirror-spin 6s linear infinite;
+}
+
+@keyframes mirror-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lg-feed__nav-button--mirror .lg-feed__nav-image-wrapper img {
+        animation: none;
+    }
+}
+
 /* ==========================================================================
    FEED POST COMPONENTS
    ========================================================================== */
