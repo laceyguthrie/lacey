@@ -204,6 +204,42 @@ a {
     padding-bottom: 1rem;
 }
 
+.lg-tabs-note {
+    position: relative;
+    top: -0.75rem;
+    font-family: "Arimo", sans-serif;
+    font-size: 0.625rem;
+    font-weight: 500;
+    padding: 0.25rem 0;
+    margin: 0;
+}
+
+.lg-tabs-note__flip {
+    display: inline-block;
+    transform: scaleX(-1);
+}
+
+.lg-music-intro {
+    max-width: 698px;
+}
+
+.lg-music-intro::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.lg-music-intro__img {
+    float: right; 
+    width: min(40%, 15rem);
+    height: auto;
+    background-color: transparent;
+    shape-outside: url("../img/tiny/menage.png");
+    shape-image-threshold: 0.5;
+    shape-margin: 1rem;
+    margin-left: 0.5rem;
+}
+
 @media screen and (max-width: 879px) {
     .lg-tabs {
         margin-inline: -1rem;
