@@ -373,6 +373,12 @@ a {
     line-height: 1;
 }
 
+.lg-section__text {
+    margin: 0;
+    line-height: 1.6;
+    max-width: 60ch;
+}
+
 .lg-section__chunk {
     display: grid;
     gap: 1.5rem;

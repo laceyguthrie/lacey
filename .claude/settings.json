@@ -1,0 +1,9 @@
+{
+  "enabledPlugins": {
+    "fuel-made-dev@fuel-made": false,
+    "foundry-dev@fuel-made": false,
+    "fuel-made-brain@fuel-made": false,
+    "fuel-made-toolkit@fuel-made": false,
+    "shopify-ai-toolkit@claude-plugins-official": false
+  }
+}
