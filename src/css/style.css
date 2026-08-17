@@ -373,6 +373,15 @@ a {
     line-height: 1;
 }
 
+.lg-footer {
+    padding: 3rem 1rem 1.5rem;
+}
+
+.lg-footer__contact {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
 .lg-section__text {
     margin: 0;
     line-height: 1.6;

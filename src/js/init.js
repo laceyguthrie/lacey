@@ -719,6 +719,16 @@ function setupLazyIframes() {
   }
 }
 
+// Email Links (assembled at runtime to keep the address out of the HTML source)
+
+function setupEmailLinks() {
+  document.querySelectorAll('.js-email').forEach(link => {
+    const address = link.dataset.user + '@' + link.dataset.domain;
+    link.href = 'mailto:' + address;
+    link.textContent = address;
+  });
+}
+
 // Initialization
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -728,4 +738,5 @@ document.addEventListener('DOMContentLoaded', function() {
   setupDevotionButton();
   setupPasswordPopup();
   setupLazyIframes();
+  setupEmailLinks();
 });
