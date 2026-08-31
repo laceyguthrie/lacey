@@ -221,23 +221,23 @@ a {
 
 .lg-music-intro {
     max-width: 698px;
-}
-
-.lg-music-intro::after {
-    content: "";
-    display: block;
-    clear: both;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    text-align: left;
 }
 
 .lg-music-intro__img {
-    float: right; 
-    width: min(40%, 15rem);
-    height: auto;
+    max-height: 320px;
+    max-width: 320px;
     background-color: transparent;
-    shape-outside: url("../img/tiny/menage.png");
-    shape-image-threshold: 0.5;
-    shape-margin: 1rem;
-    margin-left: 0.5rem;
+}
+
+.lg-music-intro > * {
+    flex: 1;
 }
 
 @media screen and (max-width: 879px) {
