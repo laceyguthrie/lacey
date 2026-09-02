@@ -51,12 +51,6 @@
     .lg-feed__nav li {
         width: calc((100vw - 2rem - var(--feed-gaps) * 0.5rem) / var(--feed-visible));
     }
-
-    .lg-feed__nav-image-wrapper {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1 / 1;
-    }
 }
 
 @media (max-width: 540px) {
@@ -83,6 +77,17 @@
     transition: box-shadow 0.15s, transform 0.15s;
     overflow: hidden;
     position: relative;
+}
+
+/* Fluid circle sizing below 620px. Declared after the unconditional rule
+   above so it wins the cascade tie-break (equal 0,1,0 specificity, later
+   source order) whenever the media query matches. */
+@media (max-width: 620px) {
+    .lg-feed__nav-image-wrapper {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
 }
 
 .lg-feed__nav img {
