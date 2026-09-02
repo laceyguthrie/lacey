@@ -51,6 +51,8 @@
 
     <header class="lg-header {{ headerModifier }} container">
         <h1 class="lg-header__title"><a href="/">who do I think I am?</a></h1>
+        {% assign activeSite = activeSite | default: "music" %}
+        {% include "site-nav.html" %}
 
         <nav class="lg-header__nav">
             <h2 class="lg-header__nav-title" id="nav-title">Directory</h2>

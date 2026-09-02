@@ -1,0 +1,7 @@
+<nav class="lg-site-nav" aria-label="Site sections">
+    <ul class="lg-site-nav__list">
+        <li><a {% if activeSite == "music" %}class="is-active" aria-current="true" {% endif %}href="/">music</a></li>
+        <li><a {% if activeSite == "digital" %}class="is-active" aria-current="true" {% endif %}href="/digital/">digital</a></li>
+        <li><a {% if activeSite == "objects" %}class="is-active" aria-current="true" {% endif %}href="/objects/">objects</a></li>
+    </ul>
+</nav>

@@ -342,6 +342,52 @@ a {
     white-space: nowrap;
 }
 
+.lg-site-nav {
+    position: absolute;
+    top: 3rem;
+    right: 1rem;
+    z-index: 2;
+}
+
+.lg-site-nav__list {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+.lg-site-nav__list a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    font-family: "Arimo", sans-serif;
+    font-size: 0.675rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.5rem;
+}
+
+.lg-site-nav__list .is-active {
+    pointer-events: none;
+}
+
+.lg-site-nav__list .is-active::after {
+    content: "you are here";
+    position: absolute;
+    bottom: 0.25rem;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    font-family: "Arimo", sans-serif;
+    font-size: 0.4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-top: 0.25rem;
+    letter-spacing: 0.025rem;
+    white-space: nowrap;
+    border-top: 1px dashed #000;
+}
+
 /* ==========================================================================
    MAIN CONTENT AREAS
    ========================================================================== */
@@ -821,6 +867,7 @@ a {
 }
 
 @media (hover: hover) {
+    .lg-site-nav__list a:hover,
     .lg-header__nav-list a:hover,
     .lg-header__nav-list button:hover,
     .lg-button:hover,
