@@ -333,7 +333,7 @@ function setupFeedFilter() {
       const tags = item.getAttribute('data-tags');
 
       if (filterTag === 'all') {
-        shouldShow = !(tags && tags.includes('mirror'));
+        shouldShow = true;
       } else {
         shouldShow = tags && tags.includes(filterTag);
       }
