@@ -50,42 +50,29 @@
    GLOBAL RESET & BASE STYLES
    ========================================================================== */
 
-/**
- * 1. Prevent adjustments of font size after orientation changes in iOS.
- */
 html {
     font-size: 1em;
     box-sizing: border-box;
     margin: 0 auto;
     height: auto;
     max-width: 100vw;
-    -webkit-text-size-adjust: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* prevents iOS from resizing text on orientation change */
     opacity: 1 !important;
     background-color: #ffffff;
     color: #000;
     width: 100vw;
-
-    /* This is a fallback for folks who have their
-    OS settings to always show scrollbars,
-    prevents layout shift */
+    /* always-reserved scrollbar gutter, so it can't shift layout when it appears */
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-/**
- * This allows all elements to safely inherit
- * the correct box-sizing. Box-sizing is set to 
- * border-box on html.
- */
 *,
 *::before,
 *::after {
     box-sizing: inherit;
 }
 
-/**
- * Render the `main` element consistently in IE.
- */
+/* IE doesn't know `main` is block-level by default */
 main {
     display: block;
 }
@@ -390,14 +377,6 @@ a {
 /* ==========================================================================
    MAIN CONTENT AREAS
    ========================================================================== */
-
-.lg-main__title {
-    font-size: 1.25rem;
-    font-style: italic;
-    margin: 0;
-    line-height: 1;
-    margin: 15vh 0;
-}
 
 .lg-main__content {
     width: 100%;

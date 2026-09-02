@@ -21,10 +21,6 @@ if (!popupOverlay) {
 
 // Popup Modal System
 
-/**
- * Traps focus within a popup modal for accessibility
- * @param {string} id - The ID of the popup element
- */
 function trapFocus(id) {
   const target = document.getElementById(id);
   if (!target) return;
@@ -73,10 +69,6 @@ function trapFocus(id) {
   trapHandlers[id] = handler;
 }
 
-/**
- * Removes focus trap from a popup modal
- * @param {string} id - The ID of the popup element
- */
 function removeTrap(id) {
   const target = document.getElementById(id);
   if (!target) return;
@@ -87,17 +79,10 @@ function removeTrap(id) {
   }
 }
 
-/**
- * Gets the current scroll position
- * @returns {number} Current scroll position
- */
 function getScrollPosition() {
   return window.pageYOffset || document.documentElement.scrollTop || 0;
 }
 
-/**
- * Prevents body scrolling when popup is open
- */
 function preventBodyScroll() {
   scrollPosition = getScrollPosition();
   document.body.style.overflow = 'hidden';
@@ -107,9 +92,6 @@ function preventBodyScroll() {
   document.documentElement.style.overflow = 'hidden';
 }
 
-/**
- * Restores body scrolling when popup is closed
- */
 function restoreBodyScroll() {
   document.body.style.overflow = '';
   document.body.style.position = '';
@@ -119,10 +101,6 @@ function restoreBodyScroll() {
   window.scrollTo(0, scrollPosition);
 }
 
-/**
- * Shows a popup modal and traps focus
- * @param {string} id - The ID of the popup element
- */
 function showcontactPopup(id) {
   const popup = document.getElementById(id);
   if (!popup) return;
@@ -133,10 +111,6 @@ function showcontactPopup(id) {
   trapFocus(id);
 }
 
-/**
- * Closes a popup modal and removes focus trap
- * @param {string} id - The ID of the popup element
- */
 function closecontactPopup(id) {
   const popup = document.getElementById(id);
   if (!popup) return;
