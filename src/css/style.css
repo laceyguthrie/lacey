@@ -221,23 +221,22 @@ a {
 
 .lg-music-intro {
     max-width: 698px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
     text-align: left;
+    display: flow-root;
 }
 
 .lg-music-intro__img {
-    max-height: 320px;
-    max-width: 320px;
+    float: left;
+    max-width: 200px;
+    height: auto;
     background-color: transparent;
+    margin: 0 1rem 0.5rem 0;
 }
 
-.lg-music-intro > * {
-    flex: 1;
+@media screen and (min-width: 880px) {
+    .lg-music-intro__img {
+        max-width: 320px;
+    }
 }
 
 @media screen and (max-width: 879px) {
