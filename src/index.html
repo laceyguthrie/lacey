@@ -7,7 +7,20 @@ activePage: mind
 ---
 <main class="lg-main lg-flex--tablet container">
     <div class="lg-main__content">
-        <h2 class="lg-main__title">What are you looking for?</h2>
+        <section class="lg-mind">
+            <h2 class="sr-only">mind</h2>
+            {% assign entries = collections.mind | reverse %}
+            {% for entry in entries %}
+            <article class="lg-mind__entry">
+                <h3 class="lg-mind__entry-title">{{ entry.data.title }}</h3>
+                <p class="lg-mind__entry-meta">
+                    <time datetime="{{ entry.date | date: '%Y-%m-%d' }}">{{ entry.date | date: '%B %d, %Y' }}</time>
+                    {%- if entry.data.place %} &middot; {{ entry.data.place }}{% endif %}
+                </p>
+                <div class="lg-mind__entry-body">{{ entry.templateContent }}</div>
+            </article>
+            {% endfor %}
+        </section>
     </div>
     {% include "shows.html" %}
 </main>
