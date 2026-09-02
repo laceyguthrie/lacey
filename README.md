@@ -6,10 +6,13 @@ Personal site — static HTML/CSS/JS, built with [Eleventy](https://www.11ty.dev
 
 ```
 src/                       # source files (Eleventy input)
-  index.html               # home page
+  index.html               # home page (the mind blog)
+  albums/
+  mind/
+  digital/
+  objects/
   lyrics/index.html        # lyrics page
   images/index.html
-  archive/index.html
   _includes/
     shows.html             # shared shows list, included by multiple pages
   css/                     # style.css, lyrics.css, feed.css
