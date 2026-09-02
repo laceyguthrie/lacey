@@ -35,6 +35,44 @@
     text-align: center;
 }
 
+/* Below 620px the buttons take fluid widths tuned so a half button always
+   peeks out at the right edge: the visible fraction is the scroll hint.
+   Above 620px the fixed 5.25rem width takes over. */
+@media (max-width: 620px) {
+    .lg-feed__nav-container {
+        max-width: none;
+    }
+
+    .lg-feed__nav {
+        --feed-visible: 6.5;
+        --feed-gaps: 6;
+    }
+
+    .lg-feed__nav li {
+        width: calc((100vw - 2rem - var(--feed-gaps) * 0.5rem) / var(--feed-visible));
+    }
+
+    .lg-feed__nav-image-wrapper {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+@media (max-width: 540px) {
+    .lg-feed__nav {
+        --feed-visible: 5.5;
+        --feed-gaps: 5;
+    }
+}
+
+@media (max-width: 480px) {
+    .lg-feed__nav {
+        --feed-visible: 4.5;
+        --feed-gaps: 4;
+    }
+}
+
 .lg-feed__nav-image-wrapper {
     display: block;
     border-radius: 50%;
