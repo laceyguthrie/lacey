@@ -281,31 +281,58 @@ function optimizeLazyLoadingImages() {
 }
 
 
+// Deep links: a tab or filter nav opts in with data-deep-link="<param>".
+// The active button's slug lands in the URL (?param=slug) so views can be
+// linked to directly. The default view keeps the URL clean (param removed).
+
+function setUrlParam(param, value) {
+  if (!param) return;
+  const url = new URL(window.location);
+  if (value) {
+    url.searchParams.set(param, value);
+  } else {
+    url.searchParams.delete(param);
+  }
+  history.replaceState(null, '', url);
+}
+
 // Tab System
 
 function setupTabs() {
   const tabs = document.querySelectorAll('.js-tab');
   if (tabs.length === 0) return;
-  
+
+  const nav = tabs[0].closest('[data-deep-link]');
+  const param = nav ? nav.getAttribute('data-deep-link') : null;
+  const defaultTab = document.querySelector('.js-tab.is-active');
+
+  function activateTab(tab) {
+    const activeTab = document.querySelector('.js-tab.is-active');
+    const activeTabContent = document.querySelector('.js-tab-content.is-active');
+
+    if (activeTab) {
+      activeTab.classList.remove('is-active');
+      activeTab.setAttribute('aria-selected', 'false');
+    }
+    if (activeTabContent) activeTabContent.classList.remove('is-active');
+
+    const targetId = tab.getAttribute('data-tab');
+    const targetContent = document.getElementById(targetId);
+
+    if (targetContent) {
+      targetContent.classList.add('is-active');
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+    }
+  }
+
   tabs.forEach(tab => {
     tab.addEventListener('click', function(e) {
       e.preventDefault();
-
-      const activeTab = document.querySelector('.js-tab.is-active');
-      const activeTabContent = document.querySelector('.js-tab-content.is-active');
-      
-      if (activeTab) activeTab.classList.remove('is-active');
-      if (activeTabContent) activeTabContent.classList.remove('is-active');
-
-      const targetId = this.getAttribute('data-tab');
-      const targetContent = document.getElementById(targetId);
-      
-      if (targetContent) {
-        targetContent.classList.add('is-active');
-        this.classList.add('is-active');
-      }
+      activateTab(this);
+      setUrlParam(param, this === defaultTab ? null : this.getAttribute('data-slug'));
     });
-    
+
     tab.addEventListener('keydown', function(e) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -313,6 +340,14 @@ function setupTabs() {
       }
     });
   });
+
+  if (param) {
+    const slug = new URLSearchParams(window.location.search).get(param);
+    if (slug) {
+      const target = Array.from(tabs).find(tab => tab.getAttribute('data-slug') === slug);
+      if (target) activateTab(target);
+    }
+  }
 }
 
 // Feed Filter System
@@ -384,6 +419,25 @@ function setupFeedFilter() {
   });
 
   updateActiveStates('all');
+
+  const param = filterNav.getAttribute('data-deep-link');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const filterValue = this.getAttribute('data-filter');
+      setUrlParam(param, filterValue === 'all' ? null : filterValue);
+    });
+  });
+
+  if (param) {
+    const requested = new URLSearchParams(window.location.search).get(param);
+    if (requested) {
+      const match = Array.from(filterButtons).find(
+        button => button.getAttribute('data-filter') === requested
+      );
+      if (match) filterItems(requested);
+    }
+  }
 }
 
 // Devotion Popup - Muppet Characters as User Profiles
