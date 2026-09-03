@@ -5,5 +5,48 @@ description: Development work and digital projects by Lacey Guthrie.
 ---
 <main class="dg-main">
     <h1 class="dg-title">digital</h1>
-    <p class="dg-placeholder">a portfolio is assembling itself. check back.</p>
+    <p class="dg-placeholder">a portfolio is assembling itself</p>
+
+    <div class="dg-tools">
+        <button type="button" class="dg-button js-devotion-button">summon muppets</button>
+        <button type="button" class="dg-button js-open-popup" data-popup-id="passwordPopup">private</button>
+    </div>
 </main>
+
+<aside id="passwordPopup" class="lg-popup js-popup" role="dialog" aria-modal="true" aria-labelledby="passwordPopupTitle">
+    <div class="lg-popup__content">
+        <div class="lg-popup__header">
+            <h2 id="passwordPopupTitle" class="lg-popup__title">e̶̟̓r̶̮̐ŕ̵͇ö̴͚́r̶͉͆ ̴͕͒p̴͙͋a̷̛͇s̶̤͝s̴̯̀w̶͇̎o̶͕͝r̷̹̅d̴̛ͅ ̴̧̐p̴̡̅ľ̷̢e̸̲̽ã̶͉s̶̏͜e̶͔͐</h2>
+            <button type="button" class="lg-popup__close js-close-popup" data-popup-id="passwordPopup">
+                <svg aria-hidden="true" class="lg-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
+                </svg>
+            </button>
+        </div>
+        <form class="lg-popup__form" action="#" method="post">
+            <fieldset>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" autocomplete="current-password">
+            </fieldset>
+            <button type="submit" class="dg-button">submit</button>
+        </form>
+    </div>
+</aside>
+
+<aside>
+    <div id="devotionPopup" class="lg-popup js-popup lg-devotion-popup" role="dialog" aria-modal="true" aria-labelledby="devotionPopupTitle">
+        <div class="lg-popup__content">
+            <div class="lg-popup__header">
+                <h2 id="devotionPopupTitle" class="lg-popup__title">🙏 bless 🙏</h2>
+                <button type="button" class="lg-popup__close js-close-popup" data-popup-id="devotionPopup">
+                    <svg aria-hidden="true" class="lg-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
+                    </svg>
+                </button>
+            </div>
+            <ul class="lg-devotion-profiles" id="devotionProfiles">
+                <li class="lg-devotion-loading">loading...</li>
+            </ul>
+        </div>
+    </div>
+</aside>

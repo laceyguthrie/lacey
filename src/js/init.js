@@ -215,27 +215,17 @@ function optimizeLazyLoadingImages() {
           const img = entry.target;
           img.addEventListener('load', function() {
             img.classList.add('loaded');
-            const container = img.closest('.lg-feed__post-image');
-            if (container) {
-              container.style.animation = 'none';
-              container.style.background = 'transparent';
-            }
           });
           observer.unobserve(img);
         }
       });
     });
-    
+
     lazyImages.forEach(img => imageObserver.observe(img));
   } else {
     lazyImages.forEach(img => {
       img.addEventListener('load', function() {
         img.classList.add('loaded');
-        const container = img.closest('.lg-feed__post-image');
-        if (container) {
-          container.style.animation = 'none';
-          container.style.background = 'transparent';
-        }
       });
     });
   }
@@ -320,96 +310,6 @@ function setupTabs() {
     if (slug) {
       const target = Array.from(tabs).find(tab => tab.getAttribute('data-slug') === slug);
       if (target) activateTab(target);
-    }
-  }
-}
-
-// Feed Filter System
-
-function setupFeedFilter() {
-  const filterNav = document.querySelector('.js-feed-filters');
-  const feedItems = document.querySelectorAll('.js-feed-item');
-  const filterButtons = filterNav?.querySelectorAll('[data-filter]');
-
-  if (!filterNav || !filterButtons || filterButtons.length === 0 || feedItems.length === 0) {
-    return;
-  }
-
-  function filterItems(filterTag) {
-    feedItems.forEach(item => {
-      let shouldShow = false;
-
-      const tags = item.getAttribute('data-tags');
-
-      if (filterTag === 'all') {
-        shouldShow = true;
-      } else {
-        shouldShow = tags && tags.includes(filterTag);
-      }
-
-      if (shouldShow) {
-        item.style.display = '';
-        item.setAttribute('aria-hidden', 'false');
-      } else {
-        item.style.display = 'none';
-        item.setAttribute('aria-hidden', 'true');
-      }
-    });
-
-    updateActiveStates(filterTag);
-  }
-
-  function updateActiveStates(filterTag) {
-    filterButtons.forEach(button => {
-      const buttonFilter = button.getAttribute('data-filter');
-      
-      if (buttonFilter === filterTag) {
-        button.classList.add('is-active');
-        button.setAttribute('aria-pressed', 'true');
-      } else {
-        button.classList.remove('is-active');
-        button.setAttribute('aria-pressed', 'false');
-      }
-    });
-  }
-
-  filterButtons.forEach((button) => {
-    const filterTag = button.getAttribute('data-filter');
-    
-    if (!filterTag) return;
-    
-    if (filterTag === 'all') {
-      button.setAttribute('aria-pressed', 'true');
-      button.classList.add('is-active');
-    } else {
-      button.setAttribute('aria-pressed', 'false');
-    }
-    
-    button.addEventListener('click', function(e) {
-      e.preventDefault();
-      const filterValue = this.getAttribute('data-filter');
-      filterItems(filterValue);
-    });
-  });
-
-  updateActiveStates('all');
-
-  const param = filterNav.getAttribute('data-deep-link');
-
-  filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const filterValue = this.getAttribute('data-filter');
-      setUrlParam(param, filterValue === 'all' ? null : filterValue);
-    });
-  });
-
-  if (param) {
-    const requested = new URLSearchParams(window.location.search).get(param);
-    if (requested) {
-      const match = Array.from(filterButtons).find(
-        button => button.getAttribute('data-filter') === requested
-      );
-      if (match) filterItems(requested);
     }
   }
 }
@@ -582,14 +482,6 @@ async function fetchRandomMuppetCharacters(count = 8) {
           thumbnailUrl = originalImage;
         }
         
-        const link = document.createElement('a');
-        link.setAttribute('href', originalImage);
-        link.setAttribute('target', '_blank');
-        link.setAttribute('rel', 'noopener noreferrer');
-        link.className = 'lg-devotion-profile__avatar-link';
-        link.setAttribute('aria-label', `View larger image of ${page.title}`);
-        avatarDiv.appendChild(link);
-        
         let imageLoaded = false;
         let triedOriginal = false;
         let errorTimeout = null;
@@ -617,9 +509,6 @@ async function fetchRandomMuppetCharacters(count = 8) {
               avatarDiv.style.removeProperty('background-image');
               avatarDiv.style.removeProperty('color');
               avatarDiv.textContent = initials;
-              if (link.parentNode) {
-                link.remove();
-              }
             }
           }
         };
@@ -762,7 +651,6 @@ function setupEmailLinks() {
 document.addEventListener('DOMContentLoaded', function() {
   optimizeLazyLoadingImages();
   setupTabs();
-  setupFeedFilter();
   setupDevotionButton();
   setupPasswordPopup();
   setupLazyIframes();

@@ -1,1 +1,5 @@
-Redirect 301 /music/ /albums/
+Redirect 301 /music/ /
+Redirect 301 /albums/ /
+Redirect 301 /projects/ /
+Redirect 301 /images/ /media/
+Redirect 301 /videos/ /media/

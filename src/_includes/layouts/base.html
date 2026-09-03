@@ -49,21 +49,21 @@
 
 <body class="lg-body">
 
+    {% assign activeSite = activeSite | default: "music" %}
+    {% include "site-nav.html" %}
+
     <header class="lg-header {{ headerModifier }} container">
         <h1 class="lg-header__title"><a href="/">who do I think I am?</a></h1>
-        {% assign activeSite = activeSite | default: "music" %}
-        {% include "site-nav.html" %}
 
         <nav class="lg-header__nav">
             <h2 class="lg-header__nav-title" id="nav-title">Directory</h2>
             <ul class="lg-header__nav-list" aria-labelledby="nav-title">
-                <li><a {% if activePage == "mind" %}class="is-active" {% endif %}href="/">mind</a></li>
-                <li><a {% if activePage == "albums" %}class="is-active" {% endif %}href="/albums/">albums</a></li>
+                <li><a {% if activePage == "work" %}class="is-active" {% endif %}href="/">work</a></li>
                 <li><a class="js-anchor-link" href="#shows">shows</a></li>
-                <li><a {% if activePage == "images" %}class="is-active" {% endif %}href="/images/">images</a></li>
-                <li><a {% if activePage == "videos" %}class="is-active" {% endif %}href="/videos/">videos</a></li>
+                <li><a {% if activePage == "media" %}class="is-active" {% endif %}href="/media/">media</a></li>
                 <li><a {% if activePage == "lyrics" %}class="is-active" {% endif %}href="/lyrics/">lyrics</a></li>
                 <li><a {% if activePage == "press" %}class="is-active" {% endif %}href="/press/">press</a></li>
+                <li><a {% if activePage == "mind" %}class="is-active" {% endif %}href="/mind/">mind</a></li>
                 <li><a href="https://shirtkiller.com/products/lacey-guthrie-flower-eating-monster-lp" target="_blank" rel="noopener noreferrer">order a record</a></li>
                 <li><a href="https://laceyguthrie.bandcamp.com" target="_blank" rel="noopener noreferrer">bandcamp</a></li>
                 <li><button type="button" class="js-open-popup" data-popup-id="contactPopup">contact</button></li>

@@ -1,5 +1,11 @@
 /* /objects microsite. Blank canvas: does not share style.css. */
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body.ob-body {
     margin: 0;
     min-height: 100vh;
@@ -24,10 +30,11 @@ body.ob-body {
     margin: 0;
 }
 
+/* Site nav reuses the shared markup, restyled for this canvas. */
 .lg-site-nav {
     position: absolute;
     top: 1.5rem;
-    right: 1rem;
+    right: 1.5rem;
 }
 
 .lg-site-nav__list {

@@ -7,6 +7,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/*.ico");
   eleventyConfig.addPassthroughCopy("src/.htaccess");
 
+  // Explicit glob keeps this to just the blog post markdown files, so the
+  // page that renders the collection (src/mind/index.html) never ends up
+  // as a member of its own collection.
+  eleventyConfig.addCollection("mind", (collectionApi) =>
+    collectionApi.getFilteredByGlob("src/mind/*.md")
+  );
+
   return {
     dir: {
       input: "src",

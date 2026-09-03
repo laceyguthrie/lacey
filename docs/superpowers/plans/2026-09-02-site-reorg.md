@@ -176,7 +176,7 @@ In `src/css/style.css`, at the end of the HEADER & NAVIGATION section (after the
 .lg-site-nav {
     position: absolute;
     top: 3rem;
-    right: 1rem;
+    right: 1.5rem;
     z-index: 2;
 }
 

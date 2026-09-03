@@ -83,7 +83,7 @@ body {
     height: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: "Arimo", sans-serif;
+    font-family: "Inter", sans-serif;
     color: #000;
     font-size: 0.75rem;
     font-weight: 400;
@@ -194,7 +194,7 @@ a {
 .lg-tabs-note {
     position: relative;
     top: -0.75rem;
-    font-family: "Arimo", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.625rem;
     font-weight: 500;
     padding: 0.25rem 0;
@@ -218,6 +218,11 @@ a {
     height: auto;
     background-color: transparent;
     margin: 0 1rem 0.5rem 0;
+    /* set per-image via an inline --shape custom property, since CSS can't
+       reuse an element's own src as the shape-outside URL */
+    shape-outside: var(--shape);
+    shape-image-threshold: 0.5;
+    shape-margin: 0.75rem;
 }
 
 @media screen and (min-width: 880px) {
@@ -265,7 +270,7 @@ a {
    ========================================================================== */
 
 .lg-header {
-    padding-top: 3rem;
+    padding-top: 5.25rem;
     position: relative;
 }
 
@@ -304,7 +309,7 @@ a {
     display: inline-block;
     position: relative;
     text-decoration: none;
-    font-family: "Arimo", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.675rem;
     font-weight: 600;
     line-height: 1;
@@ -319,7 +324,7 @@ a {
     content: "\2190  you are here";
     display: inline-block;
     margin-left: 0.5rem;
-    font-family: "Arimo", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.4rem;
     text-transform: uppercase;
     font-weight: 700;
@@ -330,8 +335,8 @@ a {
 
 .lg-site-nav {
     position: absolute;
-    top: 3rem;
-    right: 1rem;
+    top: 1rem;
+    right: 1.5rem;
     z-index: 2;
 }
 
@@ -347,7 +352,7 @@ a {
     display: inline-block;
     position: relative;
     text-decoration: none;
-    font-family: "Arimo", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.675rem;
     font-weight: 600;
     line-height: 1;
@@ -356,22 +361,7 @@ a {
 
 .lg-site-nav__list .is-active {
     pointer-events: none;
-}
-
-.lg-site-nav__list .is-active::after {
-    content: "you are here";
-    position: absolute;
-    bottom: 0.25rem;
-    left: 50%;
-    transform: translate(-50%, 100%);
-    font-family: "Arimo", sans-serif;
-    font-size: 0.4rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    padding-top: 0.25rem;
-    letter-spacing: 0.025rem;
-    white-space: nowrap;
-    border-top: 1px dashed #000;
+    border-bottom: 1px dashed #000;
 }
 
 /* ==========================================================================
@@ -399,11 +389,11 @@ a {
 }
 
 .lg-mind__entry-meta {
-    font-family: "Arimo", sans-serif;
-    font-size: 0.625rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.5625rem;
     text-transform: uppercase;
     letter-spacing: 0.025rem;
-    font-weight: 700;
+    font-weight: 600;
     margin: 0 0 1rem 0;
 }
 
@@ -518,7 +508,7 @@ a {
 
 .lg-press__title {
     margin: 0;
-    font-family: "Arimo", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 1.2;
@@ -661,7 +651,7 @@ a {
     border-radius: 1.25rem;
     border: 1px solid #000;
     display: inline-block;
-    font-family: "Arimo", sans-serif;
+    font-family: "Inter", sans-serif;
     transition: color 0.15s, background 0.15s, border-color 0.17s;
 }
 
@@ -753,7 +743,7 @@ a {
 
 .lg-popup__content p {
     margin: 0.5rem 0 0 0;
-    font-family: "Arimo", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.75rem;
     font-weight: 400;
 }

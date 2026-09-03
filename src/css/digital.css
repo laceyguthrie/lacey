@@ -1,11 +1,17 @@
 /* /digital microsite. Blank canvas: does not share style.css. */
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body.dg-body {
     margin: 0;
     min-height: 100vh;
     background: #111;
     color: #eee;
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-family: "Inconsolata", ui-monospace, "SF Mono", Menlo, monospace;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +35,7 @@ body.dg-body {
 .lg-site-nav {
     position: absolute;
     top: 1.5rem;
-    right: 1rem;
+    right: 1.5rem;
 }
 
 .lg-site-nav__list {
@@ -55,4 +61,242 @@ body.dg-body {
 .lg-site-nav__list .is-active {
     pointer-events: none;
     border-bottom: 1px dashed #eee;
+}
+
+/* ==========================================================================
+   TOOLS — temporary home for two leftover feed-nav popups (muppet fetcher,
+   password gate) until this page gets a real design
+   ========================================================================== */
+
+button {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    color: inherit;
+    font-family: inherit;
+}
+
+.dg-tools {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.dg-button {
+    border: 1px solid #eee;
+    padding: 0.5rem 1rem;
+    font-size: 0.675rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.dg-button:hover {
+    background: #eee;
+    color: #111;
+}
+
+/* ==========================================================================
+   POPUP MODAL SYSTEM — adapted from the main site's style.css for this
+   page's dark, monospace canvas
+   ========================================================================== */
+
+.lg-popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 100;
+    cursor: pointer;
+}
+
+.lg-popup-overlay.is-active {
+    display: block;
+}
+
+.lg-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    pointer-events: none;
+}
+
+.lg-popup.is-active {
+    display: block;
+}
+
+.lg-popup__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a1a1a;
+    border: 1px solid #eee;
+    box-shadow: 8px 8px 0 0 #eee;
+    width: 90%;
+    max-width: 32rem;
+    max-height: max-content;
+    padding: 1rem 1rem 1.5rem 1rem;
+    display: grid;
+    gap: 1rem;
+    pointer-events: auto;
+}
+
+.lg-popup__header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.lg-popup__title {
+    font-size: 1.25rem;
+    margin: 0;
+    line-height: 1;
+}
+
+.lg-popup__close {
+    color: #eee;
+}
+
+.lg-popup__form fieldset {
+    width: 100%;
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+.lg-popup__form label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.lg-popup__form input {
+    width: 100%;
+    padding: 0.5rem;
+    background: #111;
+    border: 1px solid #eee;
+    color: #eee;
+    font-family: inherit;
+    font-size: 0.75rem;
+}
+
+.lg-popup__form button {
+    width: 100%;
+    margin-top: 0.5rem;
+    justify-content: center;
+    display: flex;
+}
+
+/* ==========================================================================
+   DEVOTION POPUP — Muppet profile cards, dark theme
+   ========================================================================== */
+
+.lg-devotion-popup .lg-popup__content {
+    max-height: 80vh;
+    height: 100%;
+}
+
+.lg-devotion-profiles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    min-height: 200px;
+}
+
+.lg-devotion-loading {
+    display: inline-block;
+    list-style: none;
+    font-size: 0.75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+    padding: 2rem 0;
+}
+
+.lg-devotion-profile {
+    display: flex;
+    list-style: none;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background-color: #222;
+    border: 1px solid #444;
+}
+
+.lg-devotion-profile__avatar {
+    width: 5.25rem;
+    height: 5.25rem;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: #eee;
+    background-color: #333;
+    flex-shrink: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    overflow: hidden;
+}
+
+.lg-devotion-profile__avatar[style*="background-image"] {
+    color: transparent;
+}
+
+.lg-devotion-profile__info {
+    flex: 1;
+    min-width: 0;
+}
+
+.lg-devotion-profile__name {
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.375rem 0;
+    color: #eee;
+    line-height: 1.2;
+}
+
+.lg-devotion-profile__bio {
+    font-size: 0.675rem;
+    color: #ccc;
+    margin: 0 0 0.375rem 0;
+    line-height: 1.4;
+}
+
+.lg-devotion-profiles::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lg-devotion-profiles::-webkit-scrollbar-track {
+    background: #222;
+}
+
+.lg-devotion-profiles::-webkit-scrollbar-thumb {
+    background: #666;
 }
