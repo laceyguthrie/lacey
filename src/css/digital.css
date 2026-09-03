@@ -39,11 +39,10 @@ body.dg-body {
     right: 1.5rem;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 879px) {
     .lg-site-nav {
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
+        top: 1.5rem;
+        right: 0.75rem;
     }
 }
 
