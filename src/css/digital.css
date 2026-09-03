@@ -18,6 +18,13 @@ body.dg-body {
     justify-content: center;
 }
 
+.container {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 .dg-title {
     font-size: 1rem;
     font-weight: 400;
@@ -36,6 +43,13 @@ body.dg-body {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
+}
+
+@media screen and (max-width: 879px) {
+    .lg-site-nav {
+        top: 0.75rem;
+        right: 0.75rem;
+    }
 }
 
 .lg-site-nav__list {
