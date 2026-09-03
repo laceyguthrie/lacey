@@ -39,6 +39,14 @@ body.dg-body {
     right: 1.5rem;
 }
 
+@media screen and (max-width: 599px) {
+    .lg-site-nav {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+}
+
 .lg-site-nav__list {
     list-style: none;
     display: flex;
