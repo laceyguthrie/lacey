@@ -218,11 +218,16 @@ a {
     height: auto;
     background-color: transparent;
     margin: 0 1rem 0.5rem 0;
-    /* set per-image via an inline --shape custom property, since CSS can't
-       reuse an element's own src as the shape-outside URL */
+    /* set per-image via an inline --shape custom property */
     shape-outside: var(--shape);
     shape-image-threshold: 0.5;
     shape-margin: 0.75rem;
+}
+
+.lg-music-intro__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 @media screen and (min-width: 880px) {
