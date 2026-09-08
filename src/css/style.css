@@ -672,21 +672,6 @@ a {
     color: #fff;
 }
 
-.lg-pill[data-slug="twin-limb"] {
-    position: relative;
-}
-
-.lg-pill[data-slug="twin-limb"]::before {
-    content: "\25B3";
-    position: absolute;
-    top: -0.9rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.75rem;
-    line-height: 1;
-    pointer-events: none;
-}
-
 .lg-icon {
     font-size: 0.75rem;
 }
