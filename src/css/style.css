@@ -230,6 +230,13 @@ a {
     padding: 0;
 }
 
+.lg-music-intro__list-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    line-height: 1;
+}
+
 @media screen and (min-width: 880px) {
     .lg-music-intro__img {
         max-width: 320px;
