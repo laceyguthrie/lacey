@@ -4,3 +4,9 @@ _drop/
 .DS_Store
 .envrc
 docs/superpowers/
+
+# Video masters and web encodes. These live on the CDN, never in git.
+*.mov
+*.mp4
+*.webm
+_video/
