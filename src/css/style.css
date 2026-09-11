@@ -224,12 +224,6 @@ a {
     shape-margin: 0.75rem;
 }
 
-.lg-music-intro__title {
-    font-size: 1.25rem;
-    font-style: italic;
-    line-height: 1;
-}
-
 .lg-music-intro__list {
     list-style: none;
     margin: 0;
