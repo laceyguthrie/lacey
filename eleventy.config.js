@@ -1,4 +1,9 @@
 module.exports = function(eleventyConfig) {
+  // Front-matter dates (e.g. `date: 2026-09-15`) parse as UTC midnight, so
+  // formatting them in the server's local timezone can roll them back a
+  // day. Format in UTC to match.
+  eleventyConfig.setLiquidOptions({ timezoneOffset: 0 });
+
   // Copy static assets straight through to _site/ without processing.
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");

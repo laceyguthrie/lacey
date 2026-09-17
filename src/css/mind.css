@@ -1,0 +1,115 @@
+/* /mind microsite. Blank canvas: does not share style.css. */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body.mn-body {
+    margin: 0;
+    min-height: 100vh;
+    background: #dbe4e8;
+    color: #a8362b;
+    font-family: "Playwrite DE Grund", cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 1.5rem 4rem;
+}
+
+.sr-only {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+.mn-main {
+    width: 100%;
+    max-width: 640px;
+}
+
+.lg-mind {
+    max-width: 640px;
+    margin: 0;
+}
+
+.lg-mind__entry {
+    margin-bottom: 3rem;
+}
+
+.lg-mind__entry-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+    color: #a8362b;
+}
+
+.lg-mind__entry-meta {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: #1a1a1a;
+}
+
+.lg-mind__entry-body {
+    line-height: 1.6;
+    font-size: 1.0625rem;
+}
+
+.lg-mind__entry-body a {
+    color: #a8362b;
+}
+
+.lg-mind__entry-body a:hover {
+    color: #1a1a1a;
+}
+
+/* Site nav reuses the shared markup, restyled for this canvas. */
+.lg-site-nav {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+@media screen and (max-width: 879px) {
+    .lg-site-nav {
+        top: 1.5rem;
+        right: 0.75rem;
+    }
+}
+
+.lg-site-nav__list {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.675rem;
+}
+
+.lg-site-nav__list a {
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.lg-site-nav__list a:hover {
+    background: #1a1a1a;
+    color: #dbe4e8;
+}
+
+.lg-site-nav__list .is-active {
+    pointer-events: none;
+    border-bottom: 1px dashed #1a1a1a;
+}
