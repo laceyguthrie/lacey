@@ -1,4 +1,4 @@
-/* /objects microsite. Blank canvas: does not share style.css. */
+/* /physical microsite. Blank canvas: does not share style.css. */
 
 *,
 *::before,
@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-body.ob-body {
+body.ph-body {
     margin: 0;
     min-height: 100vh;
     background: #e9e6e0;
@@ -19,14 +19,14 @@ body.ob-body {
     padding: 0 1rem;
 }
 
-.ob-title {
+.ph-title {
     font-size: 1.5rem;
     font-weight: 400;
     font-style: italic;
     margin: 0 0 1rem 0;
 }
 
-.ob-placeholder {
+.ph-placeholder {
     font-size: 0.875rem;
     margin: 0;
 }
@@ -62,7 +62,7 @@ body.ob-body {
 
 .lg-site-nav__list a:hover {
     background: #1a1a1a;
-    color: #f4efe6;
+    color: #e9e6e0;
 }
 
 .lg-site-nav__list .is-active {
