@@ -1,5 +1,5 @@
 ---
-title: Things I confused for consciousness
+title: Things I've confused for consciousness
 date: 2026-09-15
 ---
 - [Metacognition](https://en.wikipedia.org/wiki/Metacognition)
