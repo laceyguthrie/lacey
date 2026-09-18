@@ -1,32 +1,23 @@
-/* /mind microsite. Blank canvas: does not share style.css. */
+/* /mind microsite. Unique rules only — reset, sr-only, and the shared nav
+   live in microsites.css. */
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+::selection {
+    background-color: #00eaff;
+    color: #000;
 }
 
 body.mn-body {
+    --ms-bg: #fdf6b0;
+    --ms-ink: #2e2e2e;
     margin: 0;
     min-height: 100vh;
-    background: #fdf6b0;
-    color: #2e2e2e;
+    background: var(--ms-bg);
+    color: var(--ms-ink);
     font-family: "Inter", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 5rem 1.5rem 4rem;
-}
-
-.sr-only {
-    position: absolute;
-    overflow: hidden;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    clip: rect(0 0 0 0);
 }
 
 .mn-main {
@@ -70,44 +61,4 @@ body.mn-body {
 .lg-mind__entry-body a:hover {
     background: #2e2e2e;
     color: #fdf6b0;
-}
-
-/* Site nav reuses the shared markup, restyled for this canvas. */
-.lg-site-nav {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-}
-
-@media screen and (max-width: 879px) {
-    .lg-site-nav {
-        top: 1.5rem;
-        right: 0.75rem;
-    }
-}
-
-.lg-site-nav__list {
-    list-style: none;
-    display: flex;
-    gap: 0.5rem;
-    margin: 0;
-    padding: 0;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
-.lg-site-nav__list a {
-    color: #2e2e2e;
-    text-decoration: none;
-    padding: 0.5rem;
-}
-
-.lg-site-nav__list a:hover {
-    background: #2e2e2e;
-    color: #fdf6b0;
-}
-
-.lg-site-nav__list .is-active {
-    pointer-events: none;
-    border-bottom: 1px dashed #2e2e2e;
 }

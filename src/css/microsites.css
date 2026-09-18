@@ -1,0 +1,64 @@
+/* Shared rules for the digital/physical/mind microsites. Each microsite's
+   own stylesheet sets --ms-bg and --ms-ink on its body selector; everything
+   here reads from those two variables instead of repeating per-site colors. */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: #f9ff5a;
+    color: #000;
+}
+
+.sr-only {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+/* Site nav reuses the shared markup, restyled per microsite via variables. */
+.lg-site-nav {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+@media screen and (max-width: 879px) {
+    .lg-site-nav {
+        top: 1.5rem;
+        right: 0.75rem;
+    }
+}
+
+.lg-site-nav__list {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    font-size: 0.75rem;
+}
+
+.lg-site-nav__list a {
+    color: var(--ms-ink);
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.lg-site-nav__list a:hover {
+    background: var(--ms-ink);
+    color: var(--ms-bg);
+}
+
+.lg-site-nav__list .is-active {
+    pointer-events: none;
+    border-bottom: 1px dashed var(--ms-ink);
+}

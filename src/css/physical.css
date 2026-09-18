@@ -1,16 +1,13 @@
-/* /physical microsite. Blank canvas: does not share style.css. */
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
+/* /physical microsite. Unique rules only — reset, ::selection, sr-only, and
+   the shared nav live in microsites.css. */
 
 body.ph-body {
+    --ms-bg: #e9e6e0;
+    --ms-ink: #1a1a1a;
     margin: 0;
     min-height: 100vh;
-    background: #e9e6e0;
-    color: #1a1a1a;
+    background: var(--ms-bg);
+    color: var(--ms-ink);
     font-family: Georgia, "Times New Roman", serif;
     display: flex;
     flex-direction: column;
@@ -29,43 +26,4 @@ body.ph-body {
 .ph-placeholder {
     font-size: 0.875rem;
     margin: 0;
-}
-
-/* Site nav reuses the shared markup, restyled for this canvas. */
-.lg-site-nav {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-}
-
-@media screen and (max-width: 879px) {
-    .lg-site-nav {
-        top: 1.5rem;
-        right: 0.75rem;
-    }
-}
-
-.lg-site-nav__list {
-    list-style: none;
-    display: flex;
-    gap: 0.5rem;
-    margin: 0;
-    padding: 0;
-    font-size: 0.75rem;
-}
-
-.lg-site-nav__list a {
-    color: #1a1a1a;
-    text-decoration: none;
-    padding: 0.5rem;
-}
-
-.lg-site-nav__list a:hover {
-    background: #1a1a1a;
-    color: #e9e6e0;
-}
-
-.lg-site-nav__list .is-active {
-    pointer-events: none;
-    border-bottom: 1px dashed #1a1a1a;
 }
