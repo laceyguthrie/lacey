@@ -245,12 +245,6 @@ a {
     margin: 0 0 0.5rem 0;
 }
 
-.lg-music-intro__arrow {
-    color: #000;
-    flex-shrink: 0;
-    transform: translateY(-0.25rem);
-}
-
 .lg-music-intro__title {
     font-family: "Jacquard 24", cursive;
     font-size: 1.25rem;
