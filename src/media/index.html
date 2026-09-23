@@ -8,7 +8,49 @@ activePage: media
 ---
 <main class="lg-main lg-flex--tablet container">
     <div class="lg-main__content">
-        <p>a mood board is assembling itself somewhere off-screen. nothing here yet.</p>
+        <div class="lg-section">
+            <h2 class="sr-only">Media</h2>
+
+            <p class="lg-section__text lg-media-intro">what are you looking for?</p>
+
+            <div class="lg-section__chunk">
+                <div class="lg-section__chunk-header">
+                    <h3 class="lg-section__chunk-title">VIDEO</h3>
+                </div>
+
+                <figure class="lg-video">
+                    <button type="button" class="lg-video__trigger js-video-trigger" aria-label="Play the video for To The Mole That Killed The King" aria-controls="mole-video">
+                        <img class="lg-video__poster" src="/img/to-the-mole-poster.jpg" alt="" width="1920" height="1080">
+                        <span class="lg-video__play-icon" aria-hidden="true"></span>
+                    </button>
+                    <video id="mole-video" class="lg-video__player js-video-player" hidden controls preload="none" playsinline poster="/img/to-the-mole-poster.jpg" width="1920" height="1080">
+                        <source src="https://pub-44667877fc6444e1ad2f4c7a179ce93b.r2.dev/to-the-mole.webm" type="video/webm">
+                        <source src="https://pub-44667877fc6444e1ad2f4c7a179ce93b.r2.dev/to-the-mole.mp4" type="video/mp4">
+                        Your browser doesn't support embedded video. <a href="https://pub-44667877fc6444e1ad2f4c7a179ce93b.r2.dev/to-the-mole.mp4">Download the video</a> instead.
+                    </video>
+                    <figcaption>"To the Mole That Killed the King," from <em>Flower-Eating Monster</em> (2024)</figcaption>
+                </figure>
+            </div>
+
+            <div class="lg-section__chunk">
+                <div class="lg-section__chunk-header">
+                    <h3 class="lg-section__chunk-title">PHOTO</h3>
+                </div>
+                <p class="lg-section__text">I'm working on it :)</p>
+            </div>
+        </div>
     </div>
     {% include "shows.html" %}
 </main>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "To the Mole That Killed the King",
+    "description": "Official music video for 'To the Mole That Killed the King' by Lacey Guthrie, from the 2024 album Flower-Eating Monster.",
+    "thumbnailUrl": "https://laceyguthrie.com/img/to-the-mole-poster.jpg",
+    "contentUrl": "https://pub-44667877fc6444e1ad2f4c7a179ce93b.r2.dev/to-the-mole.mp4",
+    "duration": "PT4M15S"
+}
+</script>
