@@ -527,7 +527,7 @@ a {
     gap: 0.5rem;
     background-color: #fff;
     padding: 0.5rem 1.25rem;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
 .lg-video__play-label { 
@@ -535,6 +535,7 @@ a {
     font-size: 1.5rem;
     line-height: 1;
     color: #000;
+    transition: color 0.2s ease;
 }
 
 .lg-video__play-icon {
@@ -549,6 +550,10 @@ a {
 .lg-video__trigger:hover .lg-video__play-badge,
 .lg-video__trigger:focus-visible .lg-video__play-badge {
     background-color: #000000;
+}
+
+.lg-video__trigger:hover .lg-video__play-label,
+.lg-video__trigger:focus-visible .lg-video__play-label {
     color: #fff;
 }
 
