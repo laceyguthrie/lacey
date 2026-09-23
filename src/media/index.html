@@ -13,15 +13,25 @@ activePage: media
 
             <p class="lg-section__text lg-media-intro">what are you looking for?</p>
 
-            <div class="lg-section__chunk">
-                <div class="lg-section__chunk-header">
-                    <h3 class="lg-section__chunk-title">VIDEO</h3>
-                </div>
+            <nav class="lg-tabs" role="tablist" aria-label="Media tabs" data-deep-link="tab">
+                <button class="lg-pill js-tab is-active" type="button" data-tab="videos-panel" data-slug="videos" role="tab" aria-selected="true" aria-controls="videos-panel" id="tab-videos">
+                    videos
+                </button>
+                <button class="lg-pill js-tab" type="button" data-tab="photos-panel" data-slug="photos" role="tab" aria-selected="false" aria-controls="photos-panel" id="tab-photos">
+                    photos
+                </button>
+            </nav>
+
+            <section class="is-active js-tab-content" id="videos-panel">
+                <h2 class="sr-only">Videos</h2>
 
                 <figure class="lg-video">
                     <button type="button" class="lg-video__trigger js-video-trigger" aria-label="Play the video for To The Mole That Killed The King" aria-controls="mole-video">
                         <img class="lg-video__poster" src="/img/to-the-mole-poster.jpg" alt="" width="1920" height="1080">
-                        <span class="lg-video__play-icon" aria-hidden="true"></span>
+                        <span class="lg-video__play-badge" aria-hidden="true">
+                            <span class="lg-video__play-label">PLAY</span>
+                            <span class="lg-video__play-icon"></span>
+                        </span>
                     </button>
                     <video id="mole-video" class="lg-video__player js-video-player" hidden controls preload="none" playsinline poster="/img/to-the-mole-poster.jpg" width="1920" height="1080">
                         <source src="https://pub-44667877fc6444e1ad2f4c7a179ce93b.r2.dev/to-the-mole.webm" type="video/webm">
@@ -30,14 +40,12 @@ activePage: media
                     </video>
                     <figcaption>"To the Mole That Killed the King," from <em>Flower-Eating Monster</em> (2024)</figcaption>
                 </figure>
-            </div>
+            </section>
 
-            <div class="lg-section__chunk">
-                <div class="lg-section__chunk-header">
-                    <h3 class="lg-section__chunk-title">PHOTO</h3>
-                </div>
+            <section class="js-tab-content" id="photos-panel">
+                <h2 class="sr-only">Photos</h2>
                 <p class="lg-section__text">I'm working on it :)</p>
-            </div>
+            </section>
         </div>
     </div>
     {% include "shows.html" %}
