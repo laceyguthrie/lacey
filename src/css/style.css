@@ -525,12 +525,12 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: #fff;
+    background-color: #fff;
     padding: 0.5rem 1.25rem;
-    transition: transform 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.lg-video__play-label {
+.lg-video__play-label { 
     font-family: "Jacquard 24", cursive;
     font-size: 1.5rem;
     line-height: 1;
@@ -548,18 +548,8 @@ a {
 
 .lg-video__trigger:hover .lg-video__play-badge,
 .lg-video__trigger:focus-visible .lg-video__play-badge {
-    transform: translate(-50%, -50%) rotate(-4deg) scale(1.1);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .lg-video__play-badge {
-        transition: none;
-    }
-
-    .lg-video__trigger:hover .lg-video__play-badge,
-    .lg-video__trigger:focus-visible .lg-video__play-badge {
-        transform: translate(-50%, -50%) rotate(-4deg);
-    }
+    background-color: #000000;
+    color: #fff;
 }
 
 .lg-video__player {
