@@ -485,11 +485,6 @@ a {
     line-height: 1.2;
 }
 
-.lg-media-intro {
-    display: inline-block;
-    transform: rotate(-3deg);
-}
-
 /* ==========================================================================
    VIDEO PLAYER
    ========================================================================== */
@@ -507,16 +502,10 @@ a {
     width: 100%;
     line-height: 0;
 }
-
-/* Author CSS beats the browser's own [hidden]{display:none} at equal
-   specificity, so the display:block above would otherwise keep the poster
-   button visible after JS hides it post-click. Restore the hide explicitly. */
 .lg-video__trigger[hidden] {
     display: none;
 }
 
-/* The poster image fully covers the button, so the sitewide focus-flash
-   background never shows through. Give this control its own visible ring. */
 .lg-video__trigger:focus-visible {
     outline: 3px solid #00ffee;
     outline-offset: 4px;
