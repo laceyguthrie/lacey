@@ -550,10 +550,6 @@ a {
     gap: 1rem;
 }
 
-.lg-reading-card__item {
-    min-width: 12rem;
-}
-
 .lg-reading-card__link {
     text-decoration: none;
     color: inherit;
@@ -573,13 +569,6 @@ a {
 .lg-reading-card__author {
     font-size: 0.75rem;
     display: block;
-}
-
-@media screen and (max-width: 879px) {
-    .lg-reading-card__list {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
 }
 
 /* ==========================================================================
