@@ -490,9 +490,8 @@ a {
    ========================================================================== */
 
 .lg-video {
-    display: grid;
-    gap: 0.75rem;
-    margin: 1rem 0;
+    margin: 0 0 1rem 0;
+    border: 12px solid #000;
 }
 
 .lg-video__player {
@@ -502,10 +501,23 @@ a {
     background: #000;
 }
 
-.lg-video figcaption {
+.lg-video__caption {
     font-size: 0.75rem;
     text-align: center;
     margin: 0 auto;
+    padding: 0.5rem 1.25rem;
+    background-color: #000;
+    color: #fff;
+}
+
+.lg-video__caption-title {
+    font-family: "Jacquard 24", cursive;
+    font-size: 1.25rem;
+    display: block;
+}
+
+.lg-video__caption-author {
+    font-size: 0.75rem;
 }
 
 /* ==========================================================================
