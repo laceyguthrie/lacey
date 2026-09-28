@@ -553,7 +553,7 @@ a {
 .lg-reading-card__link {
     text-decoration: none;
     color: inherit;
-    padding-block: 0.5rem;
+    padding: 0.5rem 1rem;
 }
 
 .lg-reading-card__link:hover {
