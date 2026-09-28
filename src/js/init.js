@@ -636,28 +636,6 @@ function setupLazyIframes() {
   }
 }
 
-// Video Player (poster button reveals and plays the real <video>)
-
-function setupVideo() {
-  document.querySelectorAll('.js-video-trigger').forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const video = document.getElementById(trigger.getAttribute('aria-controls'));
-      if (!video) return;
-
-      trigger.hidden = true;
-      video.hidden = false;
-      // Suppress the sitewide focus-flash for this programmatic focus move,
-      // same pattern as trapFocus() above.
-      video.setAttribute('data-programmatic-focus', 'true');
-      video.focus();
-      setTimeout(() => {
-        video.removeAttribute('data-programmatic-focus');
-      }, 100);
-      video.play();
-    });
-  });
-}
-
 // Email Links (assembled at runtime to keep the address out of the HTML source)
 
 function setupEmailLinks() {
@@ -676,6 +654,5 @@ document.addEventListener('DOMContentLoaded', function() {
   setupDevotionButton();
   setupPasswordPopup();
   setupLazyIframes();
-  setupVideo();
   setupEmailLinks();
 });

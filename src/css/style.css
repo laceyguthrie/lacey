@@ -492,69 +492,7 @@ a {
 .lg-video {
     display: grid;
     gap: 0.75rem;
-    max-width: 720px;
     margin: 0;
-}
-
-.lg-video__trigger {
-    position: relative;
-    display: block;
-    width: 100%;
-    line-height: 0;
-}
-.lg-video__trigger[hidden] {
-    display: none;
-}
-
-.lg-video__trigger:focus-visible {
-    outline: 3px solid #00ffee;
-    outline-offset: 4px;
-}
-
-.lg-video__poster {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.lg-video__play-badge {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-4deg);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: #fff;
-    padding: 0.5rem 1.25rem;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.lg-video__play-label { 
-    font-family: "Jacquard 24", cursive;
-    font-size: 1.5rem;
-    line-height: 1;
-    color: #000;
-    transition: color 0.2s ease;
-}
-
-.lg-video__play-icon {
-    width: 0;
-    height: 0;
-    flex-shrink: 0;
-    border-style: solid;
-    border-width: 0.4rem 0 0.4rem 0.65rem;
-    border-color: transparent transparent transparent #000;
-}
-
-.lg-video__trigger:hover .lg-video__play-badge,
-.lg-video__trigger:focus-visible .lg-video__play-badge {
-    
-}
-
-.lg-video__trigger:hover .lg-video__play-label,
-.lg-video__trigger:focus-visible .lg-video__play-label {
-
 }
 
 .lg-video__player {
@@ -564,12 +502,71 @@ a {
     background: #000;
 }
 
-.lg-video__player[hidden] {
-    display: none;
-}
-
 .lg-video figcaption {
     font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   READING LIST CARD
+   ========================================================================== */
+
+.lg-reading-card {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid #000;
+    box-shadow: 6px 6px 0 #000;
+}
+
+.lg-reading-card__title {
+    margin: 0;
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.lg-reading-card__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.lg-reading-card__item {
+    display: grid;
+}
+
+.lg-reading-card__link {
+    display: grid;
+    gap: 0.25rem;
+    text-align: center;
+    color: inherit;
+    text-decoration: none;
+}
+
+.lg-reading-card__link:hover .lg-reading-card__work,
+.lg-reading-card__link:focus-visible .lg-reading-card__work {
+    text-decoration: underline;
+}
+
+.lg-reading-card__work {
+    font-style: italic;
+    font-size: 0.875rem;
+    line-height: 1.3;
+}
+
+.lg-reading-card__author {
+    font-size: 0.75rem;
+    line-height: 1.3;
+}
+
+@media screen and (max-width: 879px) {
+    .lg-reading-card__list {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ==========================================================================
