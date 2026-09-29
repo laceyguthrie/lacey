@@ -578,6 +578,8 @@ a {
         top: 0;
         right: 0;
         transform: translateY(-100%);
+        max-width: 50vw;
+        margin-bottom: 0;
     }
 
     .lg-reading-card__list {
