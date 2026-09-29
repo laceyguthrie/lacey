@@ -405,6 +405,7 @@ a {
    ========================================================================== */
 
 .lg-main__content {
+    position: relative;
     width: 100%;
 }
 
@@ -567,11 +568,18 @@ a {
 }
 
 .lg-reading-card__author {
-    font-size: 0.75rem;
+    font-size: 0.625rem;
     display: block;
 }
 
 @media screen and (max-width: 879px) {
+    .lg-reading-card {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateY(-100%);
+    }
+
     .lg-reading-card__list {
         flex-direction: column;
         gap: 0;
