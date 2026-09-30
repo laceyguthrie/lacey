@@ -1,5 +1,7 @@
 /* ==========================================================================
-   LACEY GUTHRIE WEBSITE STYLES
+   MUSIC
+   The main site: /, /media/, /lyrics/ and /press/. Loaded after global.css,
+   which holds the reset, focus styles and .sr-only.
    ========================================================================== */
 
 /* ==========================================================================
@@ -52,7 +54,6 @@
 
 html {
     font-size: 1em;
-    box-sizing: border-box;
     margin: 0 auto;
     height: auto;
     max-width: 100vw;
@@ -62,12 +63,6 @@ html {
     width: 100vw;
     overflow-y: auto;
     overflow-x: hidden;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
 }
 
 body {
@@ -83,12 +78,15 @@ body {
     line-height: 1.5;
 }
 
+body.lg-body {
+    --ms-bg: #fff;
+    --ms-ink: #000;
+}
+
 /* ==========================================================================
    MEDIA & IMAGES
    ========================================================================== */
 
-/* Every img carries width/height attributes, which browsers already use to
-   reserve the right space before the file loads. */
 img {
     display: inline-block;
     max-width: 100%;
@@ -100,59 +98,38 @@ img {
    INTERACTIVE ELEMENTS
    ========================================================================== */
 
-button {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: none;
-    background: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    position: relative;
-    color: inherit;
-}
-
-a {
-    color: inherit;
-    text-decoration: underline;
-    transition: background-color 0.3s ease;
-    position: relative;
+@media (hover: hover) {
+    .lg-header__nav-list a:hover,
+    .lg-header__nav-list button:hover,
+    .lg-button:hover,
+    .lg-pill:hover {
+        background-color: #000;
+        color: #fff;
+    }
 }
 
 /* ==========================================================================
-   FOCUS & ACCESSIBILITY
+   ANCHOR JUMP MARKER
    ========================================================================== */
 
-*:focus {
-    outline: none;
-}
+@media screen and (min-width: 880px) {
+    .here-i-am {
+        position: relative;
+    }
 
-*:focus-visible:not([data-programmatic-focus]) {
-    outline: none;
-    background: #00ffee !important;
-    color: #000 !important;
-}
-
-.sr-only {
-    position: absolute;
-    overflow: hidden;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    clip: rect(0 0 0 0);
-}
-
-/* ==========================================================================
-   SELECTION & VISUAL FEEDBACK
-   ========================================================================== */
-
-::selection {
-    background-color: #f9ff5a;
-    color: #000;
+    .here-i-am::before {
+        content: "here";
+        position: absolute;
+        top: 5.25rem;
+        left: 5.25rem;
+        transform: rotate(-5deg);
+        font-size: 5.25rem;
+        font-weight: 400;
+        line-height: 1;
+        font-family: "Jacquard 24", cursive;
+        text-align: center;
+        z-index: 1;
+    }
 }
 
 /* ==========================================================================
@@ -165,9 +142,10 @@ a {
     align-items: center;
     justify-content: flex-start;
     gap: 0.5rem;
-    padding-block: 3rem;
-    width: fit-content;
-    max-width: 100%;
+    margin-inline: -1rem;
+    padding: 1rem;
+    width: calc(100% + 2rem);
+    max-width: none;
     overflow-x: auto;
     overflow-y: hidden;
     scrollbar-width: none;
@@ -176,12 +154,17 @@ a {
     -webkit-overflow-scrolling: touch;
 }
 
-.lg-tabs .js-tab {
-    flex-shrink: 0;
+@media screen and (min-width: 880px) {
+    .lg-tabs {
+        margin-inline: 0;
+        padding: 3rem 0 1.25rem;
+        width: fit-content;
+        max-width: 100%;
+    }
 }
 
-.lg-music-tabs-container .lg-tabs {
-    padding-bottom: 1rem;
+.lg-tabs .js-tab {
+    flex-shrink: 0;
 }
 
 .lg-tabs-note {
@@ -211,7 +194,6 @@ a {
     height: auto;
     background-color: transparent;
     margin: 0 1rem 0.5rem 0;
-    /* set per-image via an inline --shape custom property */
     shape-outside: var(--shape);
     shape-image-threshold: 0.5;
     shape-margin: 0.75rem;
@@ -246,15 +228,6 @@ a {
     }
 }
 
-@media screen and (max-width: 879px) {
-    .lg-tabs {
-        margin-inline: -1rem;
-        padding-inline: 1rem;
-        padding-block: 1rem;
-        width: calc(100% + 2rem);
-        max-width: none;
-    }
-}
 
 .js-tab-content {
     display: none;
@@ -275,9 +248,25 @@ a {
     max-width: 80rem;
 }
 
+@media screen and (min-width: 880px) {
+    .lg-flex--tablet {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 3rem;
+    }
+}
+
 /* ==========================================================================
    HEADER & NAVIGATION
    ========================================================================== */
+
+/* override because I'm a picky bitch */
+.lg-site-nav a {
+    font-weight: 600;
+    font-size: 0.675rem;
+}
 
 .lg-header {
     padding-top: 5.25rem;
@@ -343,42 +332,34 @@ a {
     white-space: nowrap;
 }
 
-.lg-site-nav {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    z-index: 2;
-}
-
-@media screen and (max-width: 879px) {
-    .lg-site-nav {
-        top: 1.5rem;
-        right: 0.75rem;
+@media screen and (min-width: 880px) {
+    .lg-header__nav-title {
+        text-align: center;
     }
-}
 
-.lg-site-nav__list {
-    list-style: none;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    padding: 0;
-}
+    .lg-header__nav-list {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0;
+        text-align: center;
+    }
 
-.lg-site-nav__list a {
-    display: inline-block;
-    position: relative;
-    text-decoration: none;
-    font-family: "Inter", sans-serif;
-    font-size: 0.675rem;
-    font-weight: 600;
-    line-height: 1;
-    padding: 0.5rem;
-}
+    .lg-header__nav-list a,
+    .lg-header__nav-list button {
+        padding: 0.5rem 0.75rem;
+        border-radius: 1.25rem;
+    }
 
-.lg-site-nav__list .is-active {
-    pointer-events: none;
-    border-bottom: 1px dashed #000;
+    .lg-header__nav-list .is-active::after {
+        content: "you are here";
+        position: absolute;
+        bottom: 0.25rem;
+        left: 50%;
+        margin-left: 0;
+        transform: translate(-50%, 100%);
+        padding-top: 0.25rem;
+    }
 }
 
 /* ==========================================================================
@@ -508,12 +489,16 @@ a {
    ========================================================================== */
 
 .lg-reading-card {
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-100%);
+    max-width: 50vw;
     display: grid;
     gap: 1rem;
-    padding: 2rem 1rem;
+    padding: 1rem;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
 }
 
 .lg-reading-card__frame {
@@ -537,10 +522,10 @@ a {
     padding: 0;
     list-style: none;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 0;
 }
 
 .lg-reading-card__link {
@@ -565,19 +550,19 @@ a {
     display: block;
 }
 
-@media screen and (max-width: 879px) {
+@media screen and (min-width: 880px) {
     .lg-reading-card {
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translateY(-100%);
-        max-width: 50vw;
-        margin-bottom: 0;
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        max-width: none;
+        margin-bottom: 1rem;
     }
 
     .lg-reading-card__list {
-        flex-direction: column;
-        gap: 0;
+        flex-direction: row;
+        gap: 1rem;
     }
 }
 
@@ -660,6 +645,12 @@ a {
     padding: 0;
 }
 
+@media screen and (min-width: 880px) {
+    .lg-section__list {
+        max-width: 20rem;
+    }
+}
+
 /* ==========================================================================
    SHOWS SECTION
    ========================================================================== */
@@ -722,6 +713,14 @@ a {
     gap: 1rem;
 }
 
+@media screen and (min-width: 880px) {
+    .lg-shows {
+        max-width: 20rem;
+        margin-top: 0;
+        order: 2;
+    }
+}
+
 /* ==========================================================================
    BUTTONS & INTERACTIVE COMPONENTS
    ========================================================================== */
@@ -765,6 +764,47 @@ a {
 
 .lg-icon {
     font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   LYRICS
+   ========================================================================== */
+
+   .lg-lyrics__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lg-lyrics__item {
+    break-inside: avoid;
+    margin-bottom: 2rem;
+}
+
+.lg-lyrics__item h4 {
+    margin: 0;
+}
+
+.lg-lyrics__item p {
+    margin: 0.625rem 0;
+}
+
+@media screen and (min-width: 600px) {
+    .lg-lyrics__list {
+        column-count: 2;
+        column-gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 880px) {
+    .lg-lyrics__list {
+        column-count: 1;
+    }
+}
+@media screen and (min-width: 936px) {
+    .lg-lyrics__list {
+        column-count: 2;
+    }
 }
 
 /* ==========================================================================
@@ -856,8 +896,6 @@ a {
     margin-bottom: 0.1rem;
 }
 
-/* the whole list is one grid child now, so the gap between categories is
-   set here rather than inherited from .lg-popup__content's grid gap */
 .lg-popup__label:not(:first-child) {
     margin-top: 1.5rem;
 }
@@ -900,88 +938,8 @@ a {
     margin-top: 0.5rem;
 }
 
-/* ==========================================================================
-   RESPONSIVE DESIGN
-   ========================================================================== */
-
 @media screen and (min-width: 880px) {
-
-    .here-i-am {
-        position: relative;
-    }
-
-    .here-i-am::before {
-        content: "here";
-        position: absolute;
-        top: 5.25rem;
-        left: 5.25rem;
-        transform: rotate(-5deg);
-        font-size: 5.25rem;
-        font-weight: 400;
-        line-height: 1;
-        font-family: "Jacquard 24", cursive;
-        text-align: center;
-        z-index: 1;
-    }
-
-    .lg-header__nav-title {
-        text-align: center;
-    }
-
-    .lg-header__nav-list {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 0;
-        text-align: center;
-    }
-
-    .lg-header__nav-list a,
-    .lg-header__nav-list button {
-        padding: 0.5rem 0.75rem;
-        border-radius: 1.25rem;
-    }
-
-    .lg-header__nav-list .is-active::after {
-        content: "you are here";
-        position: absolute;
-        bottom: 0.25rem;
-        left: 50%;
-        margin-left: 0;
-        transform: translate(-50%, 100%);
-        padding-top: 0.25rem;
-    }
-
-    .lg-flex--tablet {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 3rem;
-    }
-
-    .lg-section__list {
-        max-width: 20rem;
-    }
-
-    .lg-shows {
-        max-width: 20rem;
-        margin-top: 0;
-        order: 2;
-    }
-
     .lg-popup__content {
         transform: translate(-50%, -50%) rotate(-3deg);
-    }
-}
-
-@media (hover: hover) {
-    .lg-site-nav__list a:hover,
-    .lg-header__nav-list a:hover,
-    .lg-header__nav-list button:hover,
-    .lg-button:hover,
-    .lg-pill:hover {
-        background-color: #000;
-        color: #fff;
     }
 }

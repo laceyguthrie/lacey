@@ -1,6 +1,3 @@
-/* /physical microsite. Unique rules only — reset, ::selection, sr-only, and
-   the shared nav live in microsites.css. */
-
 body.ph-body {
     --ms-bg: #e9e6e0;
     --ms-ink: #1a1a1a;
@@ -13,7 +10,7 @@ body.ph-body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
 }
 
 .ph-title {

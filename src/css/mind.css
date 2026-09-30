@@ -1,6 +1,3 @@
-/* /mind microsite. Unique rules only — reset, sr-only, and the shared nav
-   live in microsites.css. */
-
 ::selection {
     background-color: #00eaff;
     color: #000;

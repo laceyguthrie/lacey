@@ -27,8 +27,7 @@ src/                       # source files (Eleventy input)
     site-nav.html          # music / digital / physical / mind switcher
     contact-popup.html     # contact modal, in base.html
     jsonld.html            # structured data, in base.html
-  css/                     # style.css (main site), lyrics.css,
-                           # microsites.css + digital/physical/mind.css
+  css/                     # see Stylesheets below
   js/init.js               # all of the site's JavaScript
   img/                     # site images (.jpg + .webp pairs)
   robots.liquid            # builds robots.txt
@@ -40,6 +39,23 @@ _drop/                     # drop folder for the image converter (see below)
 convert-images.sh          # image conversion script
 eleventy.config.js         # Eleventy config
 ```
+
+## Stylesheets
+
+Every page loads `global.css` first. After that a page loads only the sheets for
+the part of the site it belongs to.
+
+| File | Loaded on | Holds |
+| --- | --- | --- |
+| `global.css` | every page | reset, button reset, keyboard focus, `.sr-only`, `::selection`| the shared site nav, drawn from `--ms-bg` / `--ms-ink` |
+| `music.css` | `/`, `/media/`, `/lyrics/`, `/press/` | everything for the music pages |
+| `digital.css` `physical.css` `mind.css` | one microsite each | that microsite's colours, type and layout |
+
+Each microsite sets `--ms-bg` and `--ms-ink` on its own `body` selector, and
+`global.css` reads those instead of repeating the colours.
+
+Put a rule in `global.css` only if it should apply to the music pages *and* all
+three microsites. Anything else belongs in the sheet for its own part of the site.
 
 ## Running locally
 
