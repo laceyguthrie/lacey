@@ -9,3 +9,4 @@ date: 2026-09-15
 - [Qualia](https://en.wikipedia.org/wiki/Qualia)
 - [Intrapersonal communication](https://en.wikipedia.org/wiki/Intrapersonal_communication)
 - [Introspection](https://en.wikipedia.org/wiki/Introspection)
+- [Desire](https://en.wikipedia.org/wiki/Desire)

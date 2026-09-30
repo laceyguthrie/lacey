@@ -57,11 +57,9 @@ html {
     height: auto;
     max-width: 100vw;
     -webkit-text-size-adjust: 100%; /* prevents iOS from resizing text on orientation change */
-    opacity: 1 !important;
     background-color: #ffffff;
     color: #000;
     width: 100vw;
-    /* always-reserved scrollbar gutter, so it can't shift layout when it appears */
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -70,11 +68,6 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
-}
-
-/* IE doesn't know `main` is block-level by default */
-main {
-    display: block;
 }
 
 body {
@@ -94,13 +87,13 @@ body {
    MEDIA & IMAGES
    ========================================================================== */
 
+/* Every img carries width/height attributes, which browsers already use to
+   reserve the right space before the file loads. */
 img {
     display: inline-block;
     max-width: 100%;
     height: auto;
     background-color: #000;
-    /* Prevent layout shift during loading */
-    aspect-ratio: attr(width) / attr(height);
 }
 
 /* ==========================================================================
@@ -140,7 +133,7 @@ a {
     outline: none;
     background: #00ffee !important;
     color: #000 !important;
-}   
+}
 
 .sr-only {
     position: absolute;
@@ -163,10 +156,10 @@ a {
 }
 
 /* ==========================================================================
-   UTILITY CLASSES
+   TABS & PROJECT INTROS
    ========================================================================== */
 
-   .lg-tabs {
+.lg-tabs {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -230,13 +223,6 @@ a {
     padding: 0;
 }
 
-.lg-music-intro__list-title {
-    font-size: 0.75rem;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-    line-height: 1;
-}
-
 .lg-music-intro__heading-wrap {
     display: inline-flex;
     align-items: flex-end;
@@ -282,15 +268,10 @@ a {
    LAYOUT CONTAINERS
    ========================================================================== */
 
-.container,
-.container--wide {
+.container {
     margin: 0 auto;
     padding: 0 1rem;
     width: 100%;
-    max-width: 96rem;
-}
-
-.container {
     max-width: 80rem;
 }
 
@@ -527,17 +508,28 @@ a {
    ========================================================================== */
 
 .lg-reading-card {
+    position: relative;
     display: grid;
     gap: 1rem;
+    padding: 2rem 1rem;
     text-align: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.lg-reading-card__title {
-    margin: 0;
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-align: center;
+.lg-reading-card__frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.lg-reading-card__frame-text {
+    font-family: "Inter", sans-serif;
+    font-size: 0.425rem;
+    letter-spacing: 0.05em;
+    fill: #000;
 }
 
 .lg-reading-card__list {
@@ -852,7 +844,7 @@ a {
     background-color: transparent;
 }
 
-.lg-popup__content p {
+.lg-popup__contacts {
     margin: 0.5rem 0 0 0;
     font-family: "Inter", sans-serif;
     font-size: 0.75rem;
@@ -860,10 +852,19 @@ a {
 }
 
 .lg-popup__label {
-    display: block;
-    font-size: 0.75rem;
     font-weight: 700;
     margin-bottom: 0.1rem;
+}
+
+/* the whole list is one grid child now, so the gap between categories is
+   set here rather than inherited from .lg-popup__content's grid gap */
+.lg-popup__label:not(:first-child) {
+    margin-top: 1.5rem;
+}
+
+/* reset the browser's default dd indent */
+.lg-popup__value {
+    margin: 0;
 }
 
 .lg-popup__content a {
@@ -908,7 +909,7 @@ a {
     .here-i-am {
         position: relative;
     }
-    
+
     .here-i-am::before {
         content: "here";
         position: absolute;
@@ -950,7 +951,7 @@ a {
         transform: translate(-50%, 100%);
         padding-top: 0.25rem;
     }
-    
+
     .lg-flex--tablet {
         display: flex;
         flex-direction: row;
@@ -984,4 +985,3 @@ a {
         color: #fff;
     }
 }
-

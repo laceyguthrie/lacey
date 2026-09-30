@@ -20,6 +20,8 @@ activePage: media
         </nav>
 
         <div class="lg-reading-card">
+            <svg class="lg-reading-card__frame js-reading-card-frame" aria-hidden="true" focusable="false"></svg>
+
             <ul class="lg-reading-card__list">
                 <li class="lg-reading-card__item">
                     <a class="lg-reading-card__link" target="_blank" href="https://religioustech.org/wp-content/uploads/2019/09/Baudrillard-Jean.-Excerpts-from-Simulation-and-Simulacra.pdf">
@@ -42,7 +44,7 @@ activePage: media
             </ul>
         </div>
 
-        <section class="is-active js-tab-content" id="videos-panel">
+        <section class="is-active js-tab-content" id="videos-panel" role="tabpanel" aria-labelledby="tab-videos">
             <h2 class="sr-only">Videos</h2>
 
             <figure class="lg-video">
@@ -82,7 +84,7 @@ activePage: media
             </figure>
         </section>
 
-        <section class="js-tab-content" id="photos-panel">
+        <section class="js-tab-content" id="photos-panel" role="tabpanel" aria-labelledby="tab-photos">
             <h2 class="sr-only">Photos</h2>
             <p class="lg-section__text">I'm working on it :)</p>
         </section>

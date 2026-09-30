@@ -7,11 +7,11 @@ permalink: /mind/
 ---
 <main class="mn-main">
     <section class="lg-mind">
-        <h2 class="sr-only">mind</h2>
+        <h1 class="sr-only">mind</h1>
         {% assign entries = collections.mind | reverse %}
         {% for entry in entries %}
         <article class="lg-mind__entry">
-            <h3 class="lg-mind__entry-title">{{ entry.data.title }}</h3>
+            <h2 class="lg-mind__entry-title">{{ entry.data.title }}</h2>
             <p class="lg-mind__entry-meta">
                 <time datetime="{{ entry.date | date: '%Y-%m-%d' }}">{{ entry.date | date: '%B %d, %Y' }}</time>
             </p>

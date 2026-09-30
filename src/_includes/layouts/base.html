@@ -8,7 +8,7 @@
     <meta name="description" content="{{ description }}">
     <link rel="canonical" href="https://laceyguthrie.com{{ page.url }}">
 
-    <!-- Open Graph (Facebook) -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ ogTitle | default: title }}">
     <meta property="og:description" content="{{ description }}">
@@ -52,7 +52,7 @@
     {% assign activeSite = activeSite | default: "music" %}
     {% include "site-nav.html" %}
 
-    <header class="lg-header {{ headerModifier }} container">
+    <header class="lg-header container">
         <h1 class="lg-header__title"><a href="/">who do I think I am?</a></h1>
 
         <nav class="lg-header__nav">
@@ -79,11 +79,6 @@
     </footer>
 
     <script src="/js/init.js"></script>
-    {%- if extraScripts %}
-    {%- for src in extraScripts %}
-    <script src="/{{ src }}"></script>
-    {%- endfor %}
-    {%- endif %}
 
 </body>
 </html>
