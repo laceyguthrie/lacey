@@ -1,5 +1,5 @@
 ---
-title: resetting hyperfixation with the Salience Network (and drifting notes)
+title: Existential Survival and Brain Network Hybridization
 date: 2026-10-01
 ---
 
