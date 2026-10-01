@@ -1,5 +1,5 @@
 ---
-title: collection
+title: Things Other People Said
 date: 2026-09-23
 ---
 *The Book* by Alan Watts, chapter 1: "Inside Information"

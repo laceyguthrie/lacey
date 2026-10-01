@@ -1,5 +1,5 @@
 ---
-title: things I confused for consciousness
+title: List of Things Easily Confused for Consciousness
 date: 2026-09-15
 ---
 - [Self] (https://en.wikipedia.org/wiki/Self)
