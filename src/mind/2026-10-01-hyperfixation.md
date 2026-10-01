@@ -3,6 +3,8 @@ title: Existential Survival and Brain Network Hybridization
 date: 2026-10-01
 ---
 
+This is a search for a hardware bypass in the brain; a neuro-philosophical investigation into how the brain constructs the self, and how to intentionally disrupt that construction in order to hard-reset rumination and unshakable feelings of existential isolation and grief.
+
 Hyperfixation is part of Default Network Mode. The Salience Network monitors sensory data and switches the brain from DNM to the Task-Positive Network (TPN). They cannot be engaged simultaneously. Further questioning says this might not be an accurate description. The brain uses a Tripartite Network Model governed by three hubs: the DMN, the Salience Network, and the CEN / TPN (one hub). DMN is associated with the internal narrative, the past and the future, and self-relfection. The Central Executive Network handles outward attention, working memory, and gual execution. The Salience Network monitors the environment and directs energy between the DMN and CEN. There are actually hybrid configurations. Deep meditation is given as an example. The DMN is active but the user is not absorbed by it. 
 
 You can force the toggle with:
