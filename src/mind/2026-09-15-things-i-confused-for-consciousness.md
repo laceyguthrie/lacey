@@ -2,6 +2,8 @@
 title: things I confused for consciousness
 date: 2026-09-15
 ---
+- [Self] (https://en.wikipedia.org/wiki/Self)
+- [The Default Mode Network] (https://en.wikipedia.org/wiki/Default_mode_network)
 - [Metacognition](https://en.wikipedia.org/wiki/Metacognition)
 - [Awareness](https://en.wikipedia.org/wiki/Awareness)
 - [Thought](https://en.wikipedia.org/wiki/Thought)
