@@ -14,6 +14,9 @@ permalink: /mind/
             <h2 class="lg-mind__entry-title">{{ entry.data.title }}</h2>
             <p class="lg-mind__entry-meta">
                 <time datetime="{{ entry.date | date: '%Y-%m-%d' }}">{{ entry.date | date: '%B %d, %Y' }}</time>
+                {% if entry.data.edited %}
+                · Edited <time datetime="{{ entry.data.edited | date: '%Y-%m-%d' }}">{{ entry.data.edited | date: '%B %d, %Y' }}</time>
+                {% endif %}
             </p>
             <div class="lg-mind__entry-body">{{ entry.templateContent }}</div>
         </article>
