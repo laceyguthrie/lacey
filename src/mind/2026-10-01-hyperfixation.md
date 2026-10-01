@@ -8,13 +8,15 @@ Hyperfixation is part of Default Network Mode. The Salience Network monitors sen
 You can force the toggle with:
 
 1. Thermal shock
-2. Proprioceptive and Kinetic Demand — complex movement that requires balance or intense physical force. The brain cannot simultaneously be aware that it it existentially isolated while managing physical survival.
+2. Proprioceptive and Kinetic Demand AKA complex movement that requires balance or intense physical force. The brain cannot simultaneously be aware that it it existentially isolated while managing physical survival.
 3. A blunt-force tool like alcohol. We’ve removed this from the equation.
-4. Engage in a highly tactile and physical task with clear rules and physical resistance. Examples given are chopping wood and kneading dough. In my world this probably maps to sewing.
+4. Engaging in a highly tactile and physical task with clear rules and physical resistance. Examples given are chopping wood and kneading dough. In my world this probably maps to sewing.
 
-Apparently flow state and creative work is a hybrid state. Generation (DMN) vs. editing (CEN). This hybrid is also described when it comes to learning complex musical pieces, just in reverse. The CEN is active first while you’re learning and memorizing, then the DMN after motor integration allows you to emote through the piece. Note that the final “emoting” stage is not strictly the DMN, it’s flow state, which is the seamless coupling of the DMN and the CEN. The Archivist hooks directly into the Executive Engine.
+Apparently flow state and creative work is a hybrid. Generation (DMN) vs. editing (CEN). This hybrid is also described when it comes to learning complex musical pieces, just in reverse. The CEN is active first while you’re learning and memorizing, then the DMN after motor integration allows you to emote through the piece. Note that the final “emoting” stage is not strictly the DMN, it’s flow state, which is the coupling of the DMN and the CEN. The Archivist hooks directly into the Executive Engine. I've got more questions about this.
 
-Substances and their effects on the Tripartite Network Model — alcohol numbs networks. THC amplifies the DMN which can result in an explosion of creative associations. It can also increase hyperfixation on the self and the internal narrative. Psilocybin act primariliy on sreotonin receptors / shatters the DMN’s rigid connectivity (this seems like it’s a research project by itself — the DMN has major hubs and the ego emanates from a synchronized loop that happens in here — it’s not a black box, we can learn).
+*Substances and their effects on the Tripartite Network Model*
+
+Alcohol numbs networks, we are not interested in this. THC amplifies the DMN which can result in an explosion of creative associations. It can also increase hyperfixation on the self and the internal narrative. Psilocybin act primariliy on sreotonin receptors / shatters the DMN’s rigid connectivity (this seems like it’s a research project by itself — the DMN has major hubs and the ego emanates from a synchronized loop that happens in here — it’s not a black box, we can learn).
 
 *Opening the ego black box*
 
@@ -32,4 +34,4 @@ The generation of the ego can be viewed as a closed-loop conditional circuit per
 
 *Network Desynchronization*
 
-Experiencing awe is a hybrid state like deep meditation. Outward attention (CEN) is active, but your sensory load is so massive that the Narrator (mPFC) gets desynchronized while the Archivist (PCC) remains open.
+Experiencing awe is a hybrid state, like a flow state, like deep meditation. Outward attention (CEN) is active, but your sensory load is so massive that the Narrator (mPFC) gets desynchronized while the Archivist (PCC) remains open. What seems unique about this (compared to creative generation and flow-state activity) is the work required. I can enter a hybrid state by simply going somewhere and observing. Is meditation also simply going somewhere (to sit on the floor) and observing? Another box.
