@@ -5,12 +5,29 @@ description: Lacey Guthrie is a songwriter/musician based in Louisville, Kentuck
 activeSite: mind
 permalink: /mind/
 ---
+{% assign entries = collections.mind | reverse %}
 <main class="mn-main">
+    <!-- One nav, two shapes: a dropdown on small screens and a sticky
+         list on wide ones. CSS shows only one at a time. -->
+    <nav class="lg-mind-nav" aria-label="Table of Contents">
+        <details class="lg-mind-nav__dropdown js-mind-nav-dropdown">
+            <summary class="lg-mind-nav__summary">table of contents</summary>
+            <ul class="lg-mind-nav__menu">
+                {% for entry in entries %}
+                <li><a href="#{{ entry.fileSlug }}">{{ entry.data.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </details>
+        <ul class="lg-mind-nav__list">
+            {% for entry in entries %}
+            <li><a href="#{{ entry.fileSlug }}">{{ entry.data.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
     <section class="lg-mind">
         <h1 class="sr-only">mind</h1>
-        {% assign entries = collections.mind | reverse %}
         {% for entry in entries %}
-        <article class="lg-mind__entry">
+        <article class="lg-mind__entry" id="{{ entry.fileSlug }}">
             <h2 class="lg-mind__entry-title">{{ entry.data.title }}</h2>
             <p class="lg-mind__entry-meta">
                 <time datetime="{{ entry.date | date: '%Y-%m-%d' }}">{{ entry.date | date: '%B %d, %Y' }}</time>
@@ -23,3 +40,12 @@ permalink: /mind/
         {% endfor %}
     </section>
 </main>
+<script>
+    // Close the dropdown once a post is picked, so it is not left hanging
+    // open when you scroll back up.
+    document.querySelectorAll('.js-mind-nav-dropdown a').forEach((link) => {
+        link.addEventListener('click', () => {
+            link.closest('details').removeAttribute('open');
+        });
+    });
+</script>

@@ -1,5 +1,5 @@
 ---
-title: Things Other People Said
+title: Raw Materials
 date: 2026-09-23
 ---
 *The Book* by Alan Watts, chapter 1: "Inside Information"
