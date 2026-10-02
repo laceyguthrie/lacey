@@ -3,18 +3,18 @@ title: Existential Survival and Brain Network Hybridization
 date: 2026-10-01
 ---
 
-This is a search for a hardware bypass in the brain; a neuro-philosophical investigation into how the brain constructs the self, and how to intentionally disrupt that construction in order to hard-reset rumination and unshakable feelings of existential isolation and grief.
+Notes on a search for a hardware bypass in the brain; neuro-philosophical investigation into how the brain emanates the self, and how to intentionally disrupt that construction in order to escape loops of rumination and existential isolation and grief.
 
-Hyperfixation is part of Default Network Mode. The Salience Network monitors sensory data and switches the brain from DNM to the Task-Positive Network (TPN). They cannot be engaged simultaneously. Further questioning says this might not be an accurate description. The brain uses a Tripartite Network Model governed by three hubs: the DMN, the Salience Network, and the CEN / TPN (one hub). DMN is associated with the internal narrative, the past and the future, and self-relfection. The Central Executive Network handles outward attention, working memory, and gual execution. The Salience Network monitors the environment and directs energy between the DMN and CEN. There are actually hybrid configurations. Deep meditation is given as an example. The DMN is active but the user is not absorbed by it. 
+Hyperfixation is part of Default Network Mode. The Salience Network monitors sensory data and switches the brain from DNM to the Task-Positive Network (TPN). ~~They cannot be engaged simultaneously.~~ Further reading says this is not accurate. The brain uses a Tripartite Network Model governed by three hubs: the DMN, the Salience Network, and the CEN / TPN (one hub). DMN is associated with the internal narrative, the past and the future, and self-relfection. The Central Executive Network handles outward attention, working memory, and goal execution. The Salience Network monitors the environment and directs energy between the DMN and CEN. There are hybrid configurations. Deep meditation is given as an example. The DMN is active but the user is not absorbed by it. 
 
 You can force the toggle with:
 
 1. Thermal shock
-2. Proprioceptive and Kinetic Demand AKA complex movement that requires balance or intense physical force. The brain cannot simultaneously be aware that it it existentially isolated while managing physical survival.
+2. Proprioceptive and Kinetic Demand AKA complex movement that requires balance or intense physical force. The brain cannot simultaneously be aware that it is existentially isolated while managing physical survival.
 3. A blunt-force tool like alcohol. We’ve removed this from the equation.
-4. Engaging in a highly tactile and physical task with clear rules and physical resistance. Examples given are chopping wood and kneading dough. In my world this probably maps to sewing.
+4. Engaging in a highly tactile and physical task with clear rules and physical resistance. Examples given are chopping wood and kneading dough. In my world this probably maps to sewing. Making a note that things tend to come back to "chop wood and carry water".
 
-Apparently flow state and creative work is a hybrid. Generation (DMN) vs. editing (CEN). This hybrid is also described when it comes to learning complex musical pieces, just in reverse. The CEN is active first while you’re learning and memorizing, then the DMN after motor integration allows you to emote through the piece. Note that the final “emoting” stage is not strictly the DMN, it’s flow state, which is the coupling of the DMN and the CEN. The Archivist hooks directly into the Executive Engine. I've got more questions about this.
+Apparently flow state and creative work produce (engage?) a hybrid state (is state the right word?). Generation (DMN) vs. editing (CEN). This hybrid is also described when it comes to learning complex musical pieces, just in reverse. The CEN is active first while you’re learning and memorizing, then the DMN after motor integration allows you to emote through the piece. Note that the final “emoting” stage is not strictly the DMN, it’s flow state, which is the coupling of the DMN and the CEN. I've got more questions about this.
 
 *Substances and their effects on the Tripartite Network Model*
 
@@ -36,4 +36,10 @@ The generation of the ego can be viewed as a closed-loop conditional circuit per
 
 *Network Desynchronization*
 
-Experiencing awe is a hybrid state, like a flow state, like deep meditation. Outward attention (CEN) is active, but your sensory load is so massive that the Narrator (mPFC) gets desynchronized while the Archivist (PCC) remains open. What seems unique about this (compared to creative generation and flow-state activity) is the work required. I can enter a hybrid state by simply going somewhere and observing. Is meditation also simply going somewhere (to sit on the floor) and observing? Another box.
+Experiencing awe is a hybrid state, like a flow state, like deep meditation. Outward attention (CEN) is active, but your sensory load is so massive that the Narrator (mPFC) gets desynchronized while the Archivist (PCC) remains open. What seems unique about this (compared to creative generation and flow-state activity) is the work required. I can enter a hybrid state by simply going somewhere and observing. Is meditation also simply going somewhere (to sit on the floor) and observing? Another box. 
+
+Musical improvisation. Not in the box of effortless desynchronization.
+
+*Nonsense*
+
+Is it: either disingage the DMN, or destabilize its circuit? If the DMN is oscillating, what's the TPN doing? Right now in my mind's eye, the destabilization of the DMN is conceptually tied to the idea of the TPN somehow engaging itself from within with some kind of feedback? Is the opposit of fire water, or is it no fire?

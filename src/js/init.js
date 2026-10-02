@@ -616,6 +616,17 @@ function setupEmailLinks() {
   });
 }
 
+// Mind nav: close the dropdown once a post is picked, so it is not left
+// hanging open when you scroll back up.
+
+function setupMindNavDropdown() {
+  document.querySelectorAll('.js-mind-nav-dropdown a').forEach(link => {
+    link.addEventListener('click', () => {
+      link.closest('details').removeAttribute('open');
+    });
+  });
+}
+
 // Reading Card Frame (text that flows around the card's edge as a border)
 
 function setupReadingCardFrame() {
@@ -778,4 +789,5 @@ document.addEventListener('DOMContentLoaded', function() {
   setupLazyIframes();
   setupEmailLinks();
   setupReadingCardFrame();
+  setupMindNavDropdown();
 });

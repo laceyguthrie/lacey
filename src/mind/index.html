@@ -7,8 +7,6 @@ permalink: /mind/
 ---
 {% assign entries = collections.mind | reverse %}
 <main class="mn-main">
-    <!-- One nav, two shapes: a dropdown on small screens and a sticky
-         list on wide ones. CSS shows only one at a time. -->
     <nav class="lg-mind-nav" aria-label="Table of Contents">
         <details class="lg-mind-nav__dropdown js-mind-nav-dropdown">
             <summary class="lg-mind-nav__summary">table of contents</summary>
@@ -40,12 +38,3 @@ permalink: /mind/
         {% endfor %}
     </section>
 </main>
-<script>
-    // Close the dropdown once a post is picked, so it is not left hanging
-    // open when you scroll back up.
-    document.querySelectorAll('.js-mind-nav-dropdown a').forEach((link) => {
-        link.addEventListener('click', () => {
-            link.closest('details').removeAttribute('open');
-        });
-    });
-</script>
