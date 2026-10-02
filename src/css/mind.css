@@ -54,11 +54,7 @@ body.mn-body {
     margin: 0;
 }
 
-.lg-mind-header__byline a {
-    color: inherit;
-}
-
-.lg-mind-header__byline a:hover {
+.lg-mind-header__byline .lg-email:hover {
     background: var(--ms-ink);
     color: var(--ms-bg);
 }

@@ -607,12 +607,25 @@ function setupLazyIframes() {
 }
 
 // Addresses are assembled at runtime to keep them out of the HTML source.
+// Clicking one copies it instead of opening a mail app.
 
 function setupEmailLinks() {
-  document.querySelectorAll('.js-email').forEach(link => {
-    const address = link.dataset.user + '@' + link.dataset.domain;
-    link.href = 'mailto:' + address;
-    link.textContent = address;
+  document.querySelectorAll('.js-email').forEach(button => {
+    const address = button.dataset.user + '@' + button.dataset.domain;
+    button.textContent = address;
+    button.setAttribute('aria-live', 'polite');
+
+    let resetTimer;
+    button.addEventListener('click', () => {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(address).then(() => {
+        button.textContent = 'copied';
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(() => {
+          button.textContent = address;
+        }, 1500);
+      });
+    });
   });
 }
 

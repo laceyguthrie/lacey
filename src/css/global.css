@@ -24,6 +24,14 @@ button {
     position: relative;
 }
 
+/* Email addresses are buttons that copy to the clipboard, styled as links. */
+.lg-email {
+    font-size: inherit;
+    line-height: inherit;
+    text-decoration: underline;
+    user-select: text;
+}
+
 a {
     color: inherit;
     text-decoration: underline;
