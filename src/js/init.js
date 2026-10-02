@@ -607,22 +607,41 @@ function setupLazyIframes() {
 }
 
 // Addresses are assembled at runtime to keep them out of the HTML source.
-// Clicking one copies it instead of opening a mail app.
+// Clicking one copies it instead of opening a mail app. A "copied" badge
+// sits on top of the address so the text never changes length, and a
+// separate status region tells screen readers what happened.
 
 function setupEmailLinks() {
-  document.querySelectorAll('.js-email').forEach(button => {
+  const buttons = document.querySelectorAll('.js-email');
+  if (!buttons.length) return;
+
+  // A live region has to be in the page before its text changes, or
+  // screen readers will not announce it.
+  const status = document.createElement('span');
+  status.className = 'sr-only';
+  status.setAttribute('role', 'status');
+  document.body.appendChild(status);
+
+  buttons.forEach(button => {
     const address = button.dataset.user + '@' + button.dataset.domain;
     button.textContent = address;
-    button.setAttribute('aria-live', 'polite');
+
+    const badge = document.createElement('span');
+    badge.className = 'lg-email__badge';
+    badge.setAttribute('aria-hidden', 'true');
+    badge.textContent = 'copied';
+    button.appendChild(badge);
 
     let resetTimer;
     button.addEventListener('click', () => {
       if (!navigator.clipboard) return;
       navigator.clipboard.writeText(address).then(() => {
-        button.textContent = 'copied';
+        button.classList.add('is-copied');
+        status.textContent = address + ' copied to clipboard';
         clearTimeout(resetTimer);
         resetTimer = setTimeout(() => {
-          button.textContent = address;
+          button.classList.remove('is-copied');
+          status.textContent = '';
         }, 1500);
       });
     });

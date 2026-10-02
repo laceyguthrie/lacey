@@ -3,7 +3,7 @@ title: Existential Survival and Brain Network Hybridization
 date: 2026-10-01
 ---
 
-Notes on a search for a hardware bypass in the brain; neuro-philosophical investigation into how the brain emanates the self, and how to intentionally disrupt that construction in order to escape loops of rumination and existential isolation and grief.
+Notes on a search for a conceptual bypass in the brain; neuro-philosophical investigation into how the brain emanates the self, and how to intentionally disrupt its construction in order to escape loops of rumination and existential isolation and grief. (this summary is a mess and full of misconceptions)
 
 *edit: I've underestimated the Salience Network. How on earth is salience determined?*
 
