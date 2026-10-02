@@ -7,6 +7,10 @@ permalink: /mind/
 ---
 {% assign entries = collections.mind | reverse %}
 <main class="mn-main">
+    <header class="lg-mind-header">
+        <h1 class="lg-mind-header__title">intuition pumps / research notebook</h1>
+        <p class="lg-mind-header__byline">learning in public. sources are absent or informal, thoughts are unfinished and likely include mistakes and misunderstandings. if you have thoughts to share, email me at <a class="js-email" data-user="lacey.guthrie" data-domain="gmail.com" href="#">lacey.guthrie at gmail dot com</a></p>
+    </header>
     <nav class="lg-mind-nav" aria-label="Table of Contents">
         <details class="lg-mind-nav__dropdown js-mind-nav-dropdown">
             <summary class="lg-mind-nav__summary">table of contents</summary>
@@ -23,7 +27,6 @@ permalink: /mind/
         </ul>
     </nav>
     <section class="lg-mind">
-        <h1 class="sr-only">mind</h1>
         {% for entry in entries %}
         <article class="lg-mind__entry" id="{{ entry.fileSlug }}">
             <h2 class="lg-mind__entry-title">{{ entry.data.title }}</h2>

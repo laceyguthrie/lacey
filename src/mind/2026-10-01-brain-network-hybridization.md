@@ -5,41 +5,55 @@ date: 2026-10-01
 
 Notes on a search for a hardware bypass in the brain; neuro-philosophical investigation into how the brain emanates the self, and how to intentionally disrupt that construction in order to escape loops of rumination and existential isolation and grief.
 
-Hyperfixation is part of Default Network Mode. The Salience Network monitors sensory data and switches the brain from DNM to the Task-Positive Network (TPN). ~~They cannot be engaged simultaneously.~~ Further reading says this is not accurate. The brain uses a Tripartite Network Model governed by three hubs: the DMN, the Salience Network, and the CEN / TPN (one hub). DMN is associated with the internal narrative, the past and the future, and self-relfection. The Central Executive Network handles outward attention, working memory, and goal execution. The Salience Network monitors the environment and directs energy between the DMN and CEN. There are hybrid configurations. Deep meditation is given as an example. The DMN is active but the user is not absorbed by it. 
+*edit: I've underestimated the Salience Network. How on earth is salience determined?*
 
-You can force the toggle with:
+Hyperfixation is part of Default Network Mode. The Salience Network monitors sensory data and switches the brain from DNM to the Task-Positive Network (TPN). ~~They cannot be engaged simultaneously.~~ This isn't accurate, it's more like they compete or couple or cooperate depending on task / state. ~~The brain uses a Tripartite Network Model governed by three hubs: the DMN, the Salience Network, and the CEN / TPN (one hub).~~ What I'm describing is high-level cognition in terms of three interacting networks. DMN is associated with the internal narrative, the past and the future, and self-relfection. The Central Executive Network handles outward attention, working memory, and goal execution. ~~The Salience Network monitors the environment and directs energy between the DMN and CEN.~~ The Salience Network monitors for relevant stuff, stuff that's *salient* AKA matters enough to make a change. It's monitoring sensory input but it's also picking up internally generated signals like *thoughts that have become important*. AKA something has fucked with my prediction model (no soundcheck, out of gas) or doesn't fit, or I smell something burning, or I see my lover, or I get a phonecall, we should do something about it?
+
+There are hybrid configurations. Deep meditation is given as an example. The DMN is active but the user is not absorbed by it. 
+
+You can force the toggle with (edit: "toggle" was a naive interpretation of this, we're really asking how the brain reconfigures the cooperation between internal and external processing mechanisms):
 
 1. Thermal shock
-2. Proprioceptive and Kinetic Demand AKA complex movement that requires balance or intense physical force. The brain cannot simultaneously be aware that it is existentially isolated while managing physical survival.
+2. Proprioceptive and Kinetic Demand AKA complex movement that requires balance or intense physical force. Increasing sensorimotor and attentional demands may reduce the cognitive resources available for unconstrained recursive self-modeling.
 3. A blunt-force tool like alcohol. We’ve removed this from the equation.
 4. Engaging in a highly tactile and physical task with clear rules and physical resistance. Examples given are chopping wood and kneading dough. In my world this probably maps to sewing. Making a note that things tend to come back to "chop wood and carry water".
 
-Apparently flow state and creative work produce (engage?) a hybrid state (is state the right word?). Generation (DMN) vs. editing (CEN). This hybrid is also described when it comes to learning complex musical pieces, just in reverse. The CEN is active first while you’re learning and memorizing, then the DMN after motor integration allows you to emote through the piece. Note that the final “emoting” stage is not strictly the DMN, it’s flow state, which is the coupling of the DMN and the CEN. I've got more questions about this.
-
-*Substances and their effects on the Tripartite Network Model*
-
-Alcohol numbs networks, we are not interested in this. THC amplifies the DMN which can result in an explosion of creative associations. It can also increase hyperfixation on the self and the internal narrative. Psilocybin act primariliy on sreotonin receptors / shatters the DMN’s rigid connectivity (this seems like it’s a research project by itself — the DMN has major hubs and the ego emanates from a synchronized loop that happens in here — it’s not a black box, we can learn).
+Apparently flow state and creative work produce (engage?) a hybric/dynamic configuration (is state the right word?). Generation (DMN) vs. editing (CEN). This hybrid is also described when it comes to learning complex musical pieces, just in reverse. The CEN is active first while you’re learning and memorizing, then the DMN after motor integration allows you to emote through the piece. Note that the final “emoting” stage is not strictly the DMN, it’s flow state, which is the coupling of the DMN and the CEN. I've got more questions about this.
 
 *Opening the ego black box*
 
 The ego is a dynamic, continuous process. It is a self-referential simulation generated by a network of specialized hubs firing in perfect synchrony. A self-referential simulation. A self-referential simulation. A self-referential simulation. A self-referential simulation. A self-referential simulation. A self-referential simulation. A self-referential simulation. A self-referential simulation. A self-referential simulation. 
 
-The DMN has two core hubs, the Posterior Cingulate Cortext and Precuneus, and the Medial Prefontal Cortext. Referred to as the Archivist and the Narrator, respectively. I think my narrator needs a hand. 
+**recursive self-reference**
 
-The Archivist is located toward the back-middle of the brain. It’s the main collector of my autobiographical memory. It tracks history and connects past experiences to my current self-image. What are reasons why this part of the brain might operate poorly? Another box.
+The Posterior Cingulate Cortext and Precuneus and the Medial Prefontal Cortext are two core nodes of the DMN. They're not the whole thing.
 
-The Narrator is located right behind the forehead. Mine is very active. It handles self-referential processing and emotional evaluation (it asks “what does this mean about me?”). It projects my identity into the future. It constructs the continuous internal monolog (situation models) that dictate my personal story. 
+The PCC is located toward the back-middle of the brain. It’s a major part of a function in the brain that's the librarian of my autobiographical memory. It tracks history and connects past experiences to my current self-image. What are reasons why this part of the brain might operate poorly? Another box. Note that memories are not stored in the PCC / they aren't sitting in the back of my brain. The PCC goes looking for applicable bigraphical information / context to apply to the current situation. I might use "This Researcher goes to the Library" as a shorthand for the process.
 
-The generation of the ego can be viewed as a closed-loop conditional circuit performed between the Archivist and the Narrator. The ego emanates from the phase-locking (synchrony) of the circuit. 
+The mPFC is located right behind the forehead. Mine is very active. It plays a major role in self-referential processing and emotional evaluation (it asks “what does this mean about me?”). It projects my identity into the future. It gathers data for the continuous internal monolog (situation models) that dictate my personal story. Shorthand for this process might be "This Researcher studies Lacey".
 
-“If language is a low-bandwidth, highly error-prone prediction model, music is the high-bandwidth hardware bypass.”
+Where is language?
+
+Can generation of the ego be viewed as a closed-loop conditional circuit performed between the PCC and the mPFC? Does the ego emanate from the phase-locking (synchrony) of the circuit? At what point and through what recurrent processes does information about me become the experience of being me?
+
+*Clarifications*
+
+Bypassing wouldn't be an actual neural bypass but methods for alternative routes for organizing attention and prediction that don't require language-mediated recursive self-narration to dominate conscious experience
 
 *Network Desynchronization*
 
-Experiencing awe is a hybrid state, like a flow state, like deep meditation. Outward attention (CEN) is active, but your sensory load is so massive that the Narrator (mPFC) gets desynchronized while the Archivist (PCC) remains open. What seems unique about this (compared to creative generation and flow-state activity) is the work required. I can enter a hybrid state by simply going somewhere and observing. Is meditation also simply going somewhere (to sit on the floor) and observing? Another box. 
+**Recursive self-reference**
+
+Some speculation / what if:
+
+Experiencing awe is a dynamic configuration, like a flow state, like deep meditation. Outward attention (CEN) is active, but your sensory load is so massive that the Narrator (mPFC) gets desynchronized while the Archivist (PCC) remains open. What seems unique about this (compared to creative generation and flow-state activity) is the work required. I can activate a dynamic configuration by simply going somewhere and observing. Is meditation also simply going somewhere (to sit on the floor) and observing? Another box. 
 
 Musical improvisation. Not in the box of effortless desynchronization.
 
-*Nonsense*
+"Does X reduce recursive self-reference by overwhelming or decoupling evaluative self-processing while preserving autobiographical and perceptual integration?"
+
+Do I want to disrupt the self-model or do I want to stop the self-model from being recursively mistaken for the entirety of experience?
+
+“If language is a low-bandwidth, highly error-prone prediction model, music is the high-bandwidth hardware bypass.” (poetic)
 
 Is it: either disingage the DMN, or destabilize its circuit? If the DMN is oscillating, what's the TPN doing? Right now in my mind's eye, the destabilization of the DMN is conceptually tied to the idea of the TPN somehow engaging itself from within with some kind of feedback? Is the opposite of fire water, or is it no fire

@@ -32,6 +32,37 @@ body.mn-body {
     scroll-margin-top: 2rem;
 }
 
+/* Header
+   ========================================================================== */
+
+.lg-mind-header {
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.lg-mind-header__title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+}
+
+.lg-mind-header__byline {
+    font-size: 0.6875rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.lg-mind-header__byline a {
+    color: inherit;
+}
+
+.lg-mind-header__byline a:hover {
+    background: var(--ms-ink);
+    color: var(--ms-bg);
+}
+
 @media (prefers-reduced-motion: no-preference) {
     html {
         scroll-behavior: smooth;
@@ -111,6 +142,12 @@ body.mn-body {
     border-top: none;
 }
 
+/* Safari still shows absolutely positioned children of a closed <details>,
+   so hide the menu explicitly. */
+.lg-mind-nav__dropdown:not([open]) .lg-mind-nav__menu {
+    display: none;
+}
+
 .lg-mind-nav__list {
     display: none;
 }
@@ -124,6 +161,10 @@ body.mn-body {
         grid-template-columns: 200px minmax(0, 640px);
         gap: 3rem;
         align-items: start;
+    }
+
+    .lg-mind-header {
+        grid-column: 1 / -1;
     }
 
     .lg-mind-nav {
