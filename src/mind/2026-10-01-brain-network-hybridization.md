@@ -42,4 +42,4 @@ Musical improvisation. Not in the box of effortless desynchronization.
 
 *Nonsense*
 
-Is it: either disingage the DMN, or destabilize its circuit? If the DMN is oscillating, what's the TPN doing? Right now in my mind's eye, the destabilization of the DMN is conceptually tied to the idea of the TPN somehow engaging itself from within with some kind of feedback? Is the opposit of fire water, or is it no fire?
+Is it: either disingage the DMN, or destabilize its circuit? If the DMN is oscillating, what's the TPN doing? Right now in my mind's eye, the destabilization of the DMN is conceptually tied to the idea of the TPN somehow engaging itself from within with some kind of feedback? Is the opposite of fire water, or is it no fire
