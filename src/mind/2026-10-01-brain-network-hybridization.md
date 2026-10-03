@@ -5,20 +5,24 @@ date: 2026-10-01
 
 Notes on a search for a conceptual bypass in the brain; neuro-philosophical investigation into how the brain emanates the self, and how to intentionally disrupt its construction in order to escape loops of rumination and existential isolation and grief. (this summary is a mess and full of misconceptions)
 
-*edit: I've underestimated the Salience Network. How on earth is salience determined?*
+Hyperfixation is probably part of the Default Network Mode. The Salience Network monitors sensory data and internal events and can engage the Task-Positive Network (TPN) if something salient requires task-oriented thinking or physical effort. ~~They cannot be engaged simultaneously.~~ The DMN and TPN compete, couple, or cooperate depending on task / state. Ex. highly-focused, physically demanding, high-risk activities (I imagine) would largely fall to the TPN and the DMN would take a back seat. ~~The brain uses a Tripartite Network Model governed by three hubs: the DMN, the Salience Network, and the CEN / TPN (one hub).~~ What I'm describing is high-level cognition in terms of three interacting networks. DMN is associated with the internal narrative, the past and the future, and self-relfection. The Central Executive Network handles outward attention, working memory, and goal execution. ~~The Salience Network monitors the environment and directs energy between the DMN and CEN.~~ The Salience Network monitors for relevant stuff, stuff that's *salient* AKA matters enough to notice. It's monitoring sensory input but it's also picking up internally generated signals like *thoughts that have become important*. This is key. Metacognitive dysfunction can involve assigning too much importance or power to some thoughts. Will return to this later. Salience allocates attention to something has upset a prediction model, doesn't fit in the environment, ex. I smell something burning, I notice a snake, someone's reaction doesn't match expectations (thinking in terms of microexpressions, maybe).
 
-Hyperfixation is part of Default Network Mode. The Salience Network monitors sensory data and switches the brain from DNM to the Task-Positive Network (TPN). ~~They cannot be engaged simultaneously.~~ This isn't accurate, it's more like they compete or couple or cooperate depending on task / state. ~~The brain uses a Tripartite Network Model governed by three hubs: the DMN, the Salience Network, and the CEN / TPN (one hub).~~ What I'm describing is high-level cognition in terms of three interacting networks. DMN is associated with the internal narrative, the past and the future, and self-relfection. The Central Executive Network handles outward attention, working memory, and goal execution. ~~The Salience Network monitors the environment and directs energy between the DMN and CEN.~~ The Salience Network monitors for relevant stuff, stuff that's *salient* AKA matters enough to make a change. It's monitoring sensory input but it's also picking up internally generated signals like *thoughts that have become important*. AKA something has fucked with my prediction model (no soundcheck, out of gas) or doesn't fit, or I smell something burning, or I see my lover, or I get a phonecall, we should do something about it?
+Deep meditation is given as an example of these processes being dynamically engaged. The DMN is active but the user is not absorbed by it. 
 
-There are hybrid configurations. Deep meditation is given as an example. The DMN is active but the user is not absorbed by it. 
-
-You can force the toggle with (edit: "toggle" was a naive interpretation of this, we're really asking how the brain reconfigures the cooperation between internal and external processing mechanisms):
+The brain can be prompted to reconfigure the cooperation between internal (DMN) and external (TPN) processing mechanisms with (assuming we're stuck in a self-referential internal-processing loop):
 
 1. Thermal shock
 2. Proprioceptive and Kinetic Demand AKA complex movement that requires balance or intense physical force. Increasing sensorimotor and attentional demands may reduce the cognitive resources available for unconstrained recursive self-modeling.
 3. A blunt-force tool like alcohol. We’ve removed this from the equation.
 4. Engaging in a highly tactile and physical task with clear rules and physical resistance. Examples given are chopping wood and kneading dough. In my world this probably maps to sewing. Making a note that things tend to come back to "chop wood and carry water".
 
-Apparently flow state and creative work produce (engage?) a hybric/dynamic configuration (is state the right word?). Generation (DMN) vs. editing (CEN). This hybrid is also described when it comes to learning complex musical pieces, just in reverse. The CEN is active first while you’re learning and memorizing, then the DMN after motor integration allows you to emote through the piece. Note that the final “emoting” stage is not strictly the DMN, it’s flow state, which is the coupling of the DMN and the CEN. I've got more questions about this.
+Apparently flow state and creative work inspire a hybric/dynamic configuration. Generation (DMN) vs. editing (CEN). This hybrid is also described when it comes to learning complex musical pieces, just in reverse. The CEN is active first while you’re learning and memorizing, then the DMN after motor integration allows you to emote through the piece. Note that the final “emoting” stage is not strictly the DMN, it’s flow state, which is the coupling of the DMN and the CEN. I've got more questions about this. 
+
+Experiencing awe is a dynamic configuration, like a flow state, like deep meditation. Outward attention (CEN) is active, but your sensory load is so massive that the Narrator (mPFC) gets desynchronized while the Archivist (PCC) remains open. What seems unique about this (compared to creative generation and flow-state activity) is the work required. I can activate a dynamic configuration by simply going somewhere and observing. Is meditation also simply going somewhere (to sit on the floor) and observing? Another box. 
+
+Musical improvisation. Not in the box of effortless desynchronization.
+
+How does the allocation work? Are we osscilating? Is categorizing complex tasks actually too broad / does this truly get broken down into learning and expression? In that case, what things are truly hybrid employments of these parts of the brain outside of meditation and awe?
 
 *Opening the ego black box*
 
@@ -46,10 +50,6 @@ Bypassing wouldn't be an actual neural bypass but methods for alternative routes
 
 Some speculation / what if:
 
-Experiencing awe is a dynamic configuration, like a flow state, like deep meditation. Outward attention (CEN) is active, but your sensory load is so massive that the Narrator (mPFC) gets desynchronized while the Archivist (PCC) remains open. What seems unique about this (compared to creative generation and flow-state activity) is the work required. I can activate a dynamic configuration by simply going somewhere and observing. Is meditation also simply going somewhere (to sit on the floor) and observing? Another box. 
-
-Musical improvisation. Not in the box of effortless desynchronization.
-
 "Does X reduce recursive self-reference by overwhelming or decoupling evaluative self-processing while preserving autobiographical and perceptual integration?"
 
 Do I want to disrupt the self-model or do I want to stop the self-model from being recursively mistaken for the entirety of experience?
@@ -57,3 +57,30 @@ Do I want to disrupt the self-model or do I want to stop the self-model from bei
 “If language is a low-bandwidth, highly error-prone prediction model, music is the high-bandwidth hardware bypass.” (poetic)
 
 Is it: either disingage the DMN, or destabilize its circuit? If the DMN is oscillating, what's the TPN doing? Right now in my mind's eye, the destabilization of the DMN is conceptually tied to the idea of the TPN somehow engaging itself from within with some kind of feedback? Is the opposite of fire water, or is it no fire
+
+**Language**
+
+What does language add to motivational architecture?
+
+Bird doesn't need an internal monologue to make a decision that it's time to migrate (that we know of)
+
+*Bird*
+
+Something in the organism or its environment has changed
+
+- It becomes motivationally significant
+- Bird ready to migrate
+- Bird goes
+
+*Human*
+
+Something in the organism/world has changed.
+
+- I notice something (SN says "look at that")
+- What is this? (how do we use sensory input and memory to identify things?)
+- Why do I feel this? (not sure what's happening here)
+- What does this mean? (PCC process / archivist gathering data -- is that right?)
+- What does it mean about me? (DMN researching Lacey)
+- Why am I the kind of person who feels this? (what's this part?)
+- What if I always feel this? (this seems metacognitive plus temporal extension of self)
+- ...
