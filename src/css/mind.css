@@ -3,13 +3,11 @@
     color: #000;
 }
 
-body.mn-body {
-    --ms-bg: #fdf6b0;
-    --ms-ink: #2e2e2e;
+.lg-page--mind {
+    --bg: #fdf6b0;
+    --ink: #2e2e2e;
     margin: 0;
     min-height: 100vh;
-    background: var(--ms-bg);
-    color: var(--ms-ink);
     font-family: "Inter", sans-serif;
     display: flex;
     flex-direction: column;
@@ -17,17 +15,17 @@ body.mn-body {
     padding: 5rem 1.5rem 4rem;
 }
 
-.mn-main {
+.lg-main {
     width: 100%;
     max-width: 640px;
 }
 
-.lg-mind {
+.lg-entries {
     max-width: 640px;
     margin: 0;
 }
 
-.lg-mind__entry {
+.lg-entry {
     margin-bottom: 3rem;
     scroll-margin-top: 2rem;
 }
@@ -35,28 +33,23 @@ body.mn-body {
 /* Header
    ========================================================================== */
 
-.lg-mind-header {
+.lg-page-header {
     max-width: 480px;
     margin: 0 auto 2.5rem;
     text-align: center;
 }
 
-.lg-mind-header__title {
+.lg-page-header__title {
     font-size: 0.875rem;
     font-weight: 700;
     margin: 0 0 0.5rem 0;
     line-height: 1.2;
 }
 
-.lg-mind-header__byline {
+.lg-page-header__byline {
     font-size: 0.6875rem;
     line-height: 1.6;
     margin: 0;
-}
-
-.lg-mind-header__byline .lg-email:hover {
-    background: var(--ms-ink);
-    color: var(--ms-bg);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -68,90 +61,85 @@ body.mn-body {
 /* Posts nav
    ========================================================================== */
 
-.lg-mind-nav {
+.lg-toc {
     font-size: 0.75rem;
     line-height: 1.4;
 }
 
-.lg-mind-nav ul {
+.lg-toc ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.lg-mind-nav a {
+.lg-toc a {
     display: block;
     text-decoration: none;
     padding: 0.375rem 0.5rem;
 }
 
-.lg-mind-nav a:hover {
-    background: var(--ms-ink);
-    color: var(--ms-bg);
-}
-
 /* Small screens: dropdown */
 
-.lg-mind-nav__dropdown {
+.lg-toc__dropdown {
     position: relative;
     margin-bottom: 2.5rem;
 }
 
-.lg-mind-nav__summary {
+.lg-toc__summary {
     list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
     padding: 0.5rem 0.75rem;
-    border: 1px dashed var(--ms-ink);
+    border: 1px dashed var(--ink);
     font-size: 0.5625rem;
     font-weight: 600;
     letter-spacing: 0.025rem;
     text-transform: uppercase;
 }
 
-.lg-mind-nav__summary::-webkit-details-marker {
+.lg-toc__summary::-webkit-details-marker {
     display: none;
 }
 
-.lg-mind-nav__summary::after {
+.lg-toc__summary::after {
     content: "+";
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1;
 }
 
-.lg-mind-nav__dropdown[open] .lg-mind-nav__summary::after {
+.lg-toc__dropdown[open] .lg-toc__summary::after {
     content: "\2212";
 }
 
-.lg-mind-nav__menu {
+.lg-toc__menu {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     z-index: 5;
     padding: 0.25rem !important;
-    background: var(--ms-bg);
-    border: 1px dashed var(--ms-ink);
+    background: var(--bg);
+    border: 1px dashed var(--ink);
     border-top: none;
 }
 
 /* Safari still shows absolutely positioned children of a closed <details>,
    so hide the menu explicitly. */
-.lg-mind-nav__dropdown:not([open]) .lg-mind-nav__menu {
+.lg-toc__dropdown:not([open]) .lg-toc__menu {
     display: none;
 }
 
-.lg-mind-nav__list {
+.lg-toc__list {
     display: none;
 }
 
 /* Wide screens: sticky list on the left */
 
 @media screen and (min-width: 960px) {
-    .mn-main {
+    .lg-main {
         max-width: calc(200px + 3rem + 640px);
         display: grid;
         grid-template-columns: 200px minmax(0, 640px);
@@ -159,39 +147,39 @@ body.mn-body {
         align-items: start;
     }
 
-    .lg-mind-header {
+    .lg-page-header {
         grid-column: 1 / -1;
     }
 
-    .lg-mind-nav {
+    .lg-toc {
         position: sticky;
         top: 2rem;
         max-height: calc(100vh - 4rem);
         overflow-y: auto;
     }
 
-    .lg-mind-nav__dropdown {
+    .lg-toc__dropdown {
         display: none;
     }
 
-    .lg-mind-nav__list {
+    .lg-toc__list {
         display: block;
-        border-left: 1px dashed var(--ms-ink);
+        border-left: 1px dashed var(--ink);
     }
 
-    .lg-mind-nav__list li + li {
+    .lg-toc__list li + li {
         margin-top: 0.25rem;
     }
 }
 
-.lg-mind__entry-title {
+.lg-entry__title {
     font-size: 1.25rem;
     font-style: italic;
     margin: 0 0 0.25rem 0;
     line-height: 1;
 }
 
-.lg-mind__entry-meta {
+.lg-entry__meta {
     font-size: 0.5625rem;
     text-transform: uppercase;
     letter-spacing: 0.025rem;
@@ -199,16 +187,7 @@ body.mn-body {
     margin: 0 0 1rem 0;
 }
 
-.lg-mind__entry-body {
+.lg-entry__body {
     line-height: 1.6;
     font-size: 0.75rem;
-}
-
-.lg-mind__entry-body a {
-    color: inherit;
-}
-
-.lg-mind__entry-body a:hover {
-    background: #2e2e2e;
-    color: #fdf6b0;
 }

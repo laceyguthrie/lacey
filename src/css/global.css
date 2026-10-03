@@ -1,5 +1,21 @@
 /* ==========================================================================
-   GLOBAL: Loaded on every page before anything else
+   GLOBAL: Loaded on every page before anything else.
+   Each page theme sets --bg, --ink and, where needed, --surface on its
+   .lg-page--{name} body class. Everything here reads those variables.
+
+   CLASS NAMES
+   - Every styling class starts with lg-.
+   - BEM, one level deep: lg-block, lg-block__element, lg-block--modifier.
+     If an element needs its own elements, make it a new block
+     (lg-album, not lg-section__album-title).
+   - Name a block for what it is, not where it sits. Block names are
+     unique across the site, even though each page has its own CSS file.
+   - js- classes are hooks for init.js only. Never style them.
+   - is- classes are states (is-active, is-copied, is-here).
+   - sr-only is the one unprefixed utility.
+   - Shared components (button, email, popup, site nav) live here. Page
+     CSS can restyle them for its page but does not copy them.
+   - Small decorative accents go in the FLOURISHES section of the page CSS.
    ========================================================================== */
 
 *,
@@ -8,7 +24,12 @@
     box-sizing: border-box;
 }
 
-/* button reset*/
+.lg-page {
+    background: var(--bg);
+    color: var(--ink);
+}
+
+/* button reset */
 button {
     appearance: none;
     -webkit-appearance: none;
@@ -20,56 +41,14 @@ button {
     cursor: pointer;
     color: inherit;
     font-family: inherit;
-    transition: background-color 0.3s ease;
     position: relative;
-}
-
-/* Email addresses are buttons that copy to the clipboard, styled as links. */
-.lg-email {
-    font-size: inherit;
-    line-height: inherit;
-    text-decoration: underline;
-    user-select: text;
-}
-
-.lg-email__badge {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    padding: 0.25em 0.5em;
-    border: 1px solid var(--ms-ink);
-    background: var(--ms-bg);
-    color: var(--ms-ink);
-    font-size: 0.5625rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    line-height: 1;
-    text-transform: uppercase;
-    white-space: nowrap;
-    pointer-events: none;
-    user-select: none;
-    opacity: 0;
-    transform: translate(-50%, -50%) rotate(-6deg) scale(0.9);
-}
-
-.lg-email.is-copied .lg-email__badge {
-    opacity: 1;
-    transform: translate(-50%, -50%) rotate(-6deg);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .lg-email__badge {
-        transition: opacity 0.15s ease, transform 0.15s ease;
-    }
 }
 
 a {
     color: inherit;
     text-decoration: underline;
-    transition: background-color 0.3s ease;
     position: relative;
 }
-
 
 /* ==========================================================================
    FOCUS
@@ -100,12 +79,17 @@ a {
     padding: 0;
     border: 0;
     clip: rect(0 0 0 0);
+    white-space: nowrap;
 }
 
 ::selection {
     background-color: #f9ff5a;
     color: #000;
 }
+
+/* ==========================================================================
+   SITE NAV
+   ========================================================================== */
 
 .lg-site-nav {
     position: absolute;
@@ -129,7 +113,6 @@ a {
 }
 
 .lg-site-nav__list a {
-    color: var(--ms-ink);
     text-decoration: none;
     padding: 0.5rem;
     font-size: 0.75rem;
@@ -137,13 +120,133 @@ a {
     line-height: 1.5;
 }
 
-.lg-site-nav__list a:hover {
-    background: var(--ms-ink);
-    color: var(--ms-bg);
-}
-
 .lg-site-nav__list .is-active {
     pointer-events: none;
-    border-bottom: 1px dashed var(--ms-ink);
+    border-bottom: 1px dashed var(--ink);
 }
 
+/* ==========================================================================
+   BUTTON
+   Page CSS sets the typeface and fill to match its page.
+   ========================================================================== */
+
+.lg-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--ink);
+    padding: 0.5rem 1rem;
+}
+
+/* ==========================================================================
+   EMAIL
+   Email addresses are buttons that copy to the clipboard, styled as links.
+   ========================================================================== */
+
+.lg-email {
+    font-size: inherit;
+    line-height: inherit;
+    text-decoration: underline;
+    user-select: text;
+}
+
+.lg-email__badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0.25em 0.5em;
+    border: 1px solid var(--ink);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 0.5625rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-6deg) scale(0.9);
+}
+
+.lg-email.is-copied .lg-email__badge {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(-6deg);
+}
+
+/* ==========================================================================
+   POPUP
+   Page CSS adds anything page-specific (rotation, forms, contact list).
+   ========================================================================== */
+
+.lg-popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    cursor: pointer;
+}
+
+.lg-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 101;
+    pointer-events: none;
+}
+
+.lg-popup-overlay.is-active,
+.lg-popup.is-active {
+    display: block;
+}
+
+.lg-popup__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 32rem;
+    max-height: max-content;
+    padding: 1rem 1rem 1.5rem 1rem;
+    display: grid;
+    gap: 1rem;
+    pointer-events: auto;
+    background-color: var(--surface);
+    border: 1px solid var(--ink);
+    box-shadow: 8px 8px 0 1px var(--ink);
+}
+
+.lg-popup__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.lg-popup__title {
+    font-size: 1.25rem;
+    margin: 0;
+    line-height: 1;
+}
+
+.lg-popup__close {
+    display: flex;
+}
+
+/* ==========================================================================
+   HOVER
+   Everything you can click inverts on hover. The media query skips devices
+   without a real pointer, so a tap on a phone does not leave an element
+   stuck inverted. Page CSS can opt a link out (see music.css).
+   ========================================================================== */
+
+@media (hover: hover) {
+    a:hover,
+    button:hover {
+        background-color: var(--ink);
+        color: var(--bg);
+    }
+}

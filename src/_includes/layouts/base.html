@@ -25,11 +25,6 @@
 
     <link rel="stylesheet" type="text/css" href="/css/global.css">
     <link rel="stylesheet" type="text/css" href="/css/music.css">
-    {%- if extraCSS %}
-    {%- for href in extraCSS %}
-    <link rel="stylesheet" type="text/css" href="/{{ href }}">
-    {%- endfor %}
-    {%- endif %}
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
@@ -48,15 +43,15 @@
     </script>
 </head>
 
-<body class="lg-body">
+<body class="lg-page lg-page--music">
 
     {% assign activeSite = activeSite | default: "music" %}
     {% include "site-nav.html" %}
 
-    <header class="lg-header container">
+    <header class="lg-header lg-container">
         <h1 class="lg-header__title"><a href="/">who do I think I am?</a></h1>
 
-        <nav class="lg-header__nav">
+        <nav>
             <h2 class="lg-header__nav-title" id="nav-title">Directory</h2>
             <ul class="lg-header__nav-list" aria-labelledby="nav-title">
                 <li><a {% if activePage == "work" %}class="is-active" {% endif %}href="/">work</a></li>
@@ -75,7 +70,7 @@
 
     {% include "contact-popup.html" %}
 
-    <footer class="lg-footer container">
+    <footer class="lg-footer lg-container">
         <p class="lg-footer__contact">booking and everything else: <button type="button" class="lg-email js-email" data-user="lacey.guthrie" data-domain="gmail.com">lacey.guthrie at gmail dot com</button></p>
     </footer>
 

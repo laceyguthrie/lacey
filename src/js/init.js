@@ -115,7 +115,7 @@ function closePopup(id) {
   if (id === devotionPopupId) {
     const profilesContainer = document.getElementById('devotionProfiles');
     if (profilesContainer) {
-      profilesContainer.innerHTML = '<li class="lg-devotion-loading">loading...</li>';
+      profilesContainer.innerHTML = '<li class="lg-devotion__loading">loading...</li>';
     }
   }
 
@@ -161,7 +161,7 @@ function shouldPreventScroll(e) {
   if (!activePopup) return false;
 
   const isInsidePopup = activePopup.contains(e.target);
-  const isScrollable = e.target.closest('.lg-devotion-profiles, .lg-popup__content');
+  const isScrollable = e.target.closest('.lg-devotion__list, .lg-popup__content');
   return !isInsidePopup || (!isScrollable && activePopup === e.target.closest('.lg-popup'));
 }
 
@@ -191,9 +191,9 @@ document.querySelectorAll('.js-anchor-link').forEach(anchor => {
         block: 'start'
       });
       setTimeout(() => {
-        targetElement.classList.add('here-i-am');
+        targetElement.classList.add('is-here');
         setTimeout(() => {
-          targetElement.classList.remove('here-i-am');
+          targetElement.classList.remove('is-here');
         }, 1000);
       }, 10);
     }
@@ -434,7 +434,7 @@ async function fetchRandomMuppetCharacters(count = 8) {
       if (!page || !page.title) continue;
 
       const profileCard = document.createElement('li');
-      profileCard.className = 'lg-devotion-profile';
+      profileCard.className = 'lg-profile';
 
       const words = page.title.split(' ').filter(w => w.length > 0);
       const initials = words.length >= 2
@@ -444,7 +444,7 @@ async function fetchRandomMuppetCharacters(count = 8) {
       const originalImage = page.original?.source || null;
 
       const avatarDiv = document.createElement('div');
-      avatarDiv.className = 'lg-devotion-profile__avatar';
+      avatarDiv.className = 'lg-profile__avatar';
 
       if (originalImage) {
         let thumbnailUrl;
@@ -527,14 +527,14 @@ async function fetchRandomMuppetCharacters(count = 8) {
       }
 
       const infoDiv = document.createElement('div');
-      infoDiv.className = 'lg-devotion-profile__info';
+      infoDiv.className = 'lg-profile__info';
 
       const nameH3 = document.createElement('h3');
-      nameH3.className = 'lg-devotion-profile__name';
+      nameH3.className = 'lg-profile__name';
       nameH3.textContent = page.title;
 
       const bioP = document.createElement('p');
-      bioP.className = 'lg-devotion-profile__bio';
+      bioP.className = 'lg-profile__bio';
       bioP.textContent = description;
 
       infoDiv.appendChild(nameH3);

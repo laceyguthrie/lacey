@@ -6,7 +6,7 @@ description: Photos and video from Lacey Guthrie.
 fontsHref: https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jacquard+24&family=Inter:ital,wght@0,400..700;1,400..700&display=swap
 activePage: media
 ---
-<main class="lg-main lg-flex--tablet container">
+<main class="lg-main lg-columns lg-container">
     <div class="lg-main__content">
         <h2 class="sr-only">Media</h2>
 
@@ -23,19 +23,19 @@ activePage: media
             <svg class="lg-reading-card__frame js-reading-card-frame" aria-hidden="true" focusable="false"></svg>
 
             <ul class="lg-reading-card__list">
-                <li class="lg-reading-card__item">
+                <li>
                     <a class="lg-reading-card__link" target="_blank" href="https://religioustech.org/wp-content/uploads/2019/09/Baudrillard-Jean.-Excerpts-from-Simulation-and-Simulacra.pdf">
                         <span class="lg-reading-card__work">Simulacra and Simulations</span>
                         <span class="lg-reading-card__author">Jean Baudrillard</span>
                     </a>
                 </li>
-                <li class="lg-reading-card__item">
+                <li>
                     <a class="lg-reading-card__link" target="_blank" href="https://web.mit.edu/allanmc/www/benjamin.pdf">
                         <span class="lg-reading-card__work">The Work of Art in the Age of Mechanical Reproduction</span>
                         <span class="lg-reading-card__author">Walter Benjamin</span>
                     </a>
                 </li>
-                <li class="lg-reading-card__item">
+                <li>
                     <a class="lg-reading-card__link" target="_blank" href="https://www.marxists.org/reference/archive/debord/society.htm">
                         <span class="lg-reading-card__work">Society of the Spectacle</span>
                         <span class="lg-reading-card__author">Guy Debord</span>
@@ -44,7 +44,7 @@ activePage: media
             </ul>
         </div>
 
-        <section class="is-active js-tab-content" id="videos-panel" role="tabpanel" aria-labelledby="tab-videos">
+        <section class="lg-tab-panel is-active js-tab-content" id="videos-panel" role="tabpanel" aria-labelledby="tab-videos">
             <h2 class="sr-only">Videos</h2>
 
             <figure class="lg-video">
@@ -84,9 +84,11 @@ activePage: media
             </figure>
         </section>
 
-        <section class="js-tab-content" id="photos-panel" role="tabpanel" aria-labelledby="tab-photos">
-            <h2 class="sr-only">Photos</h2>
-            <p class="lg-section__text">I'm working on it :)</p>
+        <section class="lg-tab-panel js-tab-content" id="photos-panel" role="tabpanel" aria-labelledby="tab-photos">
+            <div class="lg-section">
+                <h2 class="sr-only">Photos</h2>
+                <p class="lg-section__text">I'm working on it :)</p>
+            </div>
         </section>
     </div>
     {% include "shows.html" %}

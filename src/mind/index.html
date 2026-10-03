@@ -6,37 +6,37 @@ activeSite: mind
 permalink: /mind/
 ---
 {% assign entries = collections.mind | reverse %}
-<main class="mn-main">
-    <header class="lg-mind-header">
-        <h1 class="lg-mind-header__title">intuition pumps / research notebook</h1>
-        <p class="lg-mind-header__byline">learning in public. sources are absent or informal, thoughts are unfinished and likely include mistakes and misunderstandings. if you have thoughts to share, email me at <button type="button" class="lg-email js-email" data-user="lacey.guthrie" data-domain="gmail.com">lacey.guthrie at gmail dot com</button></p>
+<main class="lg-main">
+    <header class="lg-page-header">
+        <h1 class="lg-page-header__title">intuition pumps / research notebook</h1>
+        <p class="lg-page-header__byline">learning in public. sources are absent or informal, thoughts are unfinished and likely include mistakes and misunderstandings. if you have thoughts to share, email me at <button type="button" class="lg-email js-email" data-user="lacey.guthrie" data-domain="gmail.com">lacey.guthrie at gmail dot com</button></p>
     </header>
-    <nav class="lg-mind-nav" aria-label="Table of Contents">
-        <details class="lg-mind-nav__dropdown js-mind-nav-dropdown">
-            <summary class="lg-mind-nav__summary">table of contents</summary>
-            <ul class="lg-mind-nav__menu">
+    <nav class="lg-toc" aria-label="Table of Contents">
+        <details class="lg-toc__dropdown js-mind-nav-dropdown">
+            <summary class="lg-toc__summary">table of contents</summary>
+            <ul class="lg-toc__menu">
                 {% for entry in entries %}
                 <li><a href="#{{ entry.fileSlug }}">{{ entry.data.title }}</a></li>
                 {% endfor %}
             </ul>
         </details>
-        <ul class="lg-mind-nav__list">
+        <ul class="lg-toc__list">
             {% for entry in entries %}
             <li><a href="#{{ entry.fileSlug }}">{{ entry.data.title }}</a></li>
             {% endfor %}
         </ul>
     </nav>
-    <section class="lg-mind">
+    <section class="lg-entries">
         {% for entry in entries %}
-        <article class="lg-mind__entry" id="{{ entry.fileSlug }}">
-            <h2 class="lg-mind__entry-title">{{ entry.data.title }}</h2>
-            <p class="lg-mind__entry-meta">
+        <article class="lg-entry" id="{{ entry.fileSlug }}">
+            <h2 class="lg-entry__title">{{ entry.data.title }}</h2>
+            <p class="lg-entry__meta">
                 <time datetime="{{ entry.date | date: '%Y-%m-%d' }}">{{ entry.date | date: '%B %d, %Y' }}</time>
                 {% if entry.data.edited %}
                 · Edited <time datetime="{{ entry.data.edited | date: '%Y-%m-%d' }}">{{ entry.data.edited | date: '%B %d, %Y' }}</time>
                 {% endif %}
             </p>
-            <div class="lg-mind__entry-body">{{ entry.templateContent }}</div>
+            <div class="lg-entry__body">{{ entry.templateContent }}</div>
         </article>
         {% endfor %}
     </section>

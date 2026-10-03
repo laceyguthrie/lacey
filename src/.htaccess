@@ -3,3 +3,11 @@ Redirect 301 /albums/ /
 Redirect 301 /projects/ /
 Redirect 301 /images/ /media/
 Redirect 301 /videos/ /media/
+
+# Make browsers check for a new version of pages, styles and scripts on every
+# visit. Unchanged files get a small "304 Not Modified" reply, so this is cheap.
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html|css|js)$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+</IfModule>

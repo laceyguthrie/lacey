@@ -1,10 +1,8 @@
-body.ph-body {
-    --ms-bg: #e9e6e0;
-    --ms-ink: #1a1a1a;
+.lg-page--physical {
+    --bg: #e9e6e0;
+    --ink: #1a1a1a;
     margin: 0;
     min-height: 100vh;
-    background: var(--ms-bg);
-    color: var(--ms-ink);
     font-family: Georgia, "Times New Roman", serif;
     display: flex;
     flex-direction: column;
@@ -13,14 +11,9 @@ body.ph-body {
     padding: 0 1.5rem;
 }
 
-.ph-title {
+.lg-page-header__title {
     font-size: 1.5rem;
     font-weight: 400;
     font-style: italic;
     margin: 0 0 1rem 0;
-}
-
-.ph-placeholder {
-    font-size: 0.875rem;
-    margin: 0;
 }

@@ -1,55 +1,11 @@
 /* ==========================================================================
    MUSIC
    The main site: /, /media/, /lyrics/ and /press/. Loaded after global.css,
-   which holds the reset, focus styles and .sr-only.
+   which holds the reset, focus styles, hover, buttons, popups and .sr-only.
    ========================================================================== */
 
 /* ==========================================================================
-   ANIMATIONS & KEYFRAMES
-   ========================================================================== */
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 4rem; }
-}
-
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-@keyframes wavy {
-    0%   { transform: scaleY(1); }
-    10%  { transform: scaleY(1.15); }
-    20%  { transform: scaleY(0.85); }
-    30%  { transform: scaleY(1.25); }
-    40%  { transform: scaleY(0.75); }
-    50%  { transform: scaleY(1.3); }
-    60%  { transform: scaleY(0.85); }
-    70%  { transform: scaleY(1.2); }
-    80%  { transform: scaleY(0.95); }
-    90%  { transform: scaleY(1.05); }
-    100% { transform: scaleY(1); }
-}
-
-/* ==========================================================================
-   ANIMATION UTILITY CLASSES
-   ========================================================================== */
-
-.wavy-1,
-.wavy-2,
-.wavy-3,
-.wavy-4 {
-    display: inline-block;
-    animation: wavy 5s linear infinite;
-}
-
-.wavy-2 { animation-delay: 0.1s; }
-.wavy-3 { animation-delay: 0.2s; }
-.wavy-4 { animation-delay: 0.3s; }
-
-/* ==========================================================================
-   GLOBAL RESET & BASE STYLES
+   BASE STYLES
    ========================================================================== */
 
 html {
@@ -65,27 +21,20 @@ html {
     overflow-x: hidden;
 }
 
-body {
+.lg-page--music {
+    --bg: #fff;
+    --ink: #000;
+    --surface: #e2e2e2;
     margin: 0 auto;
     width: 100vw;
     height: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: "Inter", sans-serif;
-    color: #000;
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 1.5;
 }
-
-body.lg-body {
-    --ms-bg: #fff;
-    --ms-ink: #000;
-}
-
-/* ==========================================================================
-   MEDIA & IMAGES
-   ========================================================================== */
 
 img {
     display: inline-block;
@@ -94,30 +43,80 @@ img {
     background-color: #000;
 }
 
+/* Jacquard 24: shared base font properties */
+.lg-loading,
+.lg-shows__ticker,
+.lg-shows__label,
+.lg-button {
+    font-family: "Jacquard 24", cursive;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
 /* ==========================================================================
-   INTERACTIVE ELEMENTS
+   HOVER EXCEPTIONS
+   Title links underline instead of inverting (see HOVER in global.css).
    ========================================================================== */
 
 @media (hover: hover) {
-    .lg-header__nav-list a:hover,
-    .lg-header__nav-list button:hover,
-    .lg-button:hover,
-    .lg-pill:hover {
-        background-color: #000;
-        color: #fff;
+    .lg-reading-card__link:hover,
+    .lg-press__title a:hover {
+        background-color: transparent;
+        color: inherit;
+        text-decoration: underline;
     }
 }
 
 /* ==========================================================================
-   ANCHOR JUMP MARKER
+   FLOURISHES
+   Small decorative accents: wavy words, the typing "loading...", the
+   "here" marker after an anchor jump, and the past/future shows label.
    ========================================================================== */
 
+@keyframes wavy {
+    0%   { transform: scaleY(1); }
+    10%  { transform: scaleY(1.15); }
+    20%  { transform: scaleY(0.85); }
+    30%  { transform: scaleY(1.25); }
+    40%  { transform: scaleY(0.75); }
+    50%  { transform: scaleY(1.3); }
+    60%  { transform: scaleY(0.85); }
+    70%  { transform: scaleY(1.2); }
+    80%  { transform: scaleY(0.95); }
+    90%  { transform: scaleY(1.05); }
+    100% { transform: scaleY(1); }
+}
+
+.lg-wavy {
+    display: inline-block;
+    animation: wavy 5s linear infinite;
+}
+
+.lg-wavy--2 { animation-delay: 0.1s; }
+.lg-wavy--3 { animation-delay: 0.2s; }
+.lg-wavy--4 { animation-delay: 0.3s; }
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 4rem; }
+}
+
+.lg-loading {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0.25rem 0 0 0;
+    animation: typing 2.5s infinite;
+}
+
+/* Added by init.js to an anchor target for one second after the jump. */
 @media screen and (min-width: 880px) {
-    .here-i-am {
+    .is-here {
         position: relative;
     }
 
-    .here-i-am::before {
+    .is-here::before {
         content: "here";
         position: absolute;
         top: 5.25rem;
@@ -130,6 +129,15 @@ img {
         text-align: center;
         z-index: 1;
     }
+}
+
+.lg-shows__label {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 /* ==========================================================================
@@ -163,7 +171,7 @@ img {
     }
 }
 
-.lg-tabs .js-tab {
+.lg-tabs .lg-pill {
     flex-shrink: 0;
 }
 
@@ -182,13 +190,21 @@ img {
     transform: scaleX(-1);
 }
 
-.lg-music-intro {
+.lg-tab-panel {
+    display: none;
+}
+
+.lg-tab-panel.is-active {
+    display: block;
+}
+
+.lg-project-intro {
     max-width: 698px;
     text-align: left;
     display: flow-root;
 }
 
-.lg-music-intro__img {
+.lg-project-intro__img {
     float: left;
     max-width: 200px;
     height: auto;
@@ -199,13 +215,13 @@ img {
     shape-margin: 0.75rem;
 }
 
-.lg-music-intro__list {
+.lg-project-intro__list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.lg-music-intro__heading-wrap {
+.lg-project-intro__heading {
     display: inline-flex;
     align-items: flex-end;
     gap: 0.25rem;
@@ -213,7 +229,7 @@ img {
     margin: 0 0 0.5rem 0;
 }
 
-.lg-music-intro__title {
+.lg-project-intro__title {
     font-family: "Jacquard 24", cursive;
     font-size: 1.125rem;
     font-weight: 400;
@@ -223,25 +239,16 @@ img {
 }
 
 @media screen and (min-width: 880px) {
-    .lg-music-intro__img {
+    .lg-project-intro__img {
         max-width: 320px;
     }
-}
-
-
-.js-tab-content {
-    display: none;
-}
-
-.js-tab-content.is-active {
-    display: block;
 }
 
 /* ==========================================================================
    LAYOUT CONTAINERS
    ========================================================================== */
 
-.container {
+.lg-container {
     margin: 0 auto;
     padding: 0 1rem;
     width: 100%;
@@ -249,7 +256,7 @@ img {
 }
 
 @media screen and (min-width: 880px) {
-    .lg-flex--tablet {
+    .lg-columns {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
@@ -286,7 +293,6 @@ img {
 
 .lg-header__title a {
     text-decoration: none;
-    position: relative;
 }
 
 .lg-header__nav-title {
@@ -306,7 +312,6 @@ img {
 .lg-header__nav-list a,
 .lg-header__nav-list button {
     display: inline-block;
-    position: relative;
     text-decoration: none;
     font-family: "Inter", sans-serif;
     font-size: 0.675rem;
@@ -401,27 +406,32 @@ img {
     max-width: 60ch;
 }
 
-.lg-section__chunk {
+/* ==========================================================================
+   ALBUM
+   One release: title, links, tracklist or embed. Also groups lyrics.
+   ========================================================================== */
+
+.lg-album {
     display: grid;
     gap: 1.5rem;
 }
 
-.lg-section__chunk-header {
+.lg-album__header {
     display: grid;
     gap: 0.75rem;
 }
 
-.lg-section__chunk-header p {
+.lg-album__header p {
     margin: 0;
 }
 
-.lg-section__chunk-title {
+.lg-album__title {
     font-size: 1rem;
     margin: 0;
     line-height: 1;
 }
 
-.lg-section__chunk-links {
+.lg-album__links {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -432,20 +442,26 @@ img {
     gap: 0.25rem;
 }
 
-.lg-section__chunk-links li {
-    list-style: none;
-    padding: 0;
-}
-
-.lg-section__chunk p {
+.lg-album p {
     max-width: 38rem;
 }
 
-.lg-section__chunk-highlight {
+.lg-album__highlight {
     display: inline-block;
     font-weight: 700;
     font-size: 0.625rem;
     line-height: 1.2;
+}
+
+.lg-album__tracklist {
+    margin: 0 0 0.5rem 1.25rem;
+    padding: 0;
+}
+
+@media screen and (min-width: 880px) {
+    .lg-album__tracklist {
+        max-width: 20rem;
+    }
 }
 
 /* ==========================================================================
@@ -514,7 +530,7 @@ img {
     font-family: "Inter", sans-serif;
     font-size: 0.425rem;
     letter-spacing: 0.05em;
-    fill: #000;
+    fill: var(--ink);
 }
 
 .lg-reading-card__list {
@@ -531,12 +547,7 @@ img {
 .lg-reading-card__link {
     display: block;
     text-decoration: none;
-    color: inherit;
     padding: 0.5rem 1rem;
-}
-
-.lg-reading-card__link:hover {
-    text-decoration: underline;
 }
 
 .lg-reading-card__work {
@@ -583,7 +594,7 @@ img {
 
 .lg-press__item:not(:last-of-type) {
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--ink);
 }
 
 .lg-press__kicker {
@@ -606,10 +617,6 @@ img {
     text-decoration: none;
 }
 
-.lg-press__title a:hover {
-    text-decoration: underline;
-}
-
 .lg-press__excerpt {
     margin: 0;
 }
@@ -621,35 +628,6 @@ img {
     letter-spacing: 0.025em;
 }
 
-/* Jacquard 24 — shared base font properties */
-.lg-section__loading,
-.lg-shows__ticker,
-.lg-the-timeline,
-.lg-button {
-    font-family: "Jacquard 24", cursive;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1;
-}
-
-.lg-section__loading {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    margin: 0.25rem 0 0 0;
-    animation: typing 2.5s infinite;
-}
-
-.lg-section__list {
-    margin: 0 0 0.5rem 1.25rem;
-    padding: 0;
-}
-
-@media screen and (min-width: 880px) {
-    .lg-section__list {
-        max-width: 20rem;
-    }
-}
 
 /* ==========================================================================
    SHOWS SECTION
@@ -679,13 +657,19 @@ img {
     gap: 1.5rem;
 }
 
-.lg-shows__list-item {
+
+.lg-shows__item {
     list-style: none;
 }
 
 .lg-shows__date {
     display: block;
     font-weight: 700;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 
 .lg-shows__ticker-container {
@@ -704,15 +688,6 @@ img {
     content: "\00a0";
 }
 
-.lg-the-timeline {
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
 @media screen and (min-width: 880px) {
     .lg-shows {
         max-width: 20rem;
@@ -722,55 +697,34 @@ img {
 }
 
 /* ==========================================================================
-   BUTTONS & INTERACTIVE COMPONENTS
+   BUTTONS & PILLS
    ========================================================================== */
 
 .lg-button {
-    margin: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    cursor: pointer;
-    color: inherit;
-    text-align: left;
-    border: 1px solid #000000;
-    background-color: #e2e2e2;
+    background-color: var(--surface);
     padding: 0.625rem 1rem;
-    min-width: 1.5rem;
-    min-height: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .lg-pill {
     text-decoration: none;
     font-size: 0.625rem;
     font-weight: 700;
-    color: #000;
     padding: 0.125rem 0.5rem;
-    background: none;
     border-radius: 1.25rem;
-    border: 1px solid #000;
+    border: 1px solid var(--ink);
     display: inline-block;
-    font-family: "Inter", sans-serif;
-    transition: color 0.15s, background 0.15s, border-color 0.17s;
 }
 
 .lg-pill.is-active {
-    background-color: #000;
-    color: #fff;
-}
-
-.lg-icon {
-    font-size: 0.75rem;
+    background-color: var(--ink);
+    color: var(--bg);
 }
 
 /* ==========================================================================
    LYRICS
    ========================================================================== */
 
-   .lg-lyrics__list {
+.lg-lyrics__list {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -801,6 +755,7 @@ img {
         column-count: 1;
     }
 }
+
 @media screen and (min-width: 936px) {
     .lg-lyrics__list {
         column-count: 2;
@@ -808,85 +763,19 @@ img {
 }
 
 /* ==========================================================================
-   POPUP MODAL SYSTEM
+   CONTACT POPUP
+   The popup itself is shared (see POPUP in global.css).
    ========================================================================== */
 
-.lg-popup-button {
+.lg-contact-button {
     position: fixed;
     bottom: 1.5rem;
     right: 1.5rem;
     z-index: 99;
 }
 
-.lg-popup-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 100;
-    cursor: pointer;
-}
-
-.lg-popup-overlay.is-active {
-    display: block;
-}
-
-.lg-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 101;
-    pointer-events: none;
-}
-
-.lg-popup.is-active {
-    display: block;
-}
-
-.lg-popup__content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #e2e2e2;
-    border: 1px solid #000;
-    box-shadow:
-        8px 8px 0 #000,
-        8px 8px 0 1px #000;
-    width: 90%;
-    max-width: 32rem;
-    max-height: max-content;
-    padding: 1rem 1rem 1.5rem 1rem;
-    display: grid;
-    gap: 1rem;
-    pointer-events: auto;
-    border-radius: 0;
-}
-
-.lg-popup__header {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
-.lg-popup__close {
-    padding: 0;
-    margin: 0;
-    border: none;
-    background-color: transparent;
-}
-
 .lg-popup__contacts {
     margin: 0.5rem 0 0 0;
-    font-family: "Inter", sans-serif;
     font-size: 0.75rem;
     font-weight: 400;
 }
@@ -903,39 +792,6 @@ img {
 /* reset the browser's default dd indent */
 .lg-popup__value {
     margin: 0;
-}
-
-.lg-popup__content a {
-    text-decoration: underline;
-}
-
-.lg-popup__form fieldset {
-    width: 100%;
-    margin: 0;
-    border: none;
-    padding: 0;
-}
-
-.lg-popup__form label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-.lg-popup__form input {
-    width: 100%;
-    padding: 0.5rem;
-}
-
-.lg-popup__form button {
-    width: 100%;
-    margin-top: 0.5rem;
 }
 
 @media screen and (min-width: 880px) {
