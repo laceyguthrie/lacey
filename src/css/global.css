@@ -266,25 +266,25 @@ button {
 }
 
 a:active {
-    top: 1px;
+    top: 2px;
 }
 
 button:active {
-    transform: translateY(1px);
+    transform: translateY(2px);
 }
 
 @media (prefers-reduced-motion: no-preference) {
     a {
-        transition: top 0.1s ease-out;
+        transition: top 0.2s ease-out;
     }
 
     button {
-        transition: transform 0.1s ease-out;
+        transition: transform 0.2s ease-out;
     }
 
     a:active,
     button:active {
-        transition-duration: 0.04s;
+        transition-duration: 0.08s;
         transition-timing-function: ease-in;
     }
 }
