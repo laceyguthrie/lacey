@@ -250,3 +250,41 @@ a {
         color: var(--bg);
     }
 }
+
+/* ==========================================================================
+   PRESS
+   Links and buttons sink 1px while pressed, like a key: a fast drop and a
+   slightly slower spring back. Links use top because a transform does
+   nothing on an inline link. Buttons use transform so a fixed button
+   (.lg-contact-button) keeps its place. This replaces the gray tap
+   highlight on phones.
+   ========================================================================== */
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:active {
+    top: 1px;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    a {
+        transition: top 0.1s ease-out;
+    }
+
+    button {
+        transition: transform 0.1s ease-out;
+    }
+
+    a:active,
+    button:active {
+        transition-duration: 0.04s;
+        transition-timing-function: ease-in;
+    }
+}
