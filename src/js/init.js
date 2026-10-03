@@ -16,8 +16,8 @@ if (!popupOverlay) {
   document.body.appendChild(popupOverlay);
 }
 
-// iOS Safari only applies :active (the dim on press in global.css) when the
-// page listens for touches. This listener does nothing else.
+// iOS Safari only applies :active (global.css PRESS) when the page listens
+// for touches.
 document.addEventListener('touchstart', () => {}, { passive: true });
 
 // Popup Modal System
@@ -205,8 +205,6 @@ document.querySelectorAll('.js-anchor-link').forEach(anchor => {
 });
 
 // Deep links: a tab or filter nav opts in with data-deep-link="<param>".
-// The active button's slug lands in the URL (?param=slug) so views can be
-// linked to directly. The default view keeps the URL clean (param removed).
 
 function setUrlParam(param, value) {
   if (!param) return;
@@ -227,8 +225,7 @@ function setupTabs() {
   const param = nav ? nav.getAttribute('data-deep-link') : null;
   const defaultTab = document.querySelector('.js-tab.is-active');
 
-  // Roving tabindex: the strip is one Tab stop, and the arrow keys move
-  // between the tabs inside it. Without this, Tab walks every tab in turn.
+  // Roving tabindex: the strip is one Tab stop; arrow keys move between tabs.
   function setRovingTabindex(selected) {
     tabs.forEach(tab => tab.setAttribute('tabindex', tab === selected ? '0' : '-1'));
   }
@@ -259,8 +256,6 @@ function setupTabs() {
       setUrlParam(param, this === defaultTab ? null : this.getAttribute('data-slug'));
     });
 
-    // Enter and Space need no handler — these are real buttons, so the
-    // browser already turns both into a click.
     tab.addEventListener('keydown', function(e) {
       const step = { ArrowLeft: -1, ArrowRight: 1 }[e.key];
       let target;
@@ -611,9 +606,7 @@ function setupLazyIframes() {
 }
 
 // Addresses are assembled at runtime to keep them out of the HTML source.
-// Clicking one copies it instead of opening a mail app. A "copied" badge
-// sits on top of the address so the text never changes length, and a
-// separate status region tells screen readers what happened.
+// The "copied" badge overlays the address so the text never changes length.
 
 function setupEmailLinks() {
   const buttons = document.querySelectorAll('.js-email');
@@ -652,8 +645,7 @@ function setupEmailLinks() {
   });
 }
 
-// Mind nav: close the dropdown once a post is picked, so it is not left
-// hanging open when you scroll back up.
+// Table of contents
 
 function setupMindNavDropdown() {
   document.querySelectorAll('.js-mind-nav-dropdown a').forEach(link => {
@@ -663,7 +655,7 @@ function setupMindNavDropdown() {
   });
 }
 
-// Reading Card Frame (text that flows around the card's edge as a border)
+// Reading Card Frame
 
 function setupReadingCardFrame() {
   const SVG_NS = 'http://www.w3.org/2000/svg';

@@ -4,7 +4,6 @@ module.exports = function(eleventyConfig) {
   // day. Format in UTC to match.
   eleventyConfig.setLiquidOptions({ timezoneOffset: 0 });
 
-  // Copy static assets straight through to _site/ without processing.
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/img");

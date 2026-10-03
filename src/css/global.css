@@ -29,7 +29,6 @@
     color: var(--ink);
 }
 
-/* button reset */
 button {
     appearance: none;
     -webkit-appearance: none;
@@ -54,8 +53,6 @@ a {
    FOCUS
    ========================================================================== */
 
-/* :focus-visible matches keyboard focus but not a mouse click, so the
-   highlight only appears for the people who need it. */
 *:focus {
     outline: none;
 }
@@ -128,7 +125,6 @@ a {
 
 /* ==========================================================================
    BUTTON
-   Page CSS sets the typeface and fill to match its page.
    ========================================================================== */
 
 .lg-button {
@@ -178,7 +174,6 @@ a {
 
 /* ==========================================================================
    POPUP
-   Page CSS adds anything page-specific (rotation, forms, contact list).
    ========================================================================== */
 
 .lg-popup-overlay {
@@ -251,9 +246,7 @@ a {
 
 /* ==========================================================================
    PRESS
-   Links and buttons dim while pressed, like native iOS buttons. This
-   replaces Safari's gray tap highlight. iOS only applies :active because
-   init.js listens for touches.
+   iOS only applies :active because init.js listens for touches.
    ========================================================================== */
 
 a,

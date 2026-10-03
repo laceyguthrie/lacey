@@ -81,7 +81,6 @@
 /* Small screens: dropdown */
 
 .lg-toc__dropdown {
-    position: relative;
     margin-bottom: 2.5rem;
 }
 
@@ -114,22 +113,10 @@
     content: "\2212";
 }
 
-.lg-toc__menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 5;
-    padding: 0.25rem !important;
-    background: var(--bg);
+.lg-toc__dropdown .lg-toc__menu {
+    padding: 0.25rem;
     border: 1px dashed var(--ink);
     border-top: none;
-}
-
-/* Safari still shows absolutely positioned children of a closed <details>,
-   so hide the menu explicitly. */
-.lg-toc__dropdown:not([open]) .lg-toc__menu {
-    display: none;
 }
 
 .lg-toc__list {

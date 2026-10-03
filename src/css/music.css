@@ -43,7 +43,6 @@ img {
     background-color: #000;
 }
 
-/* Jacquard 24: shared base font properties */
 .lg-loading,
 .lg-shows__ticker,
 .lg-shows__label,
@@ -56,7 +55,6 @@ img {
 
 /* ==========================================================================
    HOVER EXCEPTIONS
-   Title links underline instead of inverting (see HOVER in global.css).
    ========================================================================== */
 
 @media (hover: hover) {
@@ -70,8 +68,6 @@ img {
 
 /* ==========================================================================
    FLOURISHES
-   Small decorative accents: wavy words, the typing "loading...", the
-   "here" marker after an anchor jump, and the past/future shows label.
    ========================================================================== */
 
 @keyframes wavy {
@@ -408,7 +404,6 @@ img {
 
 /* ==========================================================================
    ALBUM
-   One release: title, links, tracklist or embed. Also groups lyrics.
    ========================================================================== */
 
 .lg-album {
@@ -764,7 +759,6 @@ img {
 
 /* ==========================================================================
    CONTACT POPUP
-   The popup itself is shared (see POPUP in global.css).
    ========================================================================== */
 
 .lg-contact-button {
