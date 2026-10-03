@@ -238,9 +238,6 @@ a {
 
 /* ==========================================================================
    HOVER
-   Everything you can click inverts on hover. The media query skips devices
-   without a real pointer, so a tap on a phone does not leave an element
-   stuck inverted. Page CSS can opt a link out (see music.css).
    ========================================================================== */
 
 @media (hover: hover) {
@@ -253,12 +250,6 @@ a {
 
 /* ==========================================================================
    PRESS
-   Links and buttons sink 2px while pressed, like a soft cushion: they slow
-   down as they sink, then spring back with a small bounce past their
-   resting place ("bloop", not "eep"). Links use top because a transform does
-   nothing on an inline link. Buttons use transform so a fixed button
-   (.lg-contact-button) keeps its place. This replaces the gray tap
-   highlight on phones.
    ========================================================================== */
 
 a,
@@ -275,19 +266,19 @@ button:active {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    /* Release: overshoots slightly, then settles. */
+    /* Release: rises gently and slows as it reaches rest. */
     a {
-        transition: top 0.45s cubic-bezier(0.34, 1.8, 0.64, 1);
+        transition: top 0.6s cubic-bezier(0.25, 0.8, 0.4, 1);
     }
 
     button {
-        transition: transform 0.45s cubic-bezier(0.34, 1.8, 0.64, 1);
+        transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.4, 1);
     }
 
     /* Press: sinks fast at first, then eases into the cushion. */
     a:active,
     button:active {
-        transition-duration: 0.15s;
+        transition-duration: 0.22s;
         transition-timing-function: cubic-bezier(0.25, 0.8, 0.4, 1);
     }
 }
