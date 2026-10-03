@@ -93,7 +93,7 @@ a {
 
 .lg-site-nav {
     position: absolute;
-    top: 1.5rem;
+    top: 1rem;
     right: 0.75rem;
     z-index: 11;
 }
@@ -113,6 +113,7 @@ a {
 }
 
 .lg-site-nav__list a {
+    display: inline-block;
     text-decoration: none;
     padding: 0.5rem;
     font-size: 0.75rem;
@@ -255,30 +256,4 @@ a {
 a,
 button {
     -webkit-tap-highlight-color: transparent;
-}
-
-a:active {
-    top: 2px;
-}
-
-button:active {
-    transform: translateY(2px);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    /* Release: rises gently and slows as it reaches rest. */
-    a {
-        transition: top 0.6s cubic-bezier(0.25, 0.8, 0.4, 1);
-    }
-
-    button {
-        transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.4, 1);
-    }
-
-    /* Press: sinks fast at first, then eases into the cushion. */
-    a:active,
-    button:active {
-        transition-duration: 0.22s;
-        transition-timing-function: cubic-bezier(0.25, 0.8, 0.4, 1);
-    }
 }

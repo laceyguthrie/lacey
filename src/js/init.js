@@ -17,7 +17,7 @@ if (!popupOverlay) {
 }
 
 // iOS Safari only applies :active (the 1px key press in global.css) when the
-// page listens for touches. The listener does nothing else.
+// page listens for touches. This listener does nothing else.
 document.addEventListener('touchstart', () => {}, { passive: true });
 
 // Popup Modal System
