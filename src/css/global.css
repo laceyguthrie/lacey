@@ -250,11 +250,13 @@ a {
    ========================================================================== */
 
 a,
-button {
+button,
+summary {
     -webkit-tap-highlight-color: transparent;
 }
 
 a:active,
-button:active {
+button:active,
+summary:active {
     opacity: 0.6;
 }
