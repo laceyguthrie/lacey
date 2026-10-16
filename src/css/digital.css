@@ -21,20 +21,154 @@
 }
 
 /* ==========================================================================
-   TOOLS: temporary home for two leftover feed-nav popups (muppet fetcher,
-   password gate) until this page gets a real design
+   TOOLS
    ========================================================================== */
 
 .lg-tools {
     display: flex;
+    flex-direction: column;
     gap: 0.75rem;
+    width: 100%;
+    max-width: 20rem;
     margin-top: 1.5rem;
+}
+
+.lg-tool {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--ink);
+    text-align: left;
+    text-decoration: none;
+}
+
+.lg-tool:hover,
+.lg-tool:active {
+    background: var(--ink);
+    color: var(--bg);
+    opacity: 1;
+}
+
+.lg-tool__title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.lg-tool__description {
+    font-size: 0.6875rem;
+    line-height: 1.5;
+}
+
+.lg-tools__private {
+    align-self: center;
+    margin-top: 1rem;
 }
 
 .lg-button {
     font-size: 0.675rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    text-decoration: none;
+}
+
+.lg-button[hidden] {
+    display: none;
+}
+
+/* ==========================================================================
+   FLYER LOCATIONS
+   ========================================================================== */
+
+.lg-flyers {
+    width: 100%;
+    max-width: 36rem;
+    padding: 4.5rem 0 3rem;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+}
+
+.lg-flyers__intro {
+    margin: 0 0 0.5rem;
+}
+
+.lg-flyers__updated {
+    margin: 0;
+    font-size: 0.6875rem;
+    opacity: 0.7;
+}
+
+.lg-flyers__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.lg-flyers__area + .lg-flyers__area {
+    margin-top: 2rem;
+}
+
+.lg-flyers__area-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem;
+    padding-bottom: 0.375rem;
+    border-bottom: 1px solid var(--ink);
+}
+
+.lg-flyers__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.lg-flyers__place {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 1rem;
+    padding: 0.375rem 0;
+}
+
+.lg-flyers__name {
+    font-weight: 700;
+}
+
+@media print {
+    .lg-page--digital {
+        --bg: #fff;
+        --ink: #000;
+        display: block;
+        min-height: 0;
+    }
+
+    .lg-site-nav,
+    .lg-flyers__actions,
+    .lg-popup-overlay {
+        display: none;
+    }
+
+    .lg-flyers {
+        max-width: none;
+        padding: 0;
+    }
+
+    .lg-flyers__updated {
+        margin-bottom: 2rem;
+    }
+
+    .lg-flyers__area {
+        break-inside: avoid;
+    }
+
+    .lg-flyers__address {
+        text-decoration: none;
+    }
 }
 
 /* ==========================================================================

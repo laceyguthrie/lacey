@@ -645,6 +645,43 @@ function setupEmailLinks() {
   });
 }
 
+// Flyer locations
+
+function setupFlyerTools() {
+  const source = document.getElementById('flyersText');
+  if (!source) return;
+
+  const text = source.textContent.trim();
+  const copyButton = document.querySelector('.js-flyers-copy');
+  const printButton = document.querySelector('.js-flyers-print');
+  const shareButton = document.querySelector('.js-flyers-share');
+  const status = document.querySelector('.js-flyers-status');
+
+  let resetTimer;
+  copyButton.addEventListener('click', () => {
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(text).then(() => {
+      copyButton.textContent = 'copied';
+      status.textContent = 'List copied to clipboard';
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(() => {
+        copyButton.textContent = 'copy';
+        status.textContent = '';
+      }, 1500);
+    });
+  });
+
+  printButton.addEventListener('click', () => window.print());
+
+  if (navigator.share) {
+    shareButton.hidden = false;
+    shareButton.addEventListener('click', () => {
+      // Rejects when the person closes the share sheet. Nothing to do then.
+      navigator.share({ title: 'Flyer locations, Louisville, KY', text }).catch(() => {});
+    });
+  }
+}
+
 // Table of contents
 
 function setupMindNavDropdown() {
@@ -816,6 +853,7 @@ document.addEventListener('DOMContentLoaded', function() {
   setupPasswordPopup();
   setupLazyIframes();
   setupEmailLinks();
+  setupFlyerTools();
   setupReadingCardFrame();
   setupMindNavDropdown();
 });

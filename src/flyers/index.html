@@ -1,0 +1,44 @@
+---
+layout: layouts/digital.html
+title: Flyer Locations | Lacey Guthrie
+description: A running list of places to put up show flyers in Louisville, KY, with addresses and map links.
+---
+<main class="lg-main lg-flyers">
+    <header class="lg-page-header">
+        <h1 class="lg-page-header__title">flyer locations</h1>
+        <p class="lg-flyers__intro">This is a running list of locations for flyer distribution in Louisville, KY. If you have suggestions for places to add, email me at <button type="button" class="lg-email js-email" data-user="lacey.guthrie" data-domain="gmail.com">lacey.guthrie at gmail dot com</button></p>
+        <p class="lg-flyers__updated">updated <time datetime="{{ flyers.updated | date: '%Y-%m-%d' }}">{{ flyers.updated | date: '%B %d, %Y' }}</time></p>
+    </header>
+
+    <div class="lg-flyers__actions">
+        <button type="button" class="lg-button js-flyers-copy">copy</button>
+        <button type="button" class="lg-button js-flyers-print">print</button>
+        <button type="button" class="lg-button js-flyers-share" hidden>share</button>
+        <span class="sr-only js-flyers-status" role="status"></span>
+    </div>
+
+    {% for area in flyers.areas %}
+    <section class="lg-flyers__area">
+        <h2 class="lg-flyers__area-title">{{ area.name }}</h2>
+        <ul class="lg-flyers__list">
+            {% for place in area.places %}
+            {% assign query = place.name | append: ", " | append: place.address | append: ", Louisville, KY" | url_encode %}
+            <li class="lg-flyers__place">
+                <span class="lg-flyers__name">{{ place.name }}</span>
+                <a class="lg-flyers__address" href="https://www.google.com/maps/search/?api=1&amp;query={{ query }}" target="_blank" rel="noopener noreferrer">{{ place.address }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endfor %}
+</main>
+
+<script type="text/plain" id="flyersText">
+Flyer locations, Louisville, KY
+https://laceyguthrie.com/flyers/
+{% for area in flyers.areas %}
+{{ area.name }}
+{%- for place in area.places %}
+- {{ place.name }}, {{ place.address }}
+{%- endfor %}
+{% endfor %}</script>

@@ -1,0 +1,58 @@
+{
+    "updated": "2026-10-16",
+    "areas": [
+        {
+            "name": "Highlands",
+            "places": [
+                { "name": "Carmichael’s Highlands", "address": "1295 Bardstown Rd" },
+                { "name": "Day’s Coffee", "address": "1420 Bardstown Rd" },
+                { "name": "Guestroom Records Highlands", "address": "1330A Bardstown Rd" },
+                { "name": "Heart & Soy", "address": "1216 Bardstown Rd" },
+                { "name": "Heine Brothers’ Mid City", "address": "1250 Bardstown Rd" },
+                { "name": "Safai", "address": "1707 Bardstown Rd" },
+                { "name": "Sunergos Highlands", "address": "1647 Norris Pl" },
+                { "name": "Surface Noise", "address": "600 Baxter Ave" },
+                { "name": "Wiltshire Bakery", "address": "901 Barret Ave" }
+            ]
+        },
+        {
+            "name": "Germantown / Schnitzelburg",
+            "places": [
+                { "name": "Bean", "address": "1138 Goss Ave" },
+                { "name": "Fleur de Flea", "address": "947 E Breckinridge St" },
+                { "name": "Full Stop Station", "address": "1132 E St Catherine St" },
+                { "name": "MerryWeather", "address": "1101 Lydia St" },
+                { "name": "Nachbar", "address": "969 Charles St" },
+                { "name": "Oscar’s Hardware Germantown", "address": "1515 S Shelby St" },
+                { "name": "Sunergos Preston", "address": "2122 S Preston St" }
+            ]
+        },
+        {
+            "name": "Shelby Park",
+            "places": [
+                { "name": "Logan Street Market", "address": "1001 Logan St" }
+            ]
+        },
+        {
+            "name": "NuLu / Butchertown",
+            "places": [
+                { "name": "Bargain Supply", "address": "844 E Jefferson St" },
+                { "name": "MoonDog", "address": "1019 E Main St" }
+            ]
+        },
+        {
+            "name": "Clifton / Crescent Hill",
+            "places": [
+                { "name": "Carmichael’s Frankfort", "address": "2720 Frankfort Ave" },
+                { "name": "Guestroom Records Frankfort", "address": "1806 Frankfort Ave" },
+                { "name": "The Silver Dollar", "address": "1761 Frankfort Ave" }
+            ]
+        },
+        {
+            "name": "St. Matthews",
+            "places": [
+                { "name": "Sunergos St. Matthews", "address": "3922 Willis Ave" }
+            ]
+        }
+    ]
+}
