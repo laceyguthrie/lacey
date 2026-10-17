@@ -9,6 +9,7 @@
                 { "name": "Guestroom Records Highlands", "address": "1330A Bardstown Rd" },
                 { "name": "Heart & Soy", "address": "1216 Bardstown Rd" },
                 { "name": "Heine Brothers’ Mid City", "address": "1250 Bardstown Rd" },
+                { "name": "Quills Highlands", "address": "930 Baxter Ave" },
                 { "name": "Safai", "address": "1707 Bardstown Rd" },
                 { "name": "Sunergos Highlands", "address": "1647 Norris Pl" },
                 { "name": "Surface Noise", "address": "600 Baxter Ave" },
@@ -37,20 +38,30 @@
             "name": "NuLu / Butchertown",
             "places": [
                 { "name": "Bargain Supply", "address": "844 E Jefferson St" },
-                { "name": "MoonDog", "address": "1019 E Main St" }
+                { "name": "MoonDog", "address": "1019 E Main St" },
+                { "name": "Quills Downtown", "address": "802 E Main St" }
             ]
         },
         {
             "name": "Clifton / Crescent Hill",
             "places": [
                 { "name": "Carmichael’s Frankfort", "address": "2720 Frankfort Ave" },
-                { "name": "Guestroom Records Frankfort", "address": "1806 Frankfort Ave" }
+                { "name": "Guestroom Records Frankfort", "address": "1806 Frankfort Ave" },
+                { "name": "Quills Clifton", "address": "2001 Frankfort Ave" }
             ]
         },
         {
             "name": "St. Matthews",
             "places": [
+                { "name": "Quills Brownsboro", "address": "3628 Brownsboro Rd" },
+                { "name": "Quills St. Matthews", "address": "3939 Shelbyville Rd" },
                 { "name": "Sunergos St. Matthews", "address": "3922 Willis Ave" }
+            ]
+        },
+        {
+            "name": "Jeffersontown",
+            "places": [
+                { "name": "Quills Jeffersontown", "address": "10501 Watterson Trail" }
             ]
         }
     ]
