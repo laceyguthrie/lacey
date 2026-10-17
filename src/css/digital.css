@@ -79,6 +79,21 @@
 }
 
 /* ==========================================================================
+   BACK LINK
+   ========================================================================== */
+
+.lg-back-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-size: 0.75rem;
+    text-decoration: none;
+}
+
+.lg-back-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
    FLYER LOCATIONS
    ========================================================================== */
 
@@ -148,6 +163,7 @@
     }
 
     .lg-site-nav,
+    .lg-back-link,
     .lg-flyers__actions,
     .lg-popup-overlay {
         display: none;
