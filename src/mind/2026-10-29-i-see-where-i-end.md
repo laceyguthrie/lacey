@@ -1,0 +1,24 @@
+---
+title: I See Where I End
+date: 2026-10-29
+---
+
+I've been able to meet myself recently. I've lived with an undercurrent of "something is wrong with me, I must stay focused and analytical and make sure I'm behaving as expected", stamped into my thinking since I was small, and lately "what is the worst that could happen if you stop calibrating yourself to your environment and exist as you are" has given me some freedom, and made the day-to-day so much nicer, with little perceivable change in things around me. I recognize this as a common human experience, at least among the people I know (skewed toward 'women my age').
+
+I do desire to make rooms nicer than they were before I entered them, because that's all of my power as a person. Other assessments of my contributions to the world are hallucinations in other people's minds. Remove the world I've built internally and what I am is a character that drifts in in out of rooms and the character contributes to the plot of others' subjective experiences, negative, neutral, positive. There's a representation of me in the minds of people that know me but I am not my own entity in there, really, I'm part of their world. I'm only real to myself, I think.
+
+What about a song I wrote that is stuck in someone's head, or that representation of me just existing, particularly if they don't have positive or negative feelings about it/me? Can't call that neutral because the landscape of their mind is different now, it includes the song, or a sketch of Lacey. My instinct is to say this is categorically different from them seeing a new kind of tree.
+
+I'm knocking on a familiar door. On a plane to see Kevin in LA I read half of *Radical Embodied Cognitive Science* by Anthony Chemero. Brief explanation that narrowly represents where I want to connect these wires: cognition should be explained through real-time, non-representational agent-environment dynamics rather than internal computation and mental representation. The twisted-up questions just raised become kind of irrelevant, or their importance shrinks.
+
+When I am with other thinking beings I am part of them and they are part of me, if our identity is defined in any part by cognition, which I think it is.
+
+Is identity a word for the membrane between the internal and external? The "I see where I end". Trick is it morphs and it seems like it's porous. Are we trying to define a point of interface as an thing, instead of a location, and is that a problem? On a broader note, consciousness. I've made a list of things I confuse for consciousness. 
+
+Consciousness is this state. Certainly I've added Identity to the list of things I confuse for consciousness. My identity is my set of experiences, beliefs, whatever. Consciousness is the state of being aware that I'm me and those things are mine and I'm not you. "I see where I end". This is real, yeah? 
+
+Pacing around the library in front of Gray Jackson yesterday, I suggested that Consciousness is a cryptid. We refer to it and it's not a thing, we see other things pointing to it. Qualia, identity, thinking, whatever. I'm turning the stone around in the daylight a little and thinking now, identity is cryptid and consciousness is misunderstood.
+
+The membrane / interface. Awareness, identity, things defined by their edge, which is defined by the edge of other things. It's funny I have this metaphor saved in my mind: time being like the tip of a burning cigarette (now is the part burning), and I extended it to experience, and made the membrane of subjective experience a "crack in the Everything". At some point, the Everything cracked, and now there is Experience. Somehow this holds hands with Max Tegmark's Mathmatical Universe hypothesis. Anyway the cigarette thing I assumed was Camus but it came from Luis Elizondo, a UFO disclosure activist who was formerly employed by the Department of Defense. I'm not sure how I feel about his words, saved in my memory. Negative, positive, neutral. This guy also said “all these people had suffered brain scarring. I was told that this is what doctors call white-matter disease because the scars appear as white in medical images.” As a migraine sufferer who has seen a neurologist and had an MRI, I learned recently that white matter inclusions are common and appear on an MRI for many reasons, including but not limited to migraines, stress, aging. 
+
+Porous: where I end and Luis begins / where Anthony begins / where Max begins. Shaped by what I find interesting, which seems to be out of my control, or based on what I found interesting before. Self-referential. A system.
