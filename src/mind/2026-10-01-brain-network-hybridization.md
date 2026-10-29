@@ -1,9 +1,17 @@
 ---
-title: Existential Survival and Brain Network Hybridization
+title: Existential Survival and Brain Network Hybridization (A Poem)
 date: 2026-10-01
 ---
 
-Notes on a search for a conceptual bypass in the brain; neuro-philosophical investigation into how the brain emanates the self, and how to intentionally disrupt its construction in order to escape loops of rumination and existential isolation and grief. (this summary is a mess and full of misconceptions)
+**Disclaimers**
+
+1. This feels like a literal account of a certain function of the mind. It is not.
+2. The investigation became what I was trying to circumvent.
+3. *Therefore*: This is a poem, watch me go.
+
+Ten. Nine. Eight. Seven. Six. Five. Four. Three. Two. One.
+
+A search for a conceptual bypass in the brain; neuro-philosophical investigation into how the brain emanates the self, and how to intentionally disrupt its construction in order to escape loops of rumination and existential isolation and grief. (this summary is a mess and full of misconceptions)
 
 Hyperfixation is probably part of the Default Network Mode. The Salience Network monitors sensory data and internal events and can engage the Task-Positive Network (TPN) if something salient requires task-oriented thinking or physical effort. ~~They cannot be engaged simultaneously.~~ The DMN and TPN compete, couple, or cooperate depending on task / state. Ex. highly-focused, physically demanding, high-risk activities (I imagine) would largely fall to the TPN and the DMN would take a back seat. ~~The brain uses a Tripartite Network Model governed by three hubs: the DMN, the Salience Network, and the CEN / TPN (one hub).~~ What I'm describing is high-level cognition in terms of three interacting networks. DMN is associated with the internal narrative, the past and the future, and self-relfection. The Central Executive Network handles outward attention, working memory, and goal execution. ~~The Salience Network monitors the environment and directs energy between the DMN and CEN.~~ The Salience Network monitors for relevant stuff, stuff that's *salient* AKA matters enough to notice. It's monitoring sensory input but it's also picking up internally generated signals like *thoughts that have become important*. This is key. Metacognitive dysfunction can involve assigning too much importance or power to some thoughts. Will return to this later. Salience allocates attention to something has upset a prediction model, doesn't fit in the environment, ex. I smell something burning, I notice a snake, someone's reaction doesn't match expectations (thinking in terms of microexpressions, maybe).
 
