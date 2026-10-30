@@ -3,7 +3,7 @@ title: I See Where I End
 date: 2026-10-29
 ---
 
-I have been asking myself "who do I think I am?" as a grounding exercise. The perspective shift (from what?) was revolutionary and it's time for another: the eye in the center watches its cognitive system explore its environment, modulating its border like a crawling amoeba.
+I've been asking myself "who do I think I am?" as a grounding exercise. The perspective shift (from what?) was revolutionary and it's time for another: the eye in the center watches its cognitive system explore its environment, modulating its border like a crawling amoeba.
 
 I've been monitoring my thoughts and actions to make sure they match situational expectations since I was a toddler. I remember fear leaking into my mind at that age; an understanding that, in order to be a good person, you have to drive every function of your body and mind like a mech suit or it'll go rogue and terrible things will happen. Lately I've been asking myself "what is the worst outcome if I stop calibrating myself to my environment and exist as I am?". It's given me some peace and there's been no perceivable change in the behavior of people around me. Nothing bad has happened (yet). I recognize this as a common experience; either as a feature of anxiety, or part of the human condition. I wonder how it shows up demographically and if the first 40 years of most lives are like this. I wonder if it's more present in women.
 
