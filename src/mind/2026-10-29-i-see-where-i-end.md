@@ -11,7 +11,7 @@ What about a song I wrote that is stuck in someone's head, or that representatio
 
 I'm knocking on a familiar door. On a plane to record with Kevin Ratterman in LA I read half of *Radical Embodied Cognitive Science* by Anthony Chemero. Brief explanation that narrowly represents where I want to connect these wires: cognition should be explained through real-time, non-representational agent-environment dynamics rather than internal computation and mental representation. The twisted-up questions just raised become kind of irrelevant, or their importance shrinks.
 
-When I am with other thinking beings I am part of them and they are part of me, if our identity is defined in any part by cognition, which I think it is.
+When I am with other thinking things I am part of them and they are part of me, if our identity is defined in any part by cognition, which I think it is.
 
 Is identity a word for the membrane between the internal and external? The "I see where I end". Trick is it morphs and it seems like it's porous. Are we trying to define a point of interface as a thing, instead of a location, and is that a problem? On a broader note, consciousness. I've made a list of things I confuse for consciousness. 
 
