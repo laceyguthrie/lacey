@@ -16,8 +16,8 @@ export function createSettings(root) {
 
   const settings = {
     quarterTones: load('tuner-quarter-tones') === 'true',
-    a4: clamp(Number(load('tuner-a4')) || A4.default, A4.min, A4.max),
-    tolerance: nearestStep(Number(load('tuner-precision')) || PRECISION_DEFAULT)
+    a4: Number(load('tuner-a4')) || A4.default,
+    tolerance: Number(load('tuner-precision')) || PRECISION_DEFAULT
   };
 
   const lastStep = PRECISION_STEPS.length - 1;

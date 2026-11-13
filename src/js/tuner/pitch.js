@@ -1,8 +1,16 @@
 // YIN pitch detection (de Cheveigné & Kawahara, 2002).
 // Returns the fundamental frequency in Hz, or null when there is no clear pitch.
 
+// Lowest note to detect: B0, the low string of a 5-string bass, is about 30.9 Hz.
+export const MIN_FREQUENCY = 29;
+
+// Detection needs a buffer at least twice the period of the lowest note.
+export function bufferSizeFor(sampleRate) {
+  return 2 ** Math.ceil(Math.log2((2 * sampleRate) / MIN_FREQUENCY));
+}
+
 export function detectPitch(buffer, sampleRate, {
-  minFrequency = 29,
+  minFrequency = MIN_FREQUENCY,
   maxFrequency = 1500,
   threshold = 0.15,
   silence = 0.01
@@ -12,31 +20,35 @@ export function detectPitch(buffer, sampleRate, {
   const maxTau = Math.min(Math.floor(sampleRate / minFrequency), Math.floor(buffer.length / 2));
   const minTau = Math.max(2, Math.floor(sampleRate / maxFrequency));
   const windowSize = buffer.length - maxTau;
-
-  const diff = new Float32Array(maxTau + 1);
-  for (let tau = 1; tau <= maxTau; tau++) {
-    let sum = 0;
-    for (let i = 0; i < windowSize; i++) {
-      const delta = buffer[i] - buffer[i + tau];
-      sum += delta * delta;
-    }
-    diff[tau] = sum;
-  }
-
   const normalized = new Float32Array(maxTau + 1);
-  normalized[0] = 1;
+
+  // Lags are computed in order and the loop stops at the bottom of the first dip below the threshold.
   let runningSum = 0;
+  let best = -1;
   for (let tau = 1; tau <= maxTau; tau++) {
-    runningSum += diff[tau];
-    normalized[tau] = runningSum ? (diff[tau] * tau) / runningSum : 1;
+    const diff = difference(buffer, tau, windowSize);
+    runningSum += diff;
+    normalized[tau] = runningSum ? (diff * tau) / runningSum : 1;
+
+    if (best === -1) {
+      if (tau >= minTau && normalized[tau] < threshold) best = tau;
+    } else if (normalized[tau] < normalized[best]) {
+      best = tau;
+    } else {
+      break;
+    }
   }
 
-  let tau = minTau;
-  while (tau <= maxTau && normalized[tau] >= threshold) tau++;
-  if (tau > maxTau) return null;
-  while (tau + 1 <= maxTau && normalized[tau + 1] < normalized[tau]) tau++;
+  return best === -1 ? null : sampleRate / refine(normalized, best);
+}
 
-  return sampleRate / refine(normalized, tau);
+function difference(buffer, tau, windowSize) {
+  let sum = 0;
+  for (let i = 0; i < windowSize; i++) {
+    const delta = buffer[i] - buffer[i + tau];
+    sum += delta * delta;
+  }
+  return sum;
 }
 
 function rms(buffer) {

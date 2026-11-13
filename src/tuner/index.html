@@ -28,7 +28,7 @@ description: A chromatic tuner that listens through your microphone and displays
                 <label for="tunerPrecision">precision</label>
                 <output class="js-tuner-precision-value" for="tunerPrecision">±5 cents</output>
             </div>
-            <input type="range" id="tunerPrecision" class="lg-tuner__slider js-tuner-precision" step="1">
+            <input type="range" id="tunerPrecision" class="lg-tuner__slider js-tuner-precision">
             <div class="lg-tuner__presets">
                 <button type="button" class="lg-tuner__preset js-tuner-preset" data-cents="20">loose</button>
                 <button type="button" class="lg-tuner__preset js-tuner-preset" data-cents="10">voice</button>
@@ -43,7 +43,7 @@ description: A chromatic tuner that listens through your microphone and displays
             <span class="lg-tuner__zone"></span>
             <span class="lg-tuner__line"></span>
         </div>
-        <p class="lg-tuner__note" aria-hidden="true"><span class="js-tuner-letter"></span><span class="lg-tuner__accidental-slot js-tuner-accidental"></span><span class="lg-tuner__octave js-tuner-octave"></span></p>
+        <p class="lg-tuner__note" aria-hidden="true"><span class="js-tuner-letter"></span><span class="js-tuner-accidental"></span><span class="lg-tuner__octave js-tuner-octave"></span></p>
         <p class="sr-only js-tuner-spoken"></p>
         <p class="lg-tuner__cents js-tuner-cents"></p>
         <p class="lg-tuner__status js-tuner-status" role="status"></p>
@@ -54,4 +54,4 @@ description: A chromatic tuner that listens through your microphone and displays
     </div>
 </main>
 
-<script type="module" src="/js/tuner/tuner.js"></script>
+<script type="module" src="/js/tuner/tuner.js?v={{ buildVersion }}"></script>

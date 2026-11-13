@@ -8,14 +8,14 @@
     <meta name="description" content="{{ description }}">
     <link rel="canonical" href="https://laceyguthrie.com{{ page.url }}">
 {% include "fonts.html" %}
-    <link rel="stylesheet" type="text/css" href="/css/global.css?v=7">
-    <link rel="stylesheet" type="text/css" href="/css/digital.css?v=5">
+    <link rel="stylesheet" type="text/css" href="/css/global.css?v={{ buildVersion }}">
+    <link rel="stylesheet" type="text/css" href="/css/digital.css?v={{ buildVersion }}">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body class="lg-page lg-page--digital">
     {% assign activeSite = "digital" %}
     {% include "site-nav.html" %}
     {{ content }}
-    <script src="/js/init.js?v=2"></script>
+    <script src="/js/init.js?v={{ buildVersion }}"></script>
 </body>
 </html>

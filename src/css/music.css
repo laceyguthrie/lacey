@@ -299,7 +299,6 @@ img {
 .lg-header__nav-list button {
     display: inline-block;
     text-decoration: none;
-    font-family: "Inter", sans-serif;
     font-size: 0.675rem;
     font-weight: 600;
     line-height: 1;
@@ -314,7 +313,6 @@ img {
     content: "\2190  you are here";
     display: inline-block;
     margin-left: 0.5rem;
-    font-family: "Inter", sans-serif;
     font-size: 0.4rem;
     text-transform: uppercase;
     font-weight: 700;

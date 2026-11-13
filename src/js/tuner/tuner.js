@@ -1,11 +1,10 @@
 // Chromatic tuner: wires the microphone, the settings and the readout together.
 
-import { detectPitch } from './pitch.js';
+import { detectPitch, bufferSizeFor } from './pitch.js';
 import { describePitch } from './notes.js';
 import { createReadout } from './readout.js';
 import { createSettings } from './settings.js';
 
-const SAMPLE_SIZE = 4096;
 const ANALYSIS_INTERVAL_MS = 50;
 const SMOOTHING_SAMPLES = 5;
 const SMOOTHING_WEIGHT = 0.25;
@@ -101,7 +100,7 @@ async function openMicrophone() {
   });
   const context = new AudioContext();
   const analyser = context.createAnalyser();
-  analyser.fftSize = SAMPLE_SIZE;
+  analyser.fftSize = bufferSizeFor(context.sampleRate);
   context.createMediaStreamSource(stream).connect(analyser);
   return { stream, context, analyser, timer: null };
 }

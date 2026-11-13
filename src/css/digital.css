@@ -11,10 +11,6 @@
     padding: 0 1rem;
 }
 
-.lg-page-header__title {
-    margin: 0 0 1rem 0;
-}
-
 /* ==========================================================================
    TOOLS
    ========================================================================== */
@@ -85,13 +81,21 @@
 }
 
 /* ==========================================================================
+   TOOL PAGES
+   ========================================================================== */
+
+.lg-flyers,
+.lg-tuner {
+    width: 100%;
+    padding: 4.5rem 0 3rem;
+}
+
+/* ==========================================================================
    FLYER LOCATIONS
    ========================================================================== */
 
 .lg-flyers {
-    width: 100%;
     max-width: 36rem;
-    padding: 4.5rem 0 3rem;
     font-size: 0.8125rem;
     line-height: 1.6;
 }
@@ -183,9 +187,7 @@
    ========================================================================== */
 
 .lg-tuner {
-    width: 100%;
     max-width: 20rem;
-    padding: 4.5rem 0 3rem;
 }
 
 .lg-tuner__readout {
@@ -196,9 +198,15 @@
     text-align: center;
 }
 
-.lg-tuner__readout p {
-    min-height: 1.5em;
+.lg-tuner__note,
+.lg-tuner__cents,
+.lg-tuner__status {
     margin: 0;
+}
+
+.lg-tuner__cents,
+.lg-tuner__status {
+    min-height: 1.5em;
 }
 
 .lg-tuner__scale,
@@ -249,7 +257,6 @@
     align-self: center;
     font-family: "Jacquard 24", cursive;
     font-size: 4rem;
-    font-weight: 400;
     line-height: 1;
 }
 
@@ -261,7 +268,6 @@
 .lg-tuner__octave {
     align-self: flex-end;
     font-size: 0.35em;
-    font-weight: 400;
 }
 
 .lg-tuner__cents {

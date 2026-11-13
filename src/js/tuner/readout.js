@@ -20,28 +20,38 @@ export function createReadout(root) {
   const status = root.querySelector('.js-tuner-status');
   const spokenNote = root.querySelector('.js-tuner-spoken');
   let inTune = false;
+  let shownNote = '';
+  let shownState = '';
 
   function show(pitch, tolerance) {
-    const { strokes, spoken } = ACCIDENTALS[pitch.accidental];
-    letter.textContent = pitch.letter;
-    accidental.replaceChildren(...(strokes ? [drawAccidental(strokes)] : []));
-    octave.textContent = pitch.octave;
-    spokenNote.textContent = [pitch.letter, spoken, pitch.octave].filter(Boolean).join(' ');
+    const note = `${pitch.letter} ${pitch.accidental} ${pitch.octave}`;
+    if (note !== shownNote) {
+      const { strokes, spoken } = ACCIDENTALS[pitch.accidental];
+      letter.textContent = pitch.letter;
+      accidental.replaceChildren(...(strokes ? [drawAccidental(strokes)] : []));
+      octave.textContent = pitch.octave;
+      spokenNote.textContent = [pitch.letter, spoken, pitch.octave].filter(part => part !== '').join(' ');
+      shownNote = note;
+    }
 
     cents.textContent = `${formatSigned(pitch.cents)} cents`;
-    const offset = Math.abs(pitch.cents);
-    inTune = offset <= (inTune ? tolerance + RELEASE_CENTS : tolerance);
+    inTune = Math.abs(pitch.cents) <= (inTune ? tolerance + RELEASE_CENTS : tolerance);
     const state = inTune ? 'in tune' : pitch.cents < 0 ? 'flat' : 'sharp';
-    status.textContent = state;
-    root.dataset.state = state.replace(' ', '-');
+    if (state !== shownState) {
+      status.textContent = state;
+      root.dataset.state = state.replace(' ', '-');
+      shownState = state;
+    }
 
-    // Both run from -1 (half a step flat) to 1 (half a step sharp).
-    root.style.setProperty('--tuner-offset', clamp(pitch.cents / pitch.maxCents, -1, 1));
+    // Offset runs from -1 (half a step flat) to 1 (half a step sharp). Zone is the tolerance on the same scale.
+    root.style.setProperty('--tuner-offset', pitch.cents / pitch.maxCents);
     root.style.setProperty('--tuner-zone', Math.min(1, tolerance / pitch.maxCents));
   }
 
   function clear(message = '') {
     inTune = false;
+    shownNote = '';
+    shownState = '';
     root.style.removeProperty('--tuner-offset');
     root.style.removeProperty('--tuner-zone');
     letter.textContent = '';
@@ -54,10 +64,6 @@ export function createReadout(root) {
   }
 
   return { show, clear };
-}
-
-function clamp(value, min, max) {
-  return Math.min(max, Math.max(min, value));
 }
 
 function formatSigned(value) {

@@ -4,6 +4,9 @@ module.exports = function(eleventyConfig) {
   // day. Format in UTC to match.
   eleventyConfig.setLiquidOptions({ timezoneOffset: 0 });
 
+  // Cache-busting query string for CSS and JS links. Changes on every build.
+  eleventyConfig.addGlobalData("buildVersion", Date.now());
+
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/img");
