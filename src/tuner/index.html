@@ -1,0 +1,57 @@
+---
+layout: layouts/digital.html
+title: Chromatic Tuner | Lacey Guthrie
+description: A chromatic tuner that listens through your microphone and displays the note it hears.
+---
+<main class="lg-main lg-tuner js-tuner">
+    <header class="lg-page-header">
+        <a class="lg-back-link" href="/digital/"><span aria-hidden="true">← </span>digital</a>
+        <h1 class="lg-page-header__title">chromatic tuner</h1>
+    </header>
+
+    <div class="lg-tuner__settings">
+        <label class="lg-tuner__switch">
+            <input type="checkbox" role="switch" class="js-tuner-quarter-tones">
+            <span>quarter tones</span>
+        </label>
+
+        <div class="lg-tuner__a4">
+            <output class="js-tuner-a4" aria-live="polite">A4 = 440 Hz</output>
+            <div class="lg-tuner__spinner">
+                <button type="button" class="lg-tuner__spin lg-tuner__spin--up js-tuner-a4-up" aria-label="raise A4"></button>
+                <button type="button" class="lg-tuner__spin lg-tuner__spin--down js-tuner-a4-down" aria-label="lower A4"></button>
+            </div>
+        </div>
+
+        <div class="lg-tuner__precision">
+            <div class="lg-tuner__precision-header">
+                <label for="tunerPrecision">precision</label>
+                <output class="js-tuner-precision-value" for="tunerPrecision">±5 cents</output>
+            </div>
+            <input type="range" id="tunerPrecision" class="lg-tuner__slider js-tuner-precision" step="1">
+            <div class="lg-tuner__presets">
+                <button type="button" class="lg-tuner__preset js-tuner-preset" data-cents="20">loose</button>
+                <button type="button" class="lg-tuner__preset js-tuner-preset" data-cents="10">voice</button>
+                <button type="button" class="lg-tuner__preset js-tuner-preset" data-cents="5">guitar</button>
+                <button type="button" class="lg-tuner__preset js-tuner-preset" data-cents="2">strict</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="lg-tuner__readout js-tuner-readout">
+        <div class="lg-tuner__scale" aria-hidden="true">
+            <span class="lg-tuner__zone"></span>
+            <span class="lg-tuner__line"></span>
+        </div>
+        <p class="lg-tuner__note" aria-hidden="true"><span class="js-tuner-letter"></span><span class="lg-tuner__accidental-slot js-tuner-accidental"></span><span class="lg-tuner__octave js-tuner-octave"></span></p>
+        <p class="sr-only js-tuner-spoken"></p>
+        <p class="lg-tuner__cents js-tuner-cents"></p>
+        <p class="lg-tuner__status js-tuner-status" role="status"></p>
+    </div>
+
+    <div class="lg-tuner__controls">
+        <button type="button" class="lg-button js-tuner-toggle">start listening</button>
+    </div>
+</main>
+
+<script type="module" src="/js/tuner/tuner.js"></script>

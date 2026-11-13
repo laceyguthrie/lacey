@@ -28,9 +28,6 @@ html {
     margin: 0 auto;
     width: 100vw;
     height: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-family: "Inter", sans-serif;
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 1.5;
@@ -45,8 +42,7 @@ img {
 
 .lg-loading,
 .lg-shows__ticker,
-.lg-shows__label,
-.lg-button {
+.lg-shows__label {
     font-family: "Jacquard 24", cursive;
     font-size: 1rem;
     font-weight: 400;
@@ -264,12 +260,6 @@ img {
 /* ==========================================================================
    HEADER & NAVIGATION
    ========================================================================== */
-
-/* override because I'm a picky bitch */
-.lg-site-nav a {
-    font-weight: 600;
-    font-size: 0.675rem;
-}
 
 .lg-header {
     padding-top: 5.25rem;

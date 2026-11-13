@@ -4,7 +4,6 @@
     --surface: #1a1a1a;
     margin: 0;
     min-height: 100vh;
-    font-family: "Inconsolata", ui-monospace, "SF Mono", Menlo, monospace;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,10 +12,6 @@
 }
 
 .lg-page-header__title {
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
     margin: 0 0 1rem 0;
 }
 
@@ -30,7 +25,6 @@
     gap: 0.75rem;
     width: 100%;
     max-width: 20rem;
-    margin-top: 1.5rem;
 }
 
 .lg-tool {
@@ -68,9 +62,6 @@
 }
 
 .lg-button {
-    font-size: 0.675rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
     text-decoration: none;
 }
 
@@ -185,6 +176,255 @@
     .lg-flyers__address {
         text-decoration: none;
     }
+}
+
+/* ==========================================================================
+   TUNER
+   ========================================================================== */
+
+.lg-tuner {
+    width: 100%;
+    max-width: 20rem;
+    padding: 4.5rem 0 3rem;
+}
+
+.lg-tuner__readout {
+    --travel: 4rem;
+    display: grid;
+    justify-items: center;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.lg-tuner__readout p {
+    min-height: 1.5em;
+    margin: 0;
+}
+
+.lg-tuner__scale,
+.lg-tuner__note {
+    grid-area: 1 / 1;
+}
+
+.lg-tuner__scale {
+    position: relative;
+    width: 100%;
+    height: calc(var(--travel) * 2 + 1rem);
+}
+
+.lg-tuner__zone,
+.lg-tuner__line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+}
+
+.lg-tuner__zone {
+    height: calc(var(--tuner-zone, 0) * var(--travel) * 2);
+    transform: translateY(-50%);
+    background: color-mix(in srgb, var(--ink) 10%, transparent);
+    transition: height 150ms linear;
+}
+
+.lg-tuner__line {
+    border-top: 1px dashed var(--ink);
+    opacity: 0.3;
+    transform: translateY(calc(var(--tuner-offset, 0) * var(--travel) * -1));
+    transition: transform 120ms linear;
+}
+
+.lg-tuner__readout[data-state] .lg-tuner__line {
+    opacity: 1;
+}
+
+.lg-tuner__readout[data-state="in-tune"] .lg-tuner__line {
+    border-top: 2px solid var(--ink);
+}
+
+.lg-tuner__note {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    align-self: center;
+    font-family: "Jacquard 24", cursive;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.lg-tuner__accidental {
+    height: 0.55em;
+    margin: 0.05em 0 0 0.05em;
+}
+
+.lg-tuner__octave {
+    align-self: flex-end;
+    font-size: 0.35em;
+    font-weight: 400;
+}
+
+.lg-tuner__cents {
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+}
+
+.lg-tuner__status {
+    max-width: 16rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.lg-tuner__settings {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.75rem;
+}
+
+.lg-tuner__controls {
+    display: flex;
+    justify-content: center;
+}
+
+.lg-tuner__switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.lg-tuner__switch input {
+    appearance: none;
+    position: relative;
+    width: 2rem;
+    height: 1rem;
+    margin: 0;
+    border: 1px solid var(--ink);
+    cursor: pointer;
+}
+
+.lg-tuner__switch input::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(1rem - 6px);
+    height: calc(1rem - 6px);
+    background: var(--ink);
+}
+
+.lg-tuner__switch input:checked::after {
+    left: calc(100% - 1rem + 4px);
+}
+
+.lg-tuner__a4 {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.lg-tuner__spinner {
+    display: flex;
+    flex-direction: column;
+}
+
+.lg-tuner__spin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 0.875rem;
+}
+
+.lg-tuner__spin::before {
+    content: "";
+    border-left: 0.25rem solid transparent;
+    border-right: 0.25rem solid transparent;
+}
+
+.lg-tuner__spin--up::before {
+    border-bottom: 0.3rem solid currentColor;
+}
+
+.lg-tuner__spin--down::before {
+    border-top: 0.3rem solid currentColor;
+}
+
+.lg-tuner__spin:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.lg-tuner__precision {
+    --thumb: 0.75rem;
+    flex-basis: 100%;
+}
+
+.lg-tuner__precision-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.lg-tuner__slider {
+    appearance: none;
+    display: block;
+    width: 100%;
+    height: 1rem;
+    margin: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.lg-tuner__slider::-webkit-slider-runnable-track {
+    height: 1px;
+    background: var(--ink);
+}
+
+.lg-tuner__slider::-moz-range-track {
+    height: 1px;
+    background: var(--ink);
+}
+
+.lg-tuner__slider::-webkit-slider-thumb {
+    appearance: none;
+    width: var(--thumb);
+    height: var(--thumb);
+    margin-top: calc(var(--thumb) / -2 + 0.5px);
+    border: 0;
+    background: var(--ink);
+}
+
+.lg-tuner__slider::-moz-range-thumb {
+    width: var(--thumb);
+    height: var(--thumb);
+    border: 0;
+    border-radius: 0;
+    background: var(--ink);
+}
+
+.lg-tuner__presets {
+    position: relative;
+    height: 1.25rem;
+}
+
+.lg-tuner__preset {
+    position: absolute;
+    top: 0.125rem;
+    left: calc(var(--thumb) / 2 + (100% - var(--thumb)) * var(--position));
+    transform: translateX(calc(var(--position) * -100%));
+    font-size: 0.625rem;
+    opacity: 0.6;
+}
+
+.lg-tuner__preset.is-active {
+    opacity: 1;
+    text-decoration: underline;
 }
 
 /* ==========================================================================

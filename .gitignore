@@ -11,3 +11,5 @@ docs/superpowers/
 *.mp4
 *.webm
 _video/
+.claude/
+.playwright-mcp/

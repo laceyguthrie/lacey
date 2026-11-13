@@ -6,7 +6,7 @@
   "scripts": {
     "build": "eleventy && npm run minify:css && npm run minify:js",
     "minify:css": "esbuild _site/css/*.css --minify --allow-overwrite --outdir=_site/css",
-    "minify:js": "esbuild _site/js/*.js --minify --allow-overwrite --outdir=_site/js",
+    "minify:js": "esbuild _site/js/*.js --minify --allow-overwrite --outdir=_site/js && esbuild _site/js/tuner/*.js --minify --allow-overwrite --outdir=_site/js/tuner",
     "start": "eleventy --serve"
   },
   "license": "ISC",

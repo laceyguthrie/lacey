@@ -16,6 +16,10 @@
    - Shared components (button, email, popup, site nav) live here. Page
      CSS can restyle them for its page but does not copy them.
    - Small decorative accents go in the FLOURISHES section of the page CSS.
+
+   TYPE
+   - Inter for text and headings. Jacquard for buttons and flourishes.
+     Fonts load from _includes/fonts.html on every layout.
    ========================================================================== */
 
 *,
@@ -27,6 +31,20 @@
 .lg-page {
     background: var(--bg);
     color: var(--ink);
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   TYPE
+   ========================================================================== */
+
+.lg-page-header__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1;
 }
 
 button {
@@ -113,14 +131,29 @@ a {
     display: inline-block;
     text-decoration: none;
     padding: 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    font-size: 0.675rem;
+    font-weight: 600;
     line-height: 1.5;
 }
 
 .lg-site-nav__list .is-active {
     pointer-events: none;
-    border-bottom: 1px dashed var(--ink);
+}
+
+.lg-site-nav__list .is-active::after {
+    content: "you are here";
+    position: absolute;
+    bottom: 0.25rem;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    padding-top: 0.25rem;
+    font-size: 0.4rem;
+    font-weight: 700;
+    letter-spacing: 0.025rem;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 /* ==========================================================================
@@ -133,6 +166,10 @@ a {
     justify-content: center;
     border: 1px solid var(--ink);
     padding: 0.5rem 1rem;
+    font-family: "Jacquard 24", cursive;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
 }
 
 /* ==========================================================================
