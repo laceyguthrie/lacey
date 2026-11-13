@@ -419,13 +419,25 @@
     height: 1.25rem;
 }
 
-.lg-tuner__preset {
+.lg-tuner__preset,
+.lg-tuner__end {
     position: absolute;
     top: 0.125rem;
-    left: calc(var(--thumb) / 2 + (100% - var(--thumb)) * var(--position));
-    transform: translateX(calc(var(--position) * -100%));
     font-size: 0.625rem;
     opacity: 0.6;
+}
+
+.lg-tuner__preset {
+    left: calc(var(--thumb) / 2 + (100% - var(--thumb)) * var(--position));
+    transform: translateX(-50%);
+}
+
+.lg-tuner__end--start {
+    left: 0;
+}
+
+.lg-tuner__end--end {
+    right: 0;
 }
 
 .lg-tuner__preset.is-active {
