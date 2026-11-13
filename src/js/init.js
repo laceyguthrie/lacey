@@ -677,7 +677,7 @@ function setupFlyerTools() {
     shareButton.hidden = false;
     shareButton.addEventListener('click', () => {
       // Rejects when the person closes the share sheet. Nothing to do then.
-      navigator.share({ title: 'Flyer locations, Louisville, KY', text }).catch(() => {});
+      navigator.share({ text }).catch(() => {});
     });
   }
 }
